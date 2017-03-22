@@ -1,0 +1,82 @@
+G:\ProjectUpdate 23-06-2016\ProductManagementSystem\ProductManagementSystem\bin\Debug\ProductManagementSystem.exe
+G:\ProjectUpdate 23-06-2016\ProductManagementSystem\ProductManagementSystem\bin\Debug\ProductManagementSystem.pdb
+G:\ProjectUpdate 23-06-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.csprojResolveAssemblyReference.cache
+G:\ProjectUpdate 23-06-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.LogInUI.frmLogin.resources
+G:\ProjectUpdate 23-06-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.LogInUI.frmRegistration.resources
+G:\ProjectUpdate 23-06-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.Properties.Resources.resources
+G:\ProjectUpdate 23-06-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.UI.frmProductUpdate.resources
+G:\ProjectUpdate 23-06-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.UI.MainUI1.resources
+G:\ProjectUpdate 23-06-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.UI.newProductEntry.resources
+G:\ProjectUpdate 23-06-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.UI.ProductGrid.resources
+G:\ProjectUpdate 23-06-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.csproj.GenerateResource.Cache
+G:\ProjectUpdate 23-06-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.exe
+G:\ProjectUpdate 23-06-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.pdb
+G:\ProjectUpdate 23-06-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.UI.BrandCreation.resources
+G:\ProjectUpdate 23-06-2016\Product Management System -27-11-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.exe
+G:\ProjectUpdate 23-06-2016\Product Management System -27-11-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.pdb
+G:\ProjectUpdate 23-06-2016\Product Management System -27-11-2016\ProductManagementSystem\ProductManagementSystem\bin\Debug\ProductManagementSystem.exe
+G:\ProjectUpdate 23-06-2016\Product Management System -27-11-2016\ProductManagementSystem\ProductManagementSystem\bin\Debug\ProductManagementSystem.pdb
+G:\ProjectUpdate 23-06-2016\Product Management System -27-11-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.csprojResolveAssemblyReference.cache
+G:\ProjectUpdate 23-06-2016\Product Management System -27-11-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.LogInUI.frmLogin.resources
+G:\ProjectUpdate 23-06-2016\Product Management System -27-11-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.LogInUI.frmRegistration.resources
+G:\ProjectUpdate 23-06-2016\Product Management System -27-11-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.Properties.Resources.resources
+G:\ProjectUpdate 23-06-2016\Product Management System -27-11-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.UI.BrandCreation.resources
+G:\ProjectUpdate 23-06-2016\Product Management System -27-11-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.UI.frmProductUpdate.resources
+G:\ProjectUpdate 23-06-2016\Product Management System -27-11-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.UI.MainUI1.resources
+G:\ProjectUpdate 23-06-2016\Product Management System -27-11-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.UI.newProductEntry.resources
+G:\ProjectUpdate 23-06-2016\Product Management System -27-11-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.UI.ProductGrid.resources
+G:\ProjectUpdate 23-06-2016\Product Management System -27-11-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.csproj.GenerateResource.Cache
+G:\ProjectUpdate 23-06-2016\Product Management System -27-11-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.UI.GridForBrand.resources
+G:\ProjectUpdate 23-06-2016\Product Management System -27-11-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.UI.UpDateBrand.resources
+C:\Users\KYOTO\Desktop\Product Management System-28-11-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.exe
+C:\Users\KYOTO\Desktop\Product Management System-28-11-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.pdb
+C:\Users\KYOTO\Desktop\Product Management System-28-11-2016\ProductManagementSystem\ProductManagementSystem\bin\Debug\ProductManagementSystem.exe
+C:\Users\KYOTO\Desktop\Product Management System-28-11-2016\ProductManagementSystem\ProductManagementSystem\bin\Debug\ProductManagementSystem.pdb
+C:\Users\KYOTO\Desktop\Product Management System-28-11-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.csprojResolveAssemblyReference.cache
+C:\Users\KYOTO\Desktop\Product Management System-28-11-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.LogInUI.frmLogin.resources
+C:\Users\KYOTO\Desktop\Product Management System-28-11-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.LogInUI.frmRegistration.resources
+C:\Users\KYOTO\Desktop\Product Management System-28-11-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.Properties.Resources.resources
+C:\Users\KYOTO\Desktop\Product Management System-28-11-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.UI.BrandCreation.resources
+C:\Users\KYOTO\Desktop\Product Management System-28-11-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.UI.frmProductUpdate.resources
+C:\Users\KYOTO\Desktop\Product Management System-28-11-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.UI.GridForBrand.resources
+C:\Users\KYOTO\Desktop\Product Management System-28-11-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.UI.MainUI1.resources
+C:\Users\KYOTO\Desktop\Product Management System-28-11-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.UI.newProductEntry.resources
+C:\Users\KYOTO\Desktop\Product Management System-28-11-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.UI.ProductGrid.resources
+C:\Users\KYOTO\Desktop\Product Management System-28-11-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.UI.UpDateBrand.resources
+C:\Users\KYOTO\Desktop\Product Management System-28-11-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.csproj.GenerateResource.Cache
+\\KYOTOSERVER\Share\IT\Source Code\Product Management System-8-12-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.exe
+\\KYOTOSERVER\Share\IT\Source Code\Product Management System-8-12-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.pdb
+\\KYOTOSERVER\Share\IT\Source Code\Product Management System-8-12-2016\ProductManagementSystem\ProductManagementSystem\bin\Debug\ProductManagementSystem.exe
+\\KYOTOSERVER\Share\IT\Source Code\Product Management System-8-12-2016\ProductManagementSystem\ProductManagementSystem\bin\Debug\ProductManagementSystem.pdb
+\\KYOTOSERVER\Share\IT\Source Code\Product Management System-8-12-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.csprojResolveAssemblyReference.cache
+\\KYOTOSERVER\Share\IT\Source Code\Product Management System-8-12-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.LogInUI.frmLogin.resources
+\\KYOTOSERVER\Share\IT\Source Code\Product Management System-8-12-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.LogInUI.frmRegistration.resources
+\\KYOTOSERVER\Share\IT\Source Code\Product Management System-8-12-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.Properties.Resources.resources
+\\KYOTOSERVER\Share\IT\Source Code\Product Management System-8-12-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.UI.BrandCreation.resources
+\\KYOTOSERVER\Share\IT\Source Code\Product Management System-8-12-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.UI.frmProductUpdate.resources
+\\KYOTOSERVER\Share\IT\Source Code\Product Management System-8-12-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.UI.GridForBrand.resources
+\\KYOTOSERVER\Share\IT\Source Code\Product Management System-8-12-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.UI.MainUI1.resources
+\\KYOTOSERVER\Share\IT\Source Code\Product Management System-8-12-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.UI.newProductEntry.resources
+\\KYOTOSERVER\Share\IT\Source Code\Product Management System-8-12-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.UI.ProductGrid.resources
+\\KYOTOSERVER\Share\IT\Source Code\Product Management System-8-12-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.UI.UpDateBrand.resources
+\\KYOTOSERVER\Share\IT\Source Code\Product Management System-8-12-2016\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.csproj.GenerateResource.Cache
+C:\Users\KYOTO\Desktop\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.csprojResolveAssemblyReference.cache
+C:\Users\KYOTO\Desktop\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.LogInUI.frmLogin.resources
+C:\Users\KYOTO\Desktop\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.LogInUI.frmRegistration.resources
+C:\Users\KYOTO\Desktop\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.Properties.Resources.resources
+C:\Users\KYOTO\Desktop\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.UI.BrandCreation.resources
+C:\Users\KYOTO\Desktop\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.UI.frmProductUpdate.resources
+C:\Users\KYOTO\Desktop\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.UI.GridForBrand.resources
+C:\Users\KYOTO\Desktop\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.UI.MainUI1.resources
+C:\Users\KYOTO\Desktop\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.UI.newProductEntry.resources
+C:\Users\KYOTO\Desktop\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.UI.ProductGrid.resources
+C:\Users\KYOTO\Desktop\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.UI.UpDateBrand.resources
+C:\Users\KYOTO\Desktop\ProductManagementSystem\ProductManagementSystem\obj\Debug\ProductManagementSystem.csproj.GenerateResource.Cache
+C:\Users\KYOTO\Desktop\ProductManagementSystem\ProductManagementSystem\bin\Debug\Kyoto Product Management System.exe.manifest
+C:\Users\KYOTO\Desktop\ProductManagementSystem\ProductManagementSystem\bin\Debug\Kyoto Product Management System.application
+C:\Users\KYOTO\Desktop\ProductManagementSystem\ProductManagementSystem\bin\Debug\Kyoto Product Management System.exe
+C:\Users\KYOTO\Desktop\ProductManagementSystem\ProductManagementSystem\bin\Debug\Kyoto Product Management System.pdb
+C:\Users\KYOTO\Desktop\ProductManagementSystem\ProductManagementSystem\obj\Debug\Kyoto Product Management System.exe.manifest
+C:\Users\KYOTO\Desktop\ProductManagementSystem\ProductManagementSystem\obj\Debug\Kyoto Product Management System.application
+C:\Users\KYOTO\Desktop\ProductManagementSystem\ProductManagementSystem\obj\Debug\Kyoto Product Management System.exe
+C:\Users\KYOTO\Desktop\ProductManagementSystem\ProductManagementSystem\obj\Debug\Kyoto Product Management System.pdb
