@@ -67,15 +67,38 @@ namespace ProductManagementSystem.UI
                 frm.txtId.Text = dr.Cells[0].Value.ToString();
                 frm.txtBrandName.Text = dr.Cells[1].Value.ToString();
                 frm.txtBrandCode.Text = dr.Cells[2].Value.ToString();
-                
-                
-                byte[] data = (byte[])dr.Cells[3].Value;
-                MemoryStream ms = new MemoryStream(data);
-                frm.txtUBrandFooterImage.Image = Image.FromStream(ms);
 
-                byte[] data1 = (byte[])dr.Cells[4].Value;
-                MemoryStream ms1 = new MemoryStream(data1);
-                frm.txtUBrandLogoImage.Image = Image.FromStream(ms1);
+                if (Convert.ToString(dr.Cells[3].Value) != string.Empty)
+                //if (! DBNull.Value.Equals( dr.Cells[6]))
+                {
+                    byte[] data = (byte[])dr.Cells[3].Value;
+                    MemoryStream ms = new MemoryStream(data);
+                    frm.txtUBrandFooterImage.Image = Image.FromStream(ms);
+                }
+
+             //frm.txtUTaxToDuty.Text = dr.Cells[7].Value.ToString();
+                else
+                {
+
+                    frm.txtUBrandFooterImage.Image = null;
+                }
+
+                if (Convert.ToString(dr.Cells[4].Value) != string.Empty)
+                //if (! DBNull.Value.Equals( dr.Cells[6]))
+                {
+                    byte[] data1 = (byte[])dr.Cells[4].Value;
+                    MemoryStream ms1 = new MemoryStream(data1);
+                    frm.txtUBrandLogoImage.Image = Image.FromStream(ms1);
+                }
+
+             //frm.txtUTaxToDuty.Text = dr.Cells[7].Value.ToString();
+                else
+                {
+
+                    frm.txtUBrandLogoImage.Image = null;
+                }
+
+              
                 frm.labelk.Text = labelp.Text;
 
             }

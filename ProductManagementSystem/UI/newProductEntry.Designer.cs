@@ -223,6 +223,7 @@
             "Eritrea",
             "Estonia",
             "Ethiopia",
+            "Europe",
             "Fiji",
             "Finland",
             "France",
