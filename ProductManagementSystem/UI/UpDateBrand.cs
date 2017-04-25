@@ -57,7 +57,7 @@ namespace ProductManagementSystem.UI
                 cmd.Parameters.AddWithValue("@d1", txtBrandName.Text);
                 cmd.Parameters.AddWithValue("@d2", txtBrandCode.Text);
 
-                if (txtUBrandFooterImage != null)
+                if (txtUBrandFooterImage.Image != null)
                 {
 
                     MemoryStream ms = new MemoryStream();
