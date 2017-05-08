@@ -135,6 +135,7 @@
             this.txtUProductId.ReadOnly = true;
             this.txtUProductId.Size = new System.Drawing.Size(238, 29);
             this.txtUProductId.TabIndex = 0;
+            this.txtUProductId.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUProductId_KeyDown);
             // 
             // label10
             // 
@@ -151,6 +152,7 @@
             this.txtUPrice.Name = "txtUPrice";
             this.txtUPrice.Size = new System.Drawing.Size(238, 29);
             this.txtUPrice.TabIndex = 7;
+            this.txtUPrice.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUPrice_KeyDown);
             this.txtUPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUPrice_KeyPress);
             // 
             // label9
@@ -168,6 +170,7 @@
             this.txtUItemCode.Name = "txtUItemCode";
             this.txtUItemCode.Size = new System.Drawing.Size(236, 29);
             this.txtUItemCode.TabIndex = 3;
+            this.txtUItemCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUItemCode_KeyDown);
             // 
             // txtUItemDescription
             // 
@@ -175,6 +178,7 @@
             this.txtUItemDescription.Name = "txtUItemDescription";
             this.txtUItemDescription.Size = new System.Drawing.Size(237, 29);
             this.txtUItemDescription.TabIndex = 2;
+            this.txtUItemDescription.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUItemDescription_KeyDown);
             // 
             // label7
             // 
@@ -248,6 +252,7 @@
             this.txtUProductName.Name = "txtUProductName";
             this.txtUProductName.Size = new System.Drawing.Size(237, 32);
             this.txtUProductName.TabIndex = 1;
+            this.txtUProductName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUProductName_KeyDown);
             // 
             // labelk
             // 
@@ -318,6 +323,7 @@
             this.richTextBox1.Size = new System.Drawing.Size(236, 151);
             this.richTextBox1.TabIndex = 5;
             this.richTextBox1.Text = "";
+            this.richTextBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.richTextBox1_KeyDown);
             // 
             // cmbBrand
             // 
@@ -329,6 +335,7 @@
             this.cmbBrand.TabIndex = 6;
             this.cmbBrand.SelectedIndexChanged += new System.EventHandler(this.cmbBrand_SelectedIndexChanged);
             this.cmbBrand.SelectionChangeCommitted += new System.EventHandler(this.cmbBrand_SelectionChangeCommitted);
+            this.cmbBrand.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbBrand_KeyDown);
             // 
             // cmbCountryOfOrigin
             // 
@@ -537,6 +544,7 @@
             this.cmbCountryOfOrigin.Name = "cmbCountryOfOrigin";
             this.cmbCountryOfOrigin.Size = new System.Drawing.Size(236, 30);
             this.cmbCountryOfOrigin.TabIndex = 4;
+            this.cmbCountryOfOrigin.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbCountryOfOrigin_KeyDown);
             // 
             // txtUPictureBox
             // 

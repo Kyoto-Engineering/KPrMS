@@ -322,6 +322,59 @@ namespace ProductManagementSystem.UI
             }
         }
 
+        private void txtUProductId_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtUProductName.Focus();
+                e.Handled = true;
+
+            }
+        }
+
+        private void txtUProductName_KeyDown(object sender, KeyEventArgs e)
+        {
+            txtUItemDescription.Focus();
+            e.Handled = true;
+        }
+
+        private void txtUItemDescription_KeyDown(object sender, KeyEventArgs e)
+        {
+            txtUItemCode.Focus();
+            e.Handled = true;
+        }
+
+        private void txtUItemCode_KeyDown(object sender, KeyEventArgs e)
+        {
+            cmbCountryOfOrigin.Focus();
+            e.Handled = true;
+        }
+
+        private void cmbCountryOfOrigin_KeyDown(object sender, KeyEventArgs e)
+        {
+            richTextBox1.Focus();
+            e.Handled = true;
+        }
+
+        private void richTextBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            cmbBrand.Focus();
+            e.Handled = true;
+        }
+
+        private void cmbBrand_KeyDown(object sender, KeyEventArgs e)
+        {
+            txtUPrice.Focus();
+            e.Handled = true;
+        }
+
+        private void txtUPrice_KeyDown(object sender, KeyEventArgs e)
+        {
+            browseButton.Focus();
+            e.Handled = true;
+
+        }
+
       
 
         

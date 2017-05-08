@@ -201,5 +201,76 @@ namespace ProductManagementSystem.LogInUI
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void txtUsername_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtPassword.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                cmbUserType.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void cmbUserType_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtFullName.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void txtFullName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                designationTextBox.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void designationTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                departmentTextBox.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void departmentTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtContact_no.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void txtContact_no_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnUpdate_Click(this, new EventArgs());
+
+            }
+        }
+
+        private void txtContact_no_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsDigit(e.KeyChar) || (e.KeyChar == (char)Keys.Back)))
+              
+                e.Handled = true;
+            
+        }
     }
 }

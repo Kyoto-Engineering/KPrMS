@@ -119,7 +119,7 @@
             this.blIBrowseButton.Location = new System.Drawing.Point(686, 235);
             this.blIBrowseButton.Name = "blIBrowseButton";
             this.blIBrowseButton.Size = new System.Drawing.Size(208, 36);
-            this.blIBrowseButton.TabIndex = 3;
+            this.blIBrowseButton.TabIndex = 4;
             this.blIBrowseButton.Text = "Browse";
             this.blIBrowseButton.UseVisualStyleBackColor = false;
             this.blIBrowseButton.Click += new System.EventHandler(this.blIBrowseButton_Click);
@@ -131,7 +131,7 @@
             this.bfIBrowseButton.Location = new System.Drawing.Point(36, 313);
             this.bfIBrowseButton.Name = "bfIBrowseButton";
             this.bfIBrowseButton.Size = new System.Drawing.Size(187, 36);
-            this.bfIBrowseButton.TabIndex = 2;
+            this.bfIBrowseButton.TabIndex = 3;
             this.bfIBrowseButton.Text = "Browse";
             this.bfIBrowseButton.UseVisualStyleBackColor = false;
             this.bfIBrowseButton.Click += new System.EventHandler(this.bfIBrowseButton_Click);
@@ -166,7 +166,7 @@
             this.submitButton.Location = new System.Drawing.Point(752, 374);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(192, 80);
-            this.submitButton.TabIndex = 4;
+            this.submitButton.TabIndex = 5;
             this.submitButton.Text = "Submit";
             this.submitButton.UseVisualStyleBackColor = false;
             this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
@@ -178,7 +178,7 @@
             this.txtBrandCode.MaxLength = 3;
             this.txtBrandCode.Name = "txtBrandCode";
             this.txtBrandCode.Size = new System.Drawing.Size(283, 29);
-            this.txtBrandCode.TabIndex = 1;
+            this.txtBrandCode.TabIndex = 2;
             this.txtBrandCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBrandCode_KeyDown);
             // 
             // txtBrandName
@@ -187,7 +187,7 @@
             this.txtBrandName.Location = new System.Drawing.Point(170, 32);
             this.txtBrandName.Name = "txtBrandName";
             this.txtBrandName.Size = new System.Drawing.Size(283, 29);
-            this.txtBrandName.TabIndex = 0;
+            this.txtBrandName.TabIndex = 1;
             this.txtBrandName.TextChanged += new System.EventHandler(this.txtBrandName_TextChanged);
             this.txtBrandName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBrandName_KeyDown);
             // 
