@@ -368,6 +368,7 @@
             this.cmbCountryOfOrigin.Name = "cmbCountryOfOrigin";
             this.cmbCountryOfOrigin.Size = new System.Drawing.Size(263, 30);
             this.cmbCountryOfOrigin.TabIndex = 3;
+            this.cmbCountryOfOrigin.SelectedIndexChanged += new System.EventHandler(this.cmbCountryOfOrigin_SelectedIndexChanged);
             this.cmbCountryOfOrigin.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbCountryOfOrigin_KeyDown);
             // 
             // txtPrice

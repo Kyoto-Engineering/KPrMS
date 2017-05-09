@@ -68,6 +68,8 @@ namespace ProductManagementSystem.UI
                 this.Hide();
                 frmProductUpdate frm = new frmProductUpdate();
                 frm.Show();
+                frm.groupBox1.Enabled = true;
+                frm.updateButton.Enabled = true;
                 frm.txtUProductId.Text = dr.Cells[0].Value.ToString();
                 frm.txtUProductName.Text = dr.Cells[1].Value.ToString();
                 frm.txtUItemDescription.Text = dr.Cells[2].Value.ToString();
@@ -75,24 +77,28 @@ namespace ProductManagementSystem.UI
                 frm.cmbCountryOfOrigin.Text = dr.Cells[4].Value.ToString();
                 frm.txtUPrice.Text = dr.Cells[5].Value.ToString();
                 frm.richTextBox1.Text = dr.Cells[6].Value.ToString();
-                 if(Convert.ToString(dr.Cells[7].Value) != string.Empty)
-                //if (! DBNull.Value.Equals( dr.Cells[6]))
-                {
-                    byte[] data = (byte[]) dr.Cells[7].Value;
-                    MemoryStream ms = new MemoryStream(data);
-                    frm.txtUPictureBox.Image = Image.FromStream(ms);
-                }
+                
+                
+                    if (Convert.ToString(dr.Cells[7].Value) != string.Empty)
+                    //if (! DBNull.Value.Equals( dr.Cells[6]))
+                    {
+                        byte[] data = (byte[])dr.Cells[7].Value;
+                        MemoryStream ms = new MemoryStream(data);
+                        frm.txtUPictureBox.Image = Image.FromStream(ms);
+                    }
 
-                //frm.txtUTaxToDuty.Text = dr.Cells[7].Value.ToString();
-                else
-                {
+                        //frm.txtUTaxToDuty.Text = dr.Cells[7].Value.ToString();
+                    else
+                    {
+
+                        frm.txtUPictureBox.Image = null;
+                    }
+                    frm.cmbBrand.Text = dr.Cells[8].Value.ToString();
                 
-                       frm.txtUPictureBox.Image = null;
-                }
-   
-                
-                
-                frm.cmbBrand.Text = dr.Cells[8].Value.ToString();
+
+
+
+               
                 frm.labelk.Text = labelg.Text;
 
             }

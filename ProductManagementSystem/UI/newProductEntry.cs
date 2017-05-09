@@ -253,7 +253,7 @@ namespace ProductManagementSystem.UI
 
                 con.Open();
                 cmd = con.CreateCommand();
-                cmd.CommandText = "SELECT  RTRIM(Brand.BrandId) from Brand WHERE Brand.BrandName = '" + cmbBrand.Text + "'";
+                cmd.CommandText = "SELECT  Brand.BrandId from Brand WHERE Brand.BrandName = '" + cmbBrand.Text + "'";
                 rdr = cmd.ExecuteReader();
 
                 if (rdr.Read())
@@ -345,6 +345,11 @@ namespace ProductManagementSystem.UI
                 browseButton.Focus();
                 e.Handled = true;
             }
+        }
+
+        private void cmbCountryOfOrigin_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
        

@@ -82,8 +82,8 @@ namespace ProductManagementSystem.UI
             }
             try
             {
-
-                if (cmbBrand.Text == "")
+                
+               if (cmbBrand.Text == "")
                 {
                     con = new SqlConnection(cs.DBConn);
                     con.Open();
@@ -95,6 +95,7 @@ namespace ProductManagementSystem.UI
                     cmd.Parameters.AddWithValue("@d3", txtUItemCode.Text);
                     cmd.Parameters.AddWithValue("@d4", cmbCountryOfOrigin.Text);
                     cmd.Parameters.AddWithValue("@d5", (object)priceup??DBNull.Value);
+                    //cmd.Parameters.AddWithValue("@d9", cmbBrand.Text);
                    if(txtUPictureBox.Image!=null)
                    {
                     MemoryStream ms = new MemoryStream();
@@ -119,7 +120,7 @@ namespace ProductManagementSystem.UI
                     this.Hide();
                     ProductGrid frm = new ProductGrid();
                     frm.Show();
-                }
+                } 
                 else
                 {
                     con = new SqlConnection(cs.DBConn);
@@ -131,6 +132,7 @@ namespace ProductManagementSystem.UI
                     cmd.Parameters.AddWithValue("@d2", txtUItemDescription.Text);
                     cmd.Parameters.AddWithValue("@d3", txtUItemCode.Text);
                     cmd.Parameters.AddWithValue("@d4", cmbCountryOfOrigin.Text);
+                    //cmd.Parameters.AddWithValue("@d8", cmbBrand.Text);
                     cmd.Parameters.AddWithValue("@d5", (object)priceup??DBNull.Value);
  if(txtUPictureBox.Image!=null)
                    {
@@ -235,6 +237,8 @@ namespace ProductManagementSystem.UI
 
         private void frmProductUpdate_Load(object sender, EventArgs e)
         {
+            groupBox1.Enabled = false;
+            updateButton.Enabled = false;
             FillBrandCombo();
         }
 
@@ -280,7 +284,7 @@ namespace ProductManagementSystem.UI
 
         private void cmbBrand_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
+           try
             {
                 con = new SqlConnection(cs.DBConn);
 
@@ -311,6 +315,7 @@ namespace ProductManagementSystem.UI
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+          
         }
 
         private void txtUPrice_KeyPress(object sender, KeyPressEventArgs e)
@@ -334,44 +339,75 @@ namespace ProductManagementSystem.UI
 
         private void txtUProductName_KeyDown(object sender, KeyEventArgs e)
         {
-            txtUItemDescription.Focus();
-            e.Handled = true;
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtUItemDescription.Focus();
+                e.Handled = true;
+            }
         }
 
         private void txtUItemDescription_KeyDown(object sender, KeyEventArgs e)
         {
-            txtUItemCode.Focus();
-            e.Handled = true;
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtUItemCode.Focus();
+                e.Handled = true;
+            }
         }
 
         private void txtUItemCode_KeyDown(object sender, KeyEventArgs e)
         {
-            cmbCountryOfOrigin.Focus();
-            e.Handled = true;
+            if (e.KeyCode == Keys.Enter)
+            {
+                cmbCountryOfOrigin.Focus();
+                e.Handled = true;
+            }
         }
 
         private void cmbCountryOfOrigin_KeyDown(object sender, KeyEventArgs e)
         {
-            richTextBox1.Focus();
-            e.Handled = true;
+            if (e.KeyCode == Keys.Enter)
+            {
+
+                richTextBox1.Focus();
+                e.Handled = true;
+            }
         }
 
         private void richTextBox1_KeyDown(object sender, KeyEventArgs e)
         {
-            cmbBrand.Focus();
-            e.Handled = true;
+            if (e.KeyCode == Keys.Enter)
+            {
+                cmbBrand.Focus();
+                e.Handled = true;
+            }
         }
 
         private void cmbBrand_KeyDown(object sender, KeyEventArgs e)
         {
-            txtUPrice.Focus();
-            e.Handled = true;
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtUPrice.Focus();
+                e.Handled = true;
+            }
         }
 
         private void txtUPrice_KeyDown(object sender, KeyEventArgs e)
         {
-            browseButton.Focus();
-            e.Handled = true;
+            if (e.KeyCode == Keys.Enter)
+            {
+                browseButton.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void cmbCountryOfOrigin_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmProductUpdate_KeyDown(object sender, KeyEventArgs e)
+        {
 
         }
 

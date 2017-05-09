@@ -327,7 +327,6 @@
             // 
             // cmbBrand
             // 
-            this.cmbBrand.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBrand.FormattingEnabled = true;
             this.cmbBrand.Location = new System.Drawing.Point(274, 404);
             this.cmbBrand.Name = "cmbBrand";
@@ -544,6 +543,7 @@
             this.cmbCountryOfOrigin.Name = "cmbCountryOfOrigin";
             this.cmbCountryOfOrigin.Size = new System.Drawing.Size(236, 30);
             this.cmbCountryOfOrigin.TabIndex = 4;
+            this.cmbCountryOfOrigin.SelectedIndexChanged += new System.EventHandler(this.cmbCountryOfOrigin_SelectedIndexChanged);
             this.cmbCountryOfOrigin.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbCountryOfOrigin_KeyDown);
             // 
             // txtUPictureBox
@@ -583,6 +583,7 @@
             this.Name = "frmProductUpdate";
             this.Text = "frmProductUpdate";
             this.Load += new System.EventHandler(this.frmProductUpdate_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmProductUpdate_KeyDown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtUPictureBox)).EndInit();
@@ -599,7 +600,7 @@
         public System.Windows.Forms.Button browseButton;
         public System.Windows.Forms.PictureBox txtUPictureBox;
         private System.Windows.Forms.Button backButton;
-        private System.Windows.Forms.Button updateButton;
+        public System.Windows.Forms.Button updateButton;
         public System.Windows.Forms.TextBox txtUProductId;
         private System.Windows.Forms.Label label10;
         public System.Windows.Forms.TextBox txtUPrice;
@@ -615,7 +616,7 @@
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox txtUProductName;
         public System.Windows.Forms.Label labelk;
-        private System.Windows.Forms.GroupBox groupBox1;
+        public System.Windows.Forms.GroupBox groupBox1;
         public  System.Windows.Forms.ComboBox cmbCountryOfOrigin;
         public  System.Windows.Forms.ComboBox cmbBrand;
         public System.Windows.Forms.TextBox txtUKBrandName;
