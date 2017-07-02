@@ -82,51 +82,46 @@ namespace ProductManagementSystem.UI
             }
             try
             {
-                
-               if (cmbBrand.Text == "")
+
+                if (brandId44 == 0)
                 {
+                    try
+                    {
+                        con = new SqlConnection(cs.DBConn);
+
+                        con.Open();
+                        cmd = con.CreateCommand();
+                        cmd.CommandText = "SELECT  RTRIM(Brand.BrandId) from Brand WHERE Brand.BrandName = '" + cmbBrand.Text.Trim() + "'";
+                        rdr = cmd.ExecuteReader();
+
+                        if (rdr.Read())
+                        {
+                            branId33 = (rdr.GetString(0));
+                            brandId44 = Convert.ToInt32(branId33);
+
+                        }
+
+                        if ((rdr != null))
+                        {
+                            rdr.Close();
+                        }
+                        if (con.State == ConnectionState.Open)
+                        {
+                            con.Close();
+                        }
+
+                    }
+
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                } 
+               
+                
                     con = new SqlConnection(cs.DBConn);
                     con.Open();
                     string cb = "Update ProductListSummary set ProductGenericDescription=@d1,ItemDescription=@d2,ItemCode=@d3,CountryOfOrigin=@d4,Price=@d5,ProductImage=@d6,Specification=@d7,BrandId=@d8 where Sl='" + txtUProductId.Text + "'";
-                    cmd = new SqlCommand(cb);
-                    cmd.Connection = con;
-                    cmd.Parameters.AddWithValue("@d1", txtUProductName.Text);
-                    cmd.Parameters.AddWithValue("@d2", txtUItemDescription.Text);
-                    cmd.Parameters.AddWithValue("@d3", txtUItemCode.Text);
-                    cmd.Parameters.AddWithValue("@d4", cmbCountryOfOrigin.Text);
-                    cmd.Parameters.AddWithValue("@d5", (object)priceup??DBNull.Value);
-                    //cmd.Parameters.AddWithValue("@d9", cmbBrand.Text);
-                   if(txtUPictureBox.Image!=null)
-                   {
-                    MemoryStream ms = new MemoryStream();
-                    Bitmap bmpImage = new Bitmap(txtUPictureBox.Image);
-                    bmpImage.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-                    byte[] data = ms.GetBuffer();
-                    SqlParameter p = new SqlParameter("@d6", SqlDbType.Image);
-                    p.Value = data;
-                    cmd.Parameters.Add(p);
-                    }
-                else
-                {
-                    cmd.Parameters.Add("@d6", SqlDbType.VarBinary, -1);
-                    cmd.Parameters["@d6"].Value = DBNull.Value;
-                }
-                    cmd.Parameters.AddWithValue("@d7", richTextBox1.Text);
-                    cmd.Parameters.AddWithValue("@d8", brandIdU2);
-                    rdr = cmd.ExecuteReader();
-                    con.Close();
-                    MessageBox.Show("Successfully updated", "Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Reset();
-
-                    this.Hide();
-                    ProductGrid frm = new ProductGrid();
-                    frm.Show();
-                } 
-                else
-                {
-                    con = new SqlConnection(cs.DBConn);
-                    con.Open();
-                    string cb = "Update ProductListSummary set ProductGenericDescription=@d1,ItemDescription=@d2,ItemCode=@d3,CountryOfOrigin=@d4,Price=@d5,ProductImage=@d6,BrandId=@d7 where Sl='" + txtUProductId.Text + "'";
                     cmd = new SqlCommand(cb);
                     cmd.Connection = con;
                     cmd.Parameters.AddWithValue("@d1", txtUProductName.Text);
@@ -160,7 +155,7 @@ namespace ProductManagementSystem.UI
                     this.Hide();
                     ProductGrid frm = new ProductGrid();
                     frm.Show();
-                }
+                
 
                
             }
