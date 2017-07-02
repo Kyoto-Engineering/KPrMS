@@ -32,7 +32,7 @@ namespace ProductManagementSystem.UI
         {
             con = new SqlConnection(cs.DBConn);
             con.Open();
-            sda = new SqlDataAdapter("Select  pp.Sl,pp.ProductGenericDescription,pp.ItemDescription,pp.ItemCode,pp.CountryOfOrigin,pp.Price,pp.Specification,pp.ProductImage,tt.BrandName from ProductListSummary as pp,Brand as tt  where pp.BrandId=tt.BrandId  order by pp.Sl desc", con);
+            sda = new SqlDataAdapter("Select  pp.Sl,pp.ProductGenericDescription,pp.ItemDescription,pp.ItemCode,pp.CountryOfOrigin,pp.Price,pp.Specification,pp.ProductImage,tt.BrandName, pp.Url from ProductListSummary as pp,Brand as tt  where pp.BrandId=tt.BrandId  order by pp.Sl desc", con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             dataGridView1.DataSource = dt;
@@ -44,7 +44,9 @@ namespace ProductManagementSystem.UI
             dataGridView1.Columns[5].Width = 120;
             dataGridView1.Columns[6].Width = 120;
             dataGridView1.Columns[7].Width = 180;
+            dataGridView1.Columns[8].Width = 180;
                dataGridView1.Columns[7].DefaultCellStyle.NullValue = null;
+            dataGridView1.Columns[8].DefaultCellStyle.NullValue = null;
                for (int i = 0; i < dataGridView1.Columns.Count; i++)
             if (dataGridView1.Columns[i] is DataGridViewImageColumn)
                {
@@ -94,8 +96,8 @@ namespace ProductManagementSystem.UI
                         frm.txtUPictureBox.Image = null;
                     }
                     frm.cmbBrand.Text = dr.Cells[8].Value.ToString();
-                
 
+                frm.textBox1.Text = dr.Cells[9].Value.ToString();
 
 
                

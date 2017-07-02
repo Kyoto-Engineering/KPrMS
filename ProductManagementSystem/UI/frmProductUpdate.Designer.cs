@@ -58,6 +58,8 @@
             this.cmbCountryOfOrigin = new System.Windows.Forms.ComboBox();
             this.txtUPictureBox = new System.Windows.Forms.PictureBox();
             this.txtUKBrandName = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtUPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -158,7 +160,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(139, 403);
+            this.label9.Location = new System.Drawing.Point(139, 370);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(120, 22);
             this.label9.TabIndex = 15;
@@ -266,6 +268,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.richTextBox1);
@@ -320,7 +324,7 @@
             // 
             this.richTextBox1.Location = new System.Drawing.Point(276, 237);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(236, 151);
+            this.richTextBox1.Size = new System.Drawing.Size(236, 117);
             this.richTextBox1.TabIndex = 5;
             this.richTextBox1.Text = "";
             this.richTextBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.richTextBox1_KeyDown);
@@ -328,7 +332,7 @@
             // cmbBrand
             // 
             this.cmbBrand.FormattingEnabled = true;
-            this.cmbBrand.Location = new System.Drawing.Point(274, 404);
+            this.cmbBrand.Location = new System.Drawing.Point(274, 362);
             this.cmbBrand.Name = "cmbBrand";
             this.cmbBrand.Size = new System.Drawing.Size(236, 30);
             this.cmbBrand.TabIndex = 6;
@@ -565,6 +569,22 @@
             this.txtUKBrandName.Visible = false;
             this.txtUKBrandName.TextChanged += new System.EventHandler(this.txtUKBrandName_TextChanged);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(270, 403);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(240, 29);
+            this.textBox1.TabIndex = 29;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(188, 410);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(49, 22);
+            this.label12.TabIndex = 30;
+            this.label12.Text = "URL";
+            // 
             // frmProductUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -623,5 +643,7 @@
         public System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label11;
+        public System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label12;
     }
 }
