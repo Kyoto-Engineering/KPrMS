@@ -111,7 +111,8 @@ namespace ProductManagementSystem.UI
                     cmd.Parameters.Add("@d6", SqlDbType.VarBinary, -1);
                     cmd.Parameters["@d6"].Value = DBNull.Value;
                 }
-                    cmd.Parameters.AddWithValue("@d7", brandIdU2);
+                    cmd.Parameters.AddWithValue("@d7", richTextBox1.Text);
+                    cmd.Parameters.AddWithValue("@d8", brandIdU2);
                     rdr = cmd.ExecuteReader();
                     con.Close();
                     MessageBox.Show("Successfully updated", "Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -149,7 +150,8 @@ namespace ProductManagementSystem.UI
      cmd.Parameters.Add("@d6", SqlDbType.VarBinary, -1);
      cmd.Parameters["@d6"].Value = DBNull.Value;
  }
-                    cmd.Parameters.AddWithValue("@d7", brandId44);
+                    cmd.Parameters.AddWithValue("@d7", richTextBox1.Text);
+                    cmd.Parameters.AddWithValue("@d8", brandId44);
                     rdr = cmd.ExecuteReader();
                     con.Close();
                     MessageBox.Show("Successfully updated", "Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
