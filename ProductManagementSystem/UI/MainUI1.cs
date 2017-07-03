@@ -66,5 +66,12 @@ namespace ProductManagementSystem.UI
             UpDateBrand frm=new UpDateBrand();
             frm.Show();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            PriceInquiry frm=new PriceInquiry();
+            frm.Show();
+        }
     }
 }
