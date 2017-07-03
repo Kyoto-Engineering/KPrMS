@@ -45,6 +45,7 @@
             this.QtyTextBox = new System.Windows.Forms.TextBox();
             this.PriceTextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.CloseButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -222,12 +223,26 @@
             this.label8.TabIndex = 1;
             this.label8.Text = "Price Inquiry Creation";
             // 
+            // CloseButton
+            // 
+            this.CloseButton.BackColor = System.Drawing.Color.PeachPuff;
+            this.CloseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CloseButton.ForeColor = System.Drawing.Color.DarkMagenta;
+            this.CloseButton.Location = new System.Drawing.Point(512, 19);
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Size = new System.Drawing.Size(64, 29);
+            this.CloseButton.TabIndex = 2;
+            this.CloseButton.Text = "Close";
+            this.CloseButton.UseVisualStyleBackColor = false;
+            this.CloseButton.Click += new System.EventHandler(this.button1_Click);
+            // 
             // PriceInquiry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.ClientSize = new System.Drawing.Size(578, 477);
+            this.ClientSize = new System.Drawing.Size(598, 477);
+            this.Controls.Add(this.CloseButton);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.groupBox1);
             this.Name = "PriceInquiry";
@@ -258,5 +273,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button CloseButton;
     }
 }

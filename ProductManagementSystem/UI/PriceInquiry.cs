@@ -20,5 +20,12 @@ namespace ProductManagementSystem.UI
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MainUI1 frm = new MainUI1();
+            frm.Show();
+        }
     }
 }
