@@ -18,7 +18,7 @@ namespace ProductManagementSystem.UI
         private SqlDataReader rdr;
         private SqlCommand cmd;
         ConnectionString cs = new ConnectionString();
-        public string brandId;
+        public int brandId;
         public string spec;
         public Nullable<Decimal> price;
         public newProductEntry()
@@ -260,7 +260,7 @@ namespace ProductManagementSystem.UI
 
                 if (rdr.Read())
                 {
-                    brandId = (rdr.GetString(0));
+                    brandId = (rdr.GetInt32(0));
                    
                 }
 
