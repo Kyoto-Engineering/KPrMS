@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainUI1));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.brandGridButton = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -39,7 +41,6 @@
             this.createProductButton = new System.Windows.Forms.Button();
             this.lblUser = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,6 +57,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button6);
             this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.brandGridButton);
@@ -69,14 +71,40 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.Color.Blue;
+            this.button6.Location = new System.Drawing.Point(22, 508);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(108, 69);
+            this.button6.TabIndex = 7;
+            this.button6.Text = "Reports";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.Blue;
+            this.button5.Location = new System.Drawing.Point(22, 420);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(108, 74);
+            this.button5.TabIndex = 6;
+            this.button5.Text = "Price Inquiry Creation";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.button4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.Blue;
-            this.button4.Location = new System.Drawing.Point(22, 430);
+            this.button4.Location = new System.Drawing.Point(22, 352);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(108, 69);
+            this.button4.Size = new System.Drawing.Size(108, 56);
             this.button4.TabIndex = 5;
             this.button4.Text = "Brand Update";
             this.button4.UseVisualStyleBackColor = false;
@@ -87,9 +115,9 @@
             this.brandGridButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.brandGridButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.brandGridButton.ForeColor = System.Drawing.Color.Blue;
-            this.brandGridButton.Location = new System.Drawing.Point(22, 355);
+            this.brandGridButton.Location = new System.Drawing.Point(22, 291);
             this.brandGridButton.Name = "brandGridButton";
-            this.brandGridButton.Size = new System.Drawing.Size(108, 69);
+            this.brandGridButton.Size = new System.Drawing.Size(108, 51);
             this.brandGridButton.TabIndex = 4;
             this.brandGridButton.Text = "BrandGrid";
             this.brandGridButton.UseVisualStyleBackColor = false;
@@ -100,9 +128,9 @@
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.button3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.Blue;
-            this.button3.Location = new System.Drawing.Point(22, 267);
+            this.button3.Location = new System.Drawing.Point(22, 222);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(108, 82);
+            this.button3.Size = new System.Drawing.Size(108, 60);
             this.button3.TabIndex = 3;
             this.button3.Text = "Brand Creation";
             this.button3.UseVisualStyleBackColor = false;
@@ -113,9 +141,9 @@
             this.brandButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.brandButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.brandButton.ForeColor = System.Drawing.Color.Blue;
-            this.brandButton.Location = new System.Drawing.Point(22, 180);
+            this.brandButton.Location = new System.Drawing.Point(22, 155);
             this.brandButton.Name = "brandButton";
-            this.brandButton.Size = new System.Drawing.Size(108, 81);
+            this.brandButton.Size = new System.Drawing.Size(108, 56);
             this.brandButton.TabIndex = 2;
             this.brandButton.Text = "Product Update";
             this.brandButton.UseVisualStyleBackColor = false;
@@ -126,9 +154,9 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.button1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Blue;
-            this.button1.Location = new System.Drawing.Point(22, 101);
+            this.button1.Location = new System.Drawing.Point(22, 84);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 73);
+            this.button1.Size = new System.Drawing.Size(108, 60);
             this.button1.TabIndex = 1;
             this.button1.Text = "Product In  Overseas";
             this.button1.UseVisualStyleBackColor = false;
@@ -141,7 +169,7 @@
             this.createProductButton.ForeColor = System.Drawing.Color.Blue;
             this.createProductButton.Location = new System.Drawing.Point(22, 19);
             this.createProductButton.Name = "createProductButton";
-            this.createProductButton.Size = new System.Drawing.Size(108, 76);
+            this.createProductButton.Size = new System.Drawing.Size(108, 54);
             this.createProductButton.TabIndex = 0;
             this.createProductButton.Text = "Product Creation";
             this.createProductButton.UseVisualStyleBackColor = false;
@@ -166,19 +194,6 @@
             this.button2.Text = "Log Out";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.Blue;
-            this.button5.Location = new System.Drawing.Point(22, 505);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(108, 79);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "Price Inquiry Creation";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // MainUI1
             // 
@@ -215,5 +230,6 @@
         private System.Windows.Forms.Button brandGridButton;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
     }
 }
