@@ -111,6 +111,12 @@
       <DependentUpon>ProductList.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\ReportByBrand.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportByBrand.Designer.cs">
+      <DependentUpon>ReportByBrand.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\ReportsUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +196,9 @@
     <EmbeddedResource Include="Reports\ProductList.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ProductList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportByBrand.resx">
+      <DependentUpon>ReportByBrand.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\ReportsUI.resx">
       <DependentUpon>ReportsUI.cs</DependentUpon>
