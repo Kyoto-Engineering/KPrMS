@@ -90,7 +90,7 @@ namespace ProductManagementSystem.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_BrandId {
+        public CrystalDecisions.Shared.IParameterField Parameter_BrandName {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }
