@@ -29,32 +29,6 @@ namespace ProductManagementSystem.Reports
         {
             GetButton.Enabled = false;
 
-
-            if (!string.IsNullOrWhiteSpace(BrandIdComboBox.Text))
-            {
-
-                if (ProListRadioButton.Checked)
-                {
-                    GetProductList();
-                    Clear();
-                }
-            }
-                else
-                {
-                    MessageBox.Show(@"Please Select a Brand Id");
-                }
-
-                GetButton.Enabled = true;
-            
-        }
-
-        private void Clear()
-        {
-            BrandIdComboBox.SelectedIndex = -1;
-            ProListRadioButton.Checked = false;
-        }
-        private void GetProductList()
-        {
             ParameterField paramField1 = new ParameterField();
 
 
@@ -65,10 +39,10 @@ namespace ProductManagementSystem.Reports
             ParameterDiscreteValue paramDiscreteValue1 = new ParameterDiscreteValue();
 
             //set the parameter field name
-            paramField1.Name = "BrandId";
+            paramField1.Name = "BrandName";
 
             //set the parameter value
-            paramDiscreteValue1.Value = BrandIdComboBox.Text;
+            paramDiscreteValue1.Value = BrandNameComboBox.Text;
 
             //add the parameter value in the ParameterField object
             paramField1.CurrentValues.Add(paramDiscreteValue1);
@@ -101,8 +75,15 @@ namespace ProductManagementSystem.Reports
 
             f2.ShowDialog();
             this.Visible = true;
+            GetButton.Enabled = true;
+            
         }
 
+        private void Clear()
+        {
+            BrandNameComboBox.SelectedIndex = -1;
+         }
+        
         private void ReportByBrand_load(object sender, EventArgs e)
         {
             try
@@ -110,14 +91,14 @@ namespace ProductManagementSystem.Reports
 
                 con = new SqlConnection(cs.DBConn);
                 con.Open();
-                string ct = "SELECT BrandId FROM Brand ORDER BY BrandId";
+                string ct = "SELECT BrandName FROM Brand ORDER BY BrandName";
                 cmd = new SqlCommand(ct);
                 cmd.Connection = con;
                 rdr = cmd.ExecuteReader();
 
                 while (rdr.Read())
                 {
-                    BrandIdComboBox.Items.Add(rdr[0]);
+                    BrandNameComboBox.Items.Add(rdr[0]);
                 }
                 con.Close();
 
