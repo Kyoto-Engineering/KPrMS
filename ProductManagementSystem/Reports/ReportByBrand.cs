@@ -33,7 +33,7 @@ namespace ProductManagementSystem.Reports
             if (!string.IsNullOrWhiteSpace(BrandIdComboBox.Text))
             {
 
-                if (PorListRadioButton.Checked)
+                if (ProListRadioButton.Checked)
                 {
                     GetProductList();
                     Clear();
@@ -53,7 +53,7 @@ namespace ProductManagementSystem.Reports
             BrandIdComboBox.SelectedIndex = -1;
             ProListRadioButton.Checked = false;
         }
-        private GetProductList()
+        private void GetProductList()
         {
             ParameterField paramField1 = new ParameterField();
 
@@ -86,7 +86,7 @@ namespace ProductManagementSystem.Reports
             with1.DatabaseName = "ProductNRelatedDB";
             with1.UserID = "sa";
             with1.Password = "SystemAdministrator";
-            ReportByBrand cr = new ReportByBrand();
+            ProductList cr = new ProductList();
             tables = cr.Database.Tables;
             foreach (Table table in tables)
             {
