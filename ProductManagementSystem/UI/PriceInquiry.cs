@@ -17,8 +17,7 @@ namespace ProductManagementSystem.UI
         private SqlConnection con;
         private SqlDataReader rdr;
         ConnectionString cs = new ConnectionString();
-        public Nullable<Decimal> price;
-       
+        public Nullable<Decimal> Price;       
         public PriceInquiry()
         {
             InitializeComponent();
@@ -88,21 +87,11 @@ namespace ProductManagementSystem.UI
             }
             if (PriceTextBox.Text == "")
             {
-                price = null;
+                MessageBox.Show("Please Enter Product Price", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                PriceTextBox.Focus();
+                return;
             }
-            else
-            {
-                decimal b = Convert.ToDecimal(PriceTextBox.Text);
-                if (b > 0)
-                {
-                    price = b;
-                }
-                else
-                {
-                    price = null;
-                }
-            }
-            
+                       
             try
             {
                 con = new SqlConnection(cs.DBConn);
