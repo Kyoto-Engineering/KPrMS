@@ -76,13 +76,10 @@ namespace ProductManagementSystem.Reports
             f2.ShowDialog();
             this.Visible = true;
             GetButton.Enabled = true;
+            BrandNameComboBox.SelectedIndex = -1;
             
         }
 
-        private void Clear()
-        {
-            BrandNameComboBox.SelectedIndex = -1;
-         }
         
         private void ReportByBrand_load(object sender, EventArgs e)
         {
