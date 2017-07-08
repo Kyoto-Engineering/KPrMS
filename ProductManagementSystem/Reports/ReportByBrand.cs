@@ -1,7 +1,11 @@
-﻿using System;
+﻿using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
+using ProductManagementSystem.DbGateway;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -34,13 +38,14 @@ namespace ProductManagementSystem.Reports
                     GetProductList();
                     Clear();
                 }
+            }
                 else
                 {
                     MessageBox.Show(@"Please Select a Brand Id");
                 }
 
                 GetButton.Enabled = true;
-            }
+            
         }
 
         private void Clear()
@@ -63,7 +68,7 @@ namespace ProductManagementSystem.Reports
             paramField1.Name = "BrandId";
 
             //set the parameter value
-            paramDiscreteValue1.Value = BrandIdCombobox.Text;
+            paramDiscreteValue1.Value = BrandIdComboBox.Text;
 
             //add the parameter value in the ParameterField object
             paramField1.CurrentValues.Add(paramDiscreteValue1);
@@ -96,6 +101,31 @@ namespace ProductManagementSystem.Reports
 
             f2.ShowDialog();
             this.Visible = true;
+        }
+
+        private void ReportByBrand_load(object sender, EventArgs e)
+        {
+            try
+            {
+
+                con = new SqlConnection(cs.DBConn);
+                con.Open();
+                string ct = "SELECT BrandId FROM Brand ORDER BY BrandId";
+                cmd = new SqlCommand(ct);
+                cmd.Connection = con;
+                rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    BrandIdComboBox.Items.Add(rdr[0]);
+                }
+                con.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
               
   

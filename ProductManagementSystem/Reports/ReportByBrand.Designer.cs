@@ -85,6 +85,7 @@
             this.Controls.Add(this.label1);
             this.Name = "ReportByBrand";
             this.Text = "Report By Brand";
+            this.Load += new System.EventHandler(this.ReportByBrand_load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
