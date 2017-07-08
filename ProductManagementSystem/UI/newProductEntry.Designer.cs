@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(newProductEntry));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.browseButton = new System.Windows.Forms.Button();
@@ -54,8 +56,6 @@
             this.saveButton = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.closeButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtPictureBox)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -94,6 +94,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Product Info";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(302, 342);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(263, 29);
+            this.textBox1.TabIndex = 27;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(27, 345);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(278, 22);
+            this.label11.TabIndex = 28;
+            this.label11.Text = "URL                                             :";
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -107,11 +123,11 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(163, 250);
+            this.label9.Location = new System.Drawing.Point(27, 249);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(115, 22);
+            this.label9.Size = new System.Drawing.Size(275, 22);
             this.label9.TabIndex = 26;
-            this.label9.Text = "Specification";
+            this.label9.Text = "Specification                               :";
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // browseButton
@@ -138,7 +154,7 @@
             // txtPictureBox
             // 
             this.txtPictureBox.BackgroundImage = global::ProductManagementSystem.Properties.Resources._12;
-            this.txtPictureBox.Location = new System.Drawing.Point(648, 72);
+            this.txtPictureBox.Location = new System.Drawing.Point(648, 87);
             this.txtPictureBox.Name = "txtPictureBox";
             this.txtPictureBox.Size = new System.Drawing.Size(301, 295);
             this.txtPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -159,11 +175,11 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(163, 201);
+            this.label8.Location = new System.Drawing.Point(27, 201);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(115, 22);
+            this.label8.Size = new System.Drawing.Size(280, 22);
             this.label8.TabIndex = 23;
-            this.label8.Text = "Select Brand";
+            this.label8.Text = "Select Brand                                :";
             // 
             // cmbCountryOfOrigin
             // 
@@ -404,29 +420,29 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(20, 53);
+            this.label7.Location = new System.Drawing.Point(27, 51);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(249, 22);
+            this.label7.Size = new System.Drawing.Size(274, 22);
             this.label7.TabIndex = 10;
-            this.label7.Text = " Product Generic Description";
+            this.label7.Text = "Product Generic Description     :";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(155, 384);
+            this.label6.Location = new System.Drawing.Point(27, 384);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(114, 22);
+            this.label6.Size = new System.Drawing.Size(279, 22);
             this.label6.TabIndex = 9;
-            this.label6.Text = "Price (in Tk)";
+            this.label6.Text = "Price (in Tk)                                :";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(117, 164);
+            this.label5.Location = new System.Drawing.Point(27, 164);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(161, 22);
+            this.label5.Size = new System.Drawing.Size(276, 22);
             this.label5.TabIndex = 8;
-            this.label5.Text = "Country Of Origin";
+            this.label5.Text = "Country Of Origin                      :";
             // 
             // label4
             // 
@@ -440,20 +456,20 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(174, 127);
+            this.label3.Location = new System.Drawing.Point(27, 126);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 22);
+            this.label3.Size = new System.Drawing.Size(280, 22);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Item Code";
+            this.label3.Text = "Item Code                                    :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(123, 87);
+            this.label2.Location = new System.Drawing.Point(27, 86);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(146, 22);
+            this.label2.Size = new System.Drawing.Size(281, 22);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Item Description";
+            this.label2.Text = "Item Description                          :";
             // 
             // label1
             // 
@@ -527,28 +543,12 @@
             this.closeButton.UseVisualStyleBackColor = false;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(302, 342);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(263, 29);
-            this.textBox1.TabIndex = 27;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(220, 349);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(49, 22);
-            this.label11.TabIndex = 28;
-            this.label11.Text = "URL";
-            // 
             // newProductEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(1046, 588);
+            this.ClientSize = new System.Drawing.Size(1046, 614);
             this.ControlBox = false;
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.groupBox2);
