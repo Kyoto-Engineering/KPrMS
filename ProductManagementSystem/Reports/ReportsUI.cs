@@ -34,6 +34,13 @@ namespace ProductManagementSystem.Reports
             f2.ShowDialog();
             this.Visible = true;
         }
+
+        private void ReportsUI_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Hide();
+            MainUI1 frm = new MainUI1();
+            frm.Show();
+        }
               
      }
 }

@@ -79,6 +79,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "ReportsUI";
             this.Text = "ReportsUI";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ReportsUI_FormClosed);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
