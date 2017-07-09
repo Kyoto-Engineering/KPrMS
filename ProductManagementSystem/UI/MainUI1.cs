@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using ProductManagementSystem.LogInUI;
+using ProductManagementSystem.Reports;
 
 namespace ProductManagementSystem.UI
 {
@@ -71,6 +72,13 @@ namespace ProductManagementSystem.UI
         {
             this.Hide();
             PriceInquiry frm=new PriceInquiry();
+            frm.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ReportsUI frm=new ReportsUI();
             frm.Show();
         }
     }
