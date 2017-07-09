@@ -21,7 +21,7 @@ namespace ProductManagementSystem.LogInUI
         private SqlDataReader rdr;
         ConnectionString cs=new ConnectionString();
          public static string userType, userName, readyPassword, dbUserName, dbPassword;
-        public int uId2;
+        public  static int uId2;
         public frmLogin()
         {
             InitializeComponent();
