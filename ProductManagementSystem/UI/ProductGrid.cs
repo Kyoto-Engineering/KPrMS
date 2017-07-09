@@ -32,7 +32,7 @@ namespace ProductManagementSystem.UI
         {
             con = new SqlConnection(cs.DBConn);
             con.Open();
-            sda = new SqlDataAdapter("Select  pp.Sl,pp.ProductGenericDescription,pp.ItemDescription,pp.ItemCode,pp.CountryOfOrigin,pp.Price,pp.Specification,pp.ProductImage,tt.BrandName, pp.Url from ProductListSummary as pp,Brand as tt  where pp.BrandId=tt.BrandId  order by pp.Sl desc", con);
+            sda = new SqlDataAdapter("Select  pp.Sl,pp.ProductGenericDescription,pp.ItemDescription,pp.ItemCode,pp.CountryOfOrigin,pp.Price,pp.Specification,pp.ProductImage,tt.BrandName, pp.Url,pp.CurrentRevision from ProductListSummary as pp,Brand as tt  where pp.BrandId=tt.BrandId  order by pp.Sl desc", con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             dataGridView1.DataSource = dt;
@@ -99,7 +99,7 @@ namespace ProductManagementSystem.UI
 
                 frm.textBox1.Text = dr.Cells[9].Value.ToString();
 
-
+                frm.rev = Convert.ToInt32(dr.Cells[10].Value);
                
                 frm.labelk.Text = labelg.Text;
 

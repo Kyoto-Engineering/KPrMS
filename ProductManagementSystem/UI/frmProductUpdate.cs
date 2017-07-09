@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using ProductManagementSystem.DbGateway;
+using ProductManagementSystem.LogInUI;
 
 namespace ProductManagementSystem.UI
 {
@@ -20,7 +21,7 @@ namespace ProductManagementSystem.UI
         private SqlDataReader rdr;
         ConnectionString cs=new ConnectionString();
         public string brandIdu,branId33,specup;
-        public int brandIdU2,brandId44;
+        public int brandIdU2,brandId44,rev;
         public Nullable<Decimal> priceup;
         public frmProductUpdate()
         {
@@ -121,7 +122,7 @@ namespace ProductManagementSystem.UI
                 
                     con = new SqlConnection(cs.DBConn);
                     con.Open();
-                    string cb = "Update ProductListSummary set ProductGenericDescription=@d1,ItemDescription=@d2,ItemCode=@d3,CountryOfOrigin=@d4,Price=@d5,ProductImage=@d6,Specification=@d7,BrandId=@d8,Url=@d9 where Sl='" + txtUProductId.Text + "'";
+                    string cb = "Update ProductListSummary set ProductGenericDescription=@d1,ItemDescription=@d2,ItemCode=@d3,CountryOfOrigin=@d4,Price=@d5,ProductImage=@d6,Specification=@d7,BrandId=@d8,Url=@d9,CurrentRevision=@d10 where Sl='" + txtUProductId.Text + "'";
                     cmd = new SqlCommand(cb);
                     cmd.Connection = con;
                     cmd.Parameters.AddWithValue("@d1", txtUProductName.Text);
@@ -149,14 +150,25 @@ namespace ProductManagementSystem.UI
                     cmd.Parameters.AddWithValue("@d8", brandId44);
                 cmd.Parameters.AddWithValue("@d9",
                     string.IsNullOrWhiteSpace(textBox1.Text) ? (object) DBNull.Value : textBox1.Text);
+                cmd.Parameters.AddWithValue("@d10", rev+1);
                     rdr = cmd.ExecuteReader();
                     con.Close();
-                    MessageBox.Show("Successfully updated", "Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Reset();
-
-                    this.Hide();
-                    ProductGrid frm = new ProductGrid();
-                    frm.Show();
+               string cd= "INSERT INTO ProductUpdateLog (UserId, UpdateTime, Revision, Sl) VALUES (@d1,@d2,@d3,@d4)";
+                cmd = new SqlCommand(cd);
+                cmd.Connection = con;
+                
+                cmd.Parameters.AddWithValue("@d1", frmLogin.uId2);
+                cmd.Parameters.AddWithValue("@d2", DateTime.UtcNow.ToLocalTime());
+                cmd.Parameters.AddWithValue("@d3",rev+1);
+                cmd.Parameters.AddWithValue("@d4", txtUProductId.Text);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("Successfully updated", "Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Reset();
+                ProductGrid frm = new ProductGrid();
+                this.Close();
+                frm.Show();
                 
 
                
@@ -192,8 +204,8 @@ namespace ProductManagementSystem.UI
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            MainUI1 frm =new MainUI1();
+            MainUI1 frm = new MainUI1();
+            this.Close();
                   frm.Show();
         }
 
