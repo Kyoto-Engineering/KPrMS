@@ -79,6 +79,8 @@
             this.PriceTextBox.Name = "PriceTextBox";
             this.PriceTextBox.Size = new System.Drawing.Size(249, 23);
             this.PriceTextBox.TabIndex = 7;
+            this.PriceTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PriceTextBox_KeyDown);
+            this.PriceTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PriceTextBox_KeyPress);
             // 
             // QtyTextBox
             // 
@@ -87,6 +89,8 @@
             this.QtyTextBox.Name = "QtyTextBox";
             this.QtyTextBox.Size = new System.Drawing.Size(249, 23);
             this.QtyTextBox.TabIndex = 6;
+            this.QtyTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.QtyTextBox_KeyDown);
+            this.QtyTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.QtyTextBox_KeyPress);
             // 
             // RemarksTextBox
             // 
@@ -97,6 +101,7 @@
             this.RemarksTextBox.Name = "RemarksTextBox";
             this.RemarksTextBox.Size = new System.Drawing.Size(249, 37);
             this.RemarksTextBox.TabIndex = 5;
+            this.RemarksTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RemarksTextBox_KeyDown);
             // 
             // InqFromTextBox
             // 
@@ -106,6 +111,7 @@
             this.InqFromTextBox.Name = "InqFromTextBox";
             this.InqFromTextBox.Size = new System.Drawing.Size(249, 23);
             this.InqFromTextBox.TabIndex = 4;
+            this.InqFromTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.InqFromTextBox_KeyDown);
             // 
             // ProCodeTextBox
             // 
@@ -115,6 +121,7 @@
             this.ProCodeTextBox.Name = "ProCodeTextBox";
             this.ProCodeTextBox.Size = new System.Drawing.Size(249, 23);
             this.ProCodeTextBox.TabIndex = 3;
+            this.ProCodeTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ProCodeTextBox_KeyDown);
             // 
             // ProDesTextBox
             // 
@@ -125,6 +132,7 @@
             this.ProDesTextBox.Name = "ProDesTextBox";
             this.ProDesTextBox.Size = new System.Drawing.Size(249, 66);
             this.ProDesTextBox.TabIndex = 2;
+            this.ProDesTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ProDesTextBox_KeyDown);
             // 
             // ModelTextBox
             // 
@@ -134,6 +142,7 @@
             this.ModelTextBox.Name = "ModelTextBox";
             this.ModelTextBox.Size = new System.Drawing.Size(249, 26);
             this.ModelTextBox.TabIndex = 1;
+            this.ModelTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ModelTextBox_KeyDown);
             // 
             // label7
             // 
@@ -202,9 +211,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(18, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(176, 17);
+            this.label1.Size = new System.Drawing.Size(177, 17);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Model                        :";
+            this.label1.Text = "Model Number            :";
             // 
             // SaveButton
             // 
