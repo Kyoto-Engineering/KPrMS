@@ -100,7 +100,7 @@
             this.RemarksTextBox.Multiline = true;
             this.RemarksTextBox.Name = "RemarksTextBox";
             this.RemarksTextBox.Size = new System.Drawing.Size(249, 37);
-            this.RemarksTextBox.TabIndex = 5;
+            this.RemarksTextBox.TabIndex = 2;
             this.RemarksTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RemarksTextBox_KeyDown);
             // 
             // InqFromTextBox

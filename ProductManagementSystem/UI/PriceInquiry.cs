@@ -106,7 +106,7 @@ namespace ProductManagementSystem.UI
             {
                 con = new SqlConnection(cs.DBConn);
                 con.Open();
-                string ct = "select Model from Price Inquiry where Model='" + ModelTextBox.Text + "'";
+                string ct = "select Model from PriceInquiry where Model='" + ModelTextBox.Text + "'";
 
                 cmd = new SqlCommand(ct);
                 cmd.Connection = con;
