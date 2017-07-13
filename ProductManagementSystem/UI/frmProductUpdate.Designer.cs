@@ -51,6 +51,8 @@
             this.txtUProductName = new System.Windows.Forms.TextBox();
             this.labelk = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
@@ -58,8 +60,6 @@
             this.cmbCountryOfOrigin = new System.Windows.Forms.ComboBox();
             this.txtUPictureBox = new System.Windows.Forms.PictureBox();
             this.txtUKBrandName = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtUPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -169,6 +169,7 @@
             // txtUItemCode
             // 
             this.txtUItemCode.Location = new System.Drawing.Point(276, 162);
+            this.txtUItemCode.MaxLength = 255;
             this.txtUItemCode.Name = "txtUItemCode";
             this.txtUItemCode.Size = new System.Drawing.Size(236, 29);
             this.txtUItemCode.TabIndex = 3;
@@ -177,6 +178,7 @@
             // txtUItemDescription
             // 
             this.txtUItemDescription.Location = new System.Drawing.Point(275, 125);
+            this.txtUItemDescription.MaxLength = 255;
             this.txtUItemDescription.Name = "txtUItemDescription";
             this.txtUItemDescription.Size = new System.Drawing.Size(237, 29);
             this.txtUItemDescription.TabIndex = 2;
@@ -251,6 +253,7 @@
             // 
             this.txtUProductName.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUProductName.Location = new System.Drawing.Point(275, 85);
+            this.txtUProductName.MaxLength = 255;
             this.txtUProductName.Name = "txtUProductName";
             this.txtUProductName.Size = new System.Drawing.Size(237, 32);
             this.txtUProductName.TabIndex = 1;
@@ -300,6 +303,23 @@
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Product Info";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(270, 403);
+            this.textBox1.MaxLength = 500;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(240, 29);
+            this.textBox1.TabIndex = 29;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(188, 410);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(49, 22);
+            this.label12.TabIndex = 30;
+            this.label12.Text = "URL";
             // 
             // label11
             // 
@@ -568,22 +588,6 @@
             this.txtUKBrandName.TabIndex = 25;
             this.txtUKBrandName.Visible = false;
             this.txtUKBrandName.TextChanged += new System.EventHandler(this.txtUKBrandName_TextChanged);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(270, 403);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(240, 29);
-            this.textBox1.TabIndex = 29;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(188, 410);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(49, 22);
-            this.label12.TabIndex = 30;
-            this.label12.Text = "URL";
             // 
             // frmProductUpdate
             // 

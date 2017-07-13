@@ -92,6 +92,7 @@
             // 
             this.RemarksTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RemarksTextBox.Location = new System.Drawing.Point(193, 196);
+            this.RemarksTextBox.MaxLength = 255;
             this.RemarksTextBox.Multiline = true;
             this.RemarksTextBox.Name = "RemarksTextBox";
             this.RemarksTextBox.Size = new System.Drawing.Size(249, 37);
@@ -101,6 +102,7 @@
             // 
             this.InqFromTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InqFromTextBox.Location = new System.Drawing.Point(193, 166);
+            this.InqFromTextBox.MaxLength = 255;
             this.InqFromTextBox.Name = "InqFromTextBox";
             this.InqFromTextBox.Size = new System.Drawing.Size(249, 23);
             this.InqFromTextBox.TabIndex = 4;
@@ -109,6 +111,7 @@
             // 
             this.ProCodeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProCodeTextBox.Location = new System.Drawing.Point(193, 134);
+            this.ProCodeTextBox.MaxLength = 255;
             this.ProCodeTextBox.Name = "ProCodeTextBox";
             this.ProCodeTextBox.Size = new System.Drawing.Size(249, 23);
             this.ProCodeTextBox.TabIndex = 3;
@@ -117,6 +120,7 @@
             // 
             this.ProDesTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProDesTextBox.Location = new System.Drawing.Point(193, 62);
+            this.ProDesTextBox.MaxLength = 255;
             this.ProDesTextBox.Multiline = true;
             this.ProDesTextBox.Name = "ProDesTextBox";
             this.ProDesTextBox.Size = new System.Drawing.Size(249, 66);
@@ -126,6 +130,7 @@
             // 
             this.ModelTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ModelTextBox.Location = new System.Drawing.Point(193, 23);
+            this.ModelTextBox.MaxLength = 255;
             this.ModelTextBox.Name = "ModelTextBox";
             this.ModelTextBox.Size = new System.Drawing.Size(249, 26);
             this.ModelTextBox.TabIndex = 1;

@@ -185,6 +185,7 @@
             // 
             this.txtBrandName.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBrandName.Location = new System.Drawing.Point(170, 32);
+            this.txtBrandName.MaxLength = 50;
             this.txtBrandName.Name = "txtBrandName";
             this.txtBrandName.Size = new System.Drawing.Size(283, 29);
             this.txtBrandName.TabIndex = 1;

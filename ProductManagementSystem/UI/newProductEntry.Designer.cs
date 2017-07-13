@@ -97,6 +97,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(302, 342);
+            this.textBox1.MaxLength = 500;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(263, 29);
             this.textBox1.TabIndex = 27;
@@ -403,6 +404,7 @@
             // txtItemCode
             // 
             this.txtItemCode.Location = new System.Drawing.Point(304, 123);
+            this.txtItemCode.MaxLength = 255;
             this.txtItemCode.Name = "txtItemCode";
             this.txtItemCode.Size = new System.Drawing.Size(263, 29);
             this.txtItemCode.TabIndex = 2;
@@ -411,6 +413,7 @@
             // txtItemDescription
             // 
             this.txtItemDescription.Location = new System.Drawing.Point(303, 86);
+            this.txtItemDescription.MaxLength = 255;
             this.txtItemDescription.Name = "txtItemDescription";
             this.txtItemDescription.Size = new System.Drawing.Size(263, 29);
             this.txtItemDescription.TabIndex = 1;
@@ -485,6 +488,7 @@
             // 
             this.txtProductName.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProductName.Location = new System.Drawing.Point(302, 46);
+            this.txtProductName.MaxLength = 255;
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(263, 32);
             this.txtProductName.TabIndex = 0;
