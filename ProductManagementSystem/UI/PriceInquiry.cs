@@ -17,7 +17,7 @@ namespace ProductManagementSystem.UI
         private SqlConnection con;
         private SqlDataReader rdr;
         ConnectionString cs = new ConnectionString();
-        public Nullable<Decimal> price;       
+        public int countryid;
         public PriceInquiry()
         {
             InitializeComponent();
@@ -43,7 +43,6 @@ namespace ProductManagementSystem.UI
             InqFromTextBox.Clear();
             RemarksTextBox.Clear();
             QtyTextBox.Clear();
-            PriceTextBox.Clear();
             SaveButton.Enabled = true;
         }
 
@@ -85,23 +84,7 @@ namespace ProductManagementSystem.UI
                 QtyTextBox.Focus();
                 return;
             }
-            if (PriceTextBox.Text == "")
-            {
-                price = null;
-            }
-            else
-            {
-                decimal b = Convert.ToDecimal(PriceTextBox.Text);
-                if (b > 0)
-                {
-                    price = b;
-                }
-                else
-                {
-                    price = null;
-                }
-            }
-                       
+                                   
             try
             {
                 con = new SqlConnection(cs.DBConn);
@@ -128,7 +111,7 @@ namespace ProductManagementSystem.UI
 
                 con = new SqlConnection(cs.DBConn);
                 con.Open();
-                string query = "insert into PriceInquiry(Model,ProductDescription,ProductCode,QTY,InquiryFrom,Remarks,Price) values(@d1,@d2,@d3,@d4,@d5,@d6,@d7)";
+                string query = "insert into PriceInquiry(Model,ProductDescription,ProductCode,QTY,InquiryFrom,Remarks) values(@d1,@d2,@d3,@d4,@d5,@d6)";
                 cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@d1", ModelTextBox.Text);
                 cmd.Parameters.AddWithValue("@d2", ProDesTextBox.Text);
@@ -136,7 +119,6 @@ namespace ProductManagementSystem.UI
                 cmd.Parameters.AddWithValue("@d4", QtyTextBox.Text);
                 cmd.Parameters.AddWithValue("@d5", InqFromTextBox.Text);
                 cmd.Parameters.AddWithValue("@d6", RemarksTextBox.Text);
-                cmd.Parameters.AddWithValue("@d7", (object)price??DBNull.Value);
                 cmd.ExecuteNonQuery();
                 con.Close();
                 MessageBox.Show("Successfully Saved", "Report", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -198,19 +180,11 @@ namespace ProductManagementSystem.UI
         {
             if (e.KeyCode == Keys.Enter)
             {
-                PriceTextBox.Focus();
-                e.Handled = true;
-            }
-        }
-
-        private void PriceTextBox_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
                 SaveButton_Click(this, new EventArgs());
             }
         }
 
+        
         private void QtyTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!(char.IsDigit(e.KeyChar) || (e.KeyChar == (char)Keys.Back)))
@@ -219,18 +193,62 @@ namespace ProductManagementSystem.UI
             }
         }
 
-        private void PriceTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        
+        private void COOComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            char ch = e.KeyChar;
-            decimal x;
-            if (ch == (char)Keys.Back)
+            try
             {
-                e.Handled = false;
+                con = new SqlConnection(cs.DBConn);
+                con.Open();
+                string ctk = "SELECT CountryId FROM Countries where CountryName='" + COOComboBox.Text + "'";
+                cmd = new SqlCommand(ctk);
+                cmd.Connection = con;
+                rdr = cmd.ExecuteReader();
+                if (rdr.Read())
+                {
+                    countryid = Convert.ToInt32(rdr["countryid"]);
+                    //CountryCodetextBox.Text = (rdr.GetString(1));
+                }
+                if ((rdr != null))
+                {
+                    rdr.Close();
+                }
+
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
             }
-            else if (!char.IsDigit(ch) && ch != '.' || !Decimal.TryParse(PriceTextBox.Text + ch, out x))
+            catch (Exception ex)
             {
-                e.Handled = true;
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void GetCountry()
+        {
+            try
+            {
+                con = new SqlConnection(cs.DBConn);
+                con.Open();
+                string ctt = "SELECT CountryName FROM Countries";
+                cmd = new SqlCommand(ctt);
+                cmd.Connection = con;
+                rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    COOComboBox.Items.Add(rdr.GetValue(0).ToString());
+                }
+                //cmbGender.Items.Add("Not In The List");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void PriceInquiry_Load(object sender, EventArgs e)
+        {
+            GetCountry();
         }
 
     }
