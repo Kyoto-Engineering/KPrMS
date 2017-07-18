@@ -277,6 +277,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "PriceInquiry";
             this.Text = "Price Inquiry";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PriceInquiry_FormClosed);
             this.Load += new System.EventHandler(this.PriceInquiry_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
