@@ -104,6 +104,7 @@
             this.InqFromButton.TabIndex = 9;
             this.InqFromButton.Text = ">>";
             this.InqFromButton.UseVisualStyleBackColor = true;
+            this.InqFromButton.Click += new System.EventHandler(this.InqFromButton_Click);
             // 
             // QtyTextBox
             // 
@@ -132,6 +133,7 @@
             this.InqFromTextBox.Location = new System.Drawing.Point(193, 192);
             this.InqFromTextBox.MaxLength = 255;
             this.InqFromTextBox.Name = "InqFromTextBox";
+            this.InqFromTextBox.ReadOnly = true;
             this.InqFromTextBox.Size = new System.Drawing.Size(249, 23);
             this.InqFromTextBox.TabIndex = 4;
             this.InqFromTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.InqFromTextBox_KeyDown);

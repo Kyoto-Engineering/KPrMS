@@ -17,7 +17,8 @@ namespace ProductManagementSystem.UI
         private SqlConnection con;
         private SqlDataReader rdr;
         ConnectionString cs = new ConnectionString();
-        public int countryid;
+        public int countryid, PriceInquiryId;
+        public Nullable<Int64> SalesClientId;
         public PriceInquiry()
         {
             InitializeComponent();
@@ -40,6 +41,7 @@ namespace ProductManagementSystem.UI
             ModelTextBox.Clear();
             ProDesTextBox.Clear();
             ProCodeTextBox.Clear();
+            COOComboBox.SelectedIndex = -1;
             InqFromTextBox.Clear();
             RemarksTextBox.Clear();
             QtyTextBox.Clear();
@@ -64,6 +66,12 @@ namespace ProductManagementSystem.UI
             {
                 MessageBox.Show("Please Enter Product Code", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 ProCodeTextBox.Focus();
+                return;
+            }
+            if (COOComboBox.Text == "")
+            {
+                MessageBox.Show("Please Enter Country of Origin", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                COOComboBox.Focus();
                 return;
             }
             if (InqFromTextBox.Text == "")
@@ -111,14 +119,19 @@ namespace ProductManagementSystem.UI
 
                 con = new SqlConnection(cs.DBConn);
                 con.Open();
-                string query = "insert into PriceInquiry(Model,ProductDescription,ProductCode,QTY,InquiryFrom,Remarks) values(@d1,@d2,@d3,@d4,@d5,@d6)";
+                string query = "insert into PriceInquiry(PriceInquiryId,SalesClientId,Model,ProductDescription,ProductCode,CountryOfOrigin,InquiryFrom,Remarks,Qty) values(@d1,@d2,@d3,@d4,@d5,@d6,@d7,@d8,@d9)";
                 cmd = new SqlCommand(query, con);
-                cmd.Parameters.AddWithValue("@d1", ModelTextBox.Text);
-                cmd.Parameters.AddWithValue("@d2", ProDesTextBox.Text);
-                cmd.Parameters.AddWithValue("@d3", ProCodeTextBox.Text);
-                cmd.Parameters.AddWithValue("@d4", QtyTextBox.Text);
-                cmd.Parameters.AddWithValue("@d5", InqFromTextBox.Text);
-                cmd.Parameters.AddWithValue("@d6", RemarksTextBox.Text);
+                cmd.Parameters.AddWithValue("@d1", PriceInquiryId);
+                cmd.Parameters.AddWithValue("@d2", SalesClientId);
+                cmd.Parameters.AddWithValue("@d3", ModelTextBox.Text);
+                cmd.Parameters.AddWithValue("@d4", ProDesTextBox.Text);
+                cmd.Parameters.AddWithValue("@d5", ProCodeTextBox.Text);
+                cmd.Parameters.AddWithValue("@d6", COOComboBox.Text);
+                cmd.Parameters.AddWithValue("@d7", InqFromTextBox.Text);
+                cmd.Parameters.AddWithValue("@d8", RemarksTextBox.Text);
+                cmd.Parameters.AddWithValue("@d9", QtyTextBox.Text);
+                //cmd.Parameters.AddWithValue("@d10", UserId);
+                //cmd.Parameters.AddWithValue("@d11", DateTime.UtcNow.ToLocalTime());
                 cmd.ExecuteNonQuery();
                 con.Close();
                 MessageBox.Show("Successfully Saved", "Report", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -249,6 +262,27 @@ namespace ProductManagementSystem.UI
         private void PriceInquiry_Load(object sender, EventArgs e)
         {
             GetCountry();
+        }
+
+        private void InqFromButton_Click(object sender, EventArgs e)
+        {
+            using (var form = new SalesClientGrid())
+            {
+                this.Visible = false;
+                var result = form.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    SalesClientId = Convert.ToInt32(form.ReturnValue1);            //values preserved after close
+                    string val = form.ReturnValue2;
+
+                    //Do something here with these values
+
+                    //for example
+                    this.InqFromTextBox.Text = val;
+
+                }
+                this.Visible = true;
+            }
         }
 
     }
