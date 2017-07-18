@@ -17,7 +17,8 @@ namespace ProductManagementSystem.UI
         private SqlCommand cmd;
         private SqlDataReader rdr;
         ConnectionString cs = new ConnectionString();
-        public static int ftype;
+        public int ReturnValue1 { get; set; }
+        public string ReturnValue2 { get; set; }
         public SalesClientGrid()
         {
             InitializeComponent();
@@ -59,26 +60,19 @@ namespace ProductManagementSystem.UI
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             try
-                {
-                    DataGridViewRow dr = dataGridView1.SelectedRows[0];
+            {
+                DataGridViewRow dr = dataGridView1.SelectedRows[0];
+                this.Dispose();
+                this.ReturnValue1 = Convert.ToInt32(dr.Cells[0].Value.ToString());
+                this.ReturnValue2 = dr.Cells[1].Value.ToString(); //example
+                this.DialogResult = DialogResult.OK;
+                this.Close();
 
-                    this.Dispose();
-                    PriceInquiry frm = new PriceInquiry();
-                    frm.Show();
-                    frm.ModelTextBox.Text = dr.Cells[0].Value.ToString();
-                    frm.ProDesTextBox.Text = dr.Cells[1].Value.ToString();
-                    frm.ProCodeTextBox.Text = dr.Cells[2].Value.ToString();
-                    frm.InqFromTextBox.Enabled = true;
-                    frm.RemarksTextBox.Enabled = false;
-                    frm. QtyTextBox.Enabled = false;
-                    //frm.txtAttention.Focus();
-                    // this.Dispose();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            
-           }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         }
     }
