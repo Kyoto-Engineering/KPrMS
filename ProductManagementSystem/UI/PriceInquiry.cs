@@ -17,8 +17,9 @@ namespace ProductManagementSystem.UI
         private SqlConnection con;
         private SqlDataReader rdr;
         ConnectionString cs = new ConnectionString();
-        public int countryid, PriceInquiryId;
+        public int countryid;
         public Nullable<Int64> SalesClientId;
+
         public PriceInquiry()
         {
             InitializeComponent();
@@ -119,19 +120,16 @@ namespace ProductManagementSystem.UI
 
                 con = new SqlConnection(cs.DBConn);
                 con.Open();
-                string query = "insert into PriceInquiry(PriceInquiryId,SalesClientId,Model,ProductDescription,ProductCode,CountryOfOrigin,InquiryFrom,Remarks,Qty) values(@d1,@d2,@d3,@d4,@d5,@d6,@d7,@d8,@d9)";
+                string query = "insert into PriceInquiry(SalesClientId,Model,ProductDescription,ProductCode,CountryOfOrigin,InquiryFrom,Remarks,Qty) values(@d1,@d2,@d3,@d4,@d5,@d6,@d7,@d8)";
                 cmd = new SqlCommand(query, con);
-                cmd.Parameters.AddWithValue("@d1", PriceInquiryId);
-                cmd.Parameters.AddWithValue("@d2", SalesClientId);
-                cmd.Parameters.AddWithValue("@d3", ModelTextBox.Text);
-                cmd.Parameters.AddWithValue("@d4", ProDesTextBox.Text);
-                cmd.Parameters.AddWithValue("@d5", ProCodeTextBox.Text);
-                cmd.Parameters.AddWithValue("@d6", COOComboBox.Text);
-                cmd.Parameters.AddWithValue("@d7", InqFromTextBox.Text);
-                cmd.Parameters.AddWithValue("@d8", RemarksTextBox.Text);
-                cmd.Parameters.AddWithValue("@d9", QtyTextBox.Text);
-                //cmd.Parameters.AddWithValue("@d10", UserId);
-                //cmd.Parameters.AddWithValue("@d11", DateTime.UtcNow.ToLocalTime());
+                cmd.Parameters.AddWithValue("@d1", SalesClientId);
+                cmd.Parameters.AddWithValue("@d2", ModelTextBox.Text);
+                cmd.Parameters.AddWithValue("@d3", ProDesTextBox.Text);
+                cmd.Parameters.AddWithValue("@d4", ProCodeTextBox.Text);
+                cmd.Parameters.AddWithValue("@d5", COOComboBox.Text);
+                cmd.Parameters.AddWithValue("@d6", InqFromTextBox.Text);
+                cmd.Parameters.AddWithValue("@d7", RemarksTextBox.Text);
+                cmd.Parameters.AddWithValue("@d8", QtyTextBox.Text);
                 cmd.ExecuteNonQuery();
                 con.Close();
                 MessageBox.Show("Successfully Saved", "Report", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -283,6 +281,13 @@ namespace ProductManagementSystem.UI
                 }
                 this.Visible = true;
             }
+        }
+
+        private void PriceInquiry_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Hide();
+            MainUI1 frm = new MainUI1();
+            frm.Show();
         }
 
     }
