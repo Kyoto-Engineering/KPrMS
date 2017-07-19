@@ -17,9 +17,7 @@ namespace ProductManagementSystem.UI
         private SqlConnection con;
         private SqlDataReader rdr;
         ConnectionString cs = new ConnectionString();
-        public int countryid;
-        public Nullable<Int64> SClientId;
-
+       
         public PriceInquiry()
         {
             InitializeComponent();
@@ -41,8 +39,6 @@ namespace ProductManagementSystem.UI
         {
             ModelTextBox.Clear();
             ProDesTextBox.Clear();
-            ProCodeTextBox.Clear();
-            COOComboBox.SelectedIndex = -1;
             InqFromTextBox.Clear();
             RemarksTextBox.Clear();
             QtyTextBox.Clear();
@@ -63,18 +59,7 @@ namespace ProductManagementSystem.UI
                 ProDesTextBox.Focus();
                 return;
             }
-            if (ProCodeTextBox.Text == "")
-            {
-                MessageBox.Show("Please Enter Product Code", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                ProCodeTextBox.Focus();
-                return;
-            }
-            if (COOComboBox.Text == "")
-            {
-                MessageBox.Show("Please Enter Country of Origin", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                COOComboBox.Focus();
-                return;
-            }
+            
             if (InqFromTextBox.Text == "")
             {
                 MessageBox.Show("Please Enter Inquiry From", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -120,16 +105,13 @@ namespace ProductManagementSystem.UI
 
                 con = new SqlConnection(cs.DBConn);
                 con.Open();
-                string query = "insert into PriceInquiry(SClientId,Model,ProductDescription,ProductCode,CountryOfOrigin,InquiryFrom,Remarks,Qty) values(@d1,@d2,@d3,@d4,@d5,@d6,@d7,@d8)";
+                string query = "insert into PriceInquiry(Model,ProductDescription,InquiryFrom,Remarks,Qty) values(@d1,@d2,@d3,@d4,@d5)";
                 cmd = new SqlCommand(query, con);
-                cmd.Parameters.AddWithValue("@d1", SClientId);
-                cmd.Parameters.AddWithValue("@d2", ModelTextBox.Text);
-                cmd.Parameters.AddWithValue("@d3", ProDesTextBox.Text);
-                cmd.Parameters.AddWithValue("@d4", ProCodeTextBox.Text);
-                cmd.Parameters.AddWithValue("@d5", COOComboBox.Text);
-                cmd.Parameters.AddWithValue("@d6", InqFromTextBox.Text);
-                cmd.Parameters.AddWithValue("@d7", RemarksTextBox.Text);
-                cmd.Parameters.AddWithValue("@d8", QtyTextBox.Text);
+                cmd.Parameters.AddWithValue("@d1", ModelTextBox.Text);
+                cmd.Parameters.AddWithValue("@d2", ProDesTextBox.Text);
+                cmd.Parameters.AddWithValue("@d3", InqFromTextBox.Text);
+                cmd.Parameters.AddWithValue("@d4", RemarksTextBox.Text);
+                cmd.Parameters.AddWithValue("@d5", QtyTextBox.Text);
                 cmd.ExecuteNonQuery();
                 con.Close();
                 MessageBox.Show("Successfully Saved", "Report", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -155,20 +137,12 @@ namespace ProductManagementSystem.UI
         {
             if (e.KeyCode == Keys.Enter)
             {
-                ProCodeTextBox.Focus();
-                e.Handled = true;
-            }
-        }
-
-        private void ProCodeTextBox_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
                 InqFromTextBox.Focus();
                 e.Handled = true;
             }
         }
 
+        
         private void InqFromTextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -203,86 +177,7 @@ namespace ProductManagementSystem.UI
                 e.Handled = true;
             }
         }
-
-        
-        private void COOComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                con = new SqlConnection(cs.DBConn);
-                con.Open();
-                string ctk = "SELECT CountryId FROM Countries where CountryName='" + COOComboBox.Text + "'";
-                cmd = new SqlCommand(ctk);
-                cmd.Connection = con;
-                rdr = cmd.ExecuteReader();
-                if (rdr.Read())
-                {
-                    countryid = Convert.ToInt32(rdr["countryid"]);
-                    //CountryCodetextBox.Text = (rdr.GetString(1));
-                }
-                if ((rdr != null))
-                {
-                    rdr.Close();
-                }
-
-                if (con.State == ConnectionState.Open)
-                {
-                    con.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void GetCountry()
-        {
-            try
-            {
-                con = new SqlConnection(cs.DBConn);
-                con.Open();
-                string ctt = "SELECT CountryName FROM Countries";
-                cmd = new SqlCommand(ctt);
-                cmd.Connection = con;
-                rdr = cmd.ExecuteReader();
-                while (rdr.Read())
-                {
-                    COOComboBox.Items.Add(rdr.GetValue(0).ToString());
-                }
-                //cmbGender.Items.Add("Not In The List");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-        private void PriceInquiry_Load(object sender, EventArgs e)
-        {
-            GetCountry();
-        }
-
-        private void InqFromButton_Click(object sender, EventArgs e)
-        {
-            using (var form = new SalesClientGrid())
-            {
-                this.Visible = false;
-                var result = form.ShowDialog();
-                if (result == DialogResult.OK)
-                {
-                    SClientId = Convert.ToInt32(form.ReturnValue1);            //values preserved after close
-                    string val = form.ReturnValue2;
-
-                    //Do something here with these values
-
-                    //for example
-                    this.InqFromTextBox.Text = val;
-
-                }
-                this.Visible = true;
-            }
-        }
-
+                     
         private void PriceInquiry_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Hide();
