@@ -18,7 +18,7 @@ namespace ProductManagementSystem.UI
         private SqlDataReader rdr;
         ConnectionString cs = new ConnectionString();
         public int countryid;
-        public Nullable<Int64> SalesClientId;
+        public Nullable<Int64> SClientId;
 
         public PriceInquiry()
         {
@@ -120,9 +120,9 @@ namespace ProductManagementSystem.UI
 
                 con = new SqlConnection(cs.DBConn);
                 con.Open();
-                string query = "insert into PriceInquiry(SalesClientId,Model,ProductDescription,ProductCode,CountryOfOrigin,InquiryFrom,Remarks,Qty) values(@d1,@d2,@d3,@d4,@d5,@d6,@d7,@d8)";
+                string query = "insert into PriceInquiry(SClientId,Model,ProductDescription,ProductCode,CountryOfOrigin,InquiryFrom,Remarks,Qty) values(@d1,@d2,@d3,@d4,@d5,@d6,@d7,@d8)";
                 cmd = new SqlCommand(query, con);
-                cmd.Parameters.AddWithValue("@d1", SalesClientId);
+                cmd.Parameters.AddWithValue("@d1", SClientId);
                 cmd.Parameters.AddWithValue("@d2", ModelTextBox.Text);
                 cmd.Parameters.AddWithValue("@d3", ProDesTextBox.Text);
                 cmd.Parameters.AddWithValue("@d4", ProCodeTextBox.Text);
@@ -270,7 +270,7 @@ namespace ProductManagementSystem.UI
                 var result = form.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    SalesClientId = Convert.ToInt32(form.ReturnValue1);            //values preserved after close
+                    SClientId = Convert.ToInt32(form.ReturnValue1);            //values preserved after close
                     string val = form.ReturnValue2;
 
                     //Do something here with these values
