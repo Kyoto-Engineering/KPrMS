@@ -31,11 +31,13 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.CloseButton = new System.Windows.Forms.Button();
+            this.PriceInqListButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.PriceInqListButton);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Location = new System.Drawing.Point(24, 50);
             this.groupBox1.Name = "groupBox1";
@@ -69,6 +71,19 @@
             this.CloseButton.UseVisualStyleBackColor = false;
             this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
+            // PriceInqListButton
+            // 
+            this.PriceInqListButton.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.PriceInqListButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PriceInqListButton.ForeColor = System.Drawing.Color.Blue;
+            this.PriceInqListButton.Location = new System.Drawing.Point(152, 27);
+            this.PriceInqListButton.Name = "PriceInqListButton";
+            this.PriceInqListButton.Size = new System.Drawing.Size(155, 52);
+            this.PriceInqListButton.TabIndex = 1;
+            this.PriceInqListButton.Text = "Price Inquiry List";
+            this.PriceInqListButton.UseVisualStyleBackColor = false;
+            this.PriceInqListButton.Click += new System.EventHandler(this.PriceInqListButton_Click);
+            // 
             // ReportsUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -90,5 +105,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button CloseButton;
+        private System.Windows.Forms.Button PriceInqListButton;
     }
 }
