@@ -83,28 +83,6 @@ namespace ProductManagementSystem.UI
             {
                 con = new SqlConnection(cs.DBConn);
                 con.Open();
-                string ct = "select Model from PriceInquiry where Model='" + ModelTextBox.Text + "'";
-
-                cmd = new SqlCommand(ct);
-                cmd.Connection = con;
-                rdr = cmd.ExecuteReader();
-                
-                if (rdr.Read())
-                {
-                    MessageBox.Show("Product Model Already Exists", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    ModelTextBox.Text = "";
-                    ModelTextBox.Focus();
-
-
-                    if ((rdr != null))
-                    {
-                        rdr.Close();
-                    }
-                    return;
-                }
-
-                con = new SqlConnection(cs.DBConn);
-                con.Open();
                 string query = "insert into PriceInquiry(Model,ProductDescription,InquiryFrom,Remarks,Qty) values(@d1,@d2,@d3,@d4,@d5)";
                 cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@d1", ModelTextBox.Text);
