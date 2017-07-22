@@ -29,14 +29,16 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.PriceInqListButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.CloseButton = new System.Windows.Forms.Button();
-            this.PriceInqListButton = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.PriceInqListButton);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Location = new System.Drawing.Point(24, 50);
@@ -44,6 +46,19 @@
             this.groupBox1.Size = new System.Drawing.Size(519, 313);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // PriceInqListButton
+            // 
+            this.PriceInqListButton.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.PriceInqListButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PriceInqListButton.ForeColor = System.Drawing.Color.Blue;
+            this.PriceInqListButton.Location = new System.Drawing.Point(152, 27);
+            this.PriceInqListButton.Name = "PriceInqListButton";
+            this.PriceInqListButton.Size = new System.Drawing.Size(155, 52);
+            this.PriceInqListButton.TabIndex = 1;
+            this.PriceInqListButton.Text = "Price Inquiry List";
+            this.PriceInqListButton.UseVisualStyleBackColor = false;
+            this.PriceInqListButton.Click += new System.EventHandler(this.PriceInqListButton_Click);
             // 
             // button1
             // 
@@ -71,18 +86,18 @@
             this.CloseButton.UseVisualStyleBackColor = false;
             this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
-            // PriceInqListButton
+            // button2
             // 
-            this.PriceInqListButton.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.PriceInqListButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PriceInqListButton.ForeColor = System.Drawing.Color.Blue;
-            this.PriceInqListButton.Location = new System.Drawing.Point(152, 27);
-            this.PriceInqListButton.Name = "PriceInqListButton";
-            this.PriceInqListButton.Size = new System.Drawing.Size(155, 52);
-            this.PriceInqListButton.TabIndex = 1;
-            this.PriceInqListButton.Text = "Price Inquiry List";
-            this.PriceInqListButton.UseVisualStyleBackColor = false;
-            this.PriceInqListButton.Click += new System.EventHandler(this.PriceInqListButton_Click);
+            this.button2.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Blue;
+            this.button2.Location = new System.Drawing.Point(322, 27);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(152, 52);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Product List Without Price";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // ReportsUI
             // 
@@ -106,5 +121,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button CloseButton;
         private System.Windows.Forms.Button PriceInqListButton;
+        private System.Windows.Forms.Button button2;
     }
 }
