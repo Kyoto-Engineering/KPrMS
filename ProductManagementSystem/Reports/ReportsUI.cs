@@ -72,8 +72,14 @@ namespace ProductManagementSystem.Reports
             this.Visible = true;
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            WithoutPriceProduct f2 = new WithoutPriceProduct();
+            this.Visible = false;
+            f2.ShowDialog();
+            this.Visible = true;
+        }
 
-
-        //public ParameterFields paramFields { get; set; }
-    }
+        
+        }
 }
