@@ -189,6 +189,12 @@
     <Compile Include="UI\ProductGrid.Designer.cs">
       <DependentUpon>ProductGrid.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\ReplyForInquiry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ReplyForInquiry.Designer.cs">
+      <DependentUpon>ReplyForInquiry.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\UpDateBrand.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -255,6 +261,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ProductGrid.resx">
       <DependentUpon>ProductGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ReplyForInquiry.resx">
+      <DependentUpon>ReplyForInquiry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UpDateBrand.resx">
       <DependentUpon>UpDateBrand.cs</DependentUpon>
