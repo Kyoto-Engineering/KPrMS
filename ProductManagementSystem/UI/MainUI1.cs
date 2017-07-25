@@ -81,5 +81,12 @@ namespace ProductManagementSystem.UI
             ReportsUI frm=new ReportsUI();
             frm.Show();
         }
+
+        private void ReplyInqCreationButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ReplyForInquiry frm = new ReplyForInquiry();
+            frm.Show();
+        }
     }
 }
