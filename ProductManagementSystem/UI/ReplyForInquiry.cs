@@ -18,6 +18,8 @@ namespace ProductManagementSystem.UI
         private SqlConnection con;
         private SqlDataReader rdr;
         public string Countryid;
+        private DataGridViewRow dr;
+        private string PInquiryId;
         public ReplyForInquiry()
         {
             InitializeComponent();
@@ -25,12 +27,22 @@ namespace ProductManagementSystem.UI
 
         private void CountryComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+                con = new SqlConnection(cs.DBConn);
+                string qry ="SELECT Model, ProductDescription, Qty FROM PriceInquiry";
+                cmd = new SqlCommand(qry, con);
+                con.Open();
+                rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    dataGridView1.Rows.Add(rdr[0], rdr[1], rdr[2]);
+                }
+                con.Close();
         }
 
         private void ReplyForInquiry_Load(object sender, EventArgs e)
         {
             FillCountry();
+            GetData();
 
         }
 
@@ -68,6 +80,40 @@ namespace ProductManagementSystem.UI
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
        }
+
+        //price inquiry info grid view data load
+        public void GetData()
+        {
+            try
+            {
+                con = new SqlConnection(cs.DBConn);
+                con.Open();
+                cmd = new SqlCommand("SELECT Model, ProductDescription, Qty FROM PriceInquiry",con);
+                rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                dataGridView1.Rows.Clear();
+                while (rdr.Read() == true)
+                {
+                    dataGridView1.Rows.Add(rdr[0], rdr[1], rdr[2]);
+                }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ReplyForInquiry_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Hide();
+            MainUI1 frm = new MainUI1();
+            frm.Show();
+        }
+
+        private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            
+        }
         
     }
 }
