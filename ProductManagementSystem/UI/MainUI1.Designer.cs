@@ -41,6 +41,7 @@
             this.createProductButton = new System.Windows.Forms.Button();
             this.lblUser = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.ReplyInqCreationButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,6 +58,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.ReplyInqCreationButton);
             this.groupBox1.Controls.Add(this.button6);
             this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.button4);
@@ -67,14 +69,14 @@
             this.groupBox1.Controls.Add(this.createProductButton);
             this.groupBox1.Location = new System.Drawing.Point(16, 9);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(155, 599);
+            this.groupBox1.Size = new System.Drawing.Size(299, 599);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
             // button6
             // 
             this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.Blue;
             this.button6.Location = new System.Drawing.Point(22, 508);
             this.button6.Name = "button6";
@@ -87,11 +89,11 @@
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.Blue;
             this.button5.Location = new System.Drawing.Point(22, 420);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(108, 74);
+            this.button5.Size = new System.Drawing.Size(108, 82);
             this.button5.TabIndex = 6;
             this.button5.Text = "Price Inquiry Creation";
             this.button5.UseVisualStyleBackColor = false;
@@ -195,6 +197,19 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // ReplyInqCreationButton
+            // 
+            this.ReplyInqCreationButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.ReplyInqCreationButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReplyInqCreationButton.ForeColor = System.Drawing.Color.Blue;
+            this.ReplyInqCreationButton.Location = new System.Drawing.Point(152, 19);
+            this.ReplyInqCreationButton.Name = "ReplyInqCreationButton";
+            this.ReplyInqCreationButton.Size = new System.Drawing.Size(123, 54);
+            this.ReplyInqCreationButton.TabIndex = 8;
+            this.ReplyInqCreationButton.Text = "Reply Inquiry Creation";
+            this.ReplyInqCreationButton.UseVisualStyleBackColor = false;
+            this.ReplyInqCreationButton.Click += new System.EventHandler(this.ReplyInqCreationButton_Click);
+            // 
             // MainUI1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -231,5 +246,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button ReplyInqCreationButton;
     }
 }
