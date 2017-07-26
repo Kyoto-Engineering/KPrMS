@@ -60,22 +60,21 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -154,7 +153,7 @@
             this.groupBox2.Size = new System.Drawing.Size(427, 494);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Reply For Inquiry";
+            this.groupBox2.Text = "Feedback Inquiry";
             // 
             // textBox3
             // 
@@ -166,6 +165,9 @@
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "Pcs",
+            "Kg"});
             this.comboBox3.Location = new System.Drawing.Point(303, 393);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(93, 21);
@@ -174,6 +176,10 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Days",
+            "Weeks",
+            "Months"});
             this.comboBox2.Location = new System.Drawing.Point(303, 355);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(93, 21);
@@ -195,7 +201,12 @@
             // 
             // StockStatusComboBox
             // 
+            this.StockStatusComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.StockStatusComboBox.FormattingEnabled = true;
+            this.StockStatusComboBox.Items.AddRange(new object[] {
+            "Indent",
+            "Stock",
+            "Out of Stock"});
             this.StockStatusComboBox.Location = new System.Drawing.Point(143, 318);
             this.StockStatusComboBox.Name = "StockStatusComboBox";
             this.StockStatusComboBox.Size = new System.Drawing.Size(151, 21);
@@ -227,6 +238,7 @@
             this.AddButton.TabIndex = 16;
             this.AddButton.Text = "Add";
             this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // CountryComboBox
             // 
@@ -364,98 +376,87 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.dataGridView2);
+            this.groupBox3.Controls.Add(this.listView1);
             this.groupBox3.Location = new System.Drawing.Point(461, 317);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(889, 326);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Reply Inquiry Info";
+            this.groupBox3.Text = "Feedback Inquiry Info";
             // 
-            // dataGridView2
+            // listView1
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column8,
-            this.Column9,
-            this.Column10,
-            this.Column11,
-            this.Column12});
-            this.dataGridView2.Location = new System.Drawing.Point(6, 24);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(877, 284);
-            this.dataGridView2.TabIndex = 0;
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6,
+            this.columnHeader7,
+            this.columnHeader8,
+            this.columnHeader9});
+            this.listView1.Location = new System.Drawing.Point(6, 27);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(875, 293);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
             // 
-            // Column4
+            // columnHeader1
             // 
-            this.Column4.HeaderText = "Model Number";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
+            this.columnHeader1.Text = "Model ";
+            this.columnHeader1.Width = 94;
             // 
-            // Column5
+            // columnHeader2
             // 
-            this.Column5.HeaderText = "Product Description";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
+            this.columnHeader2.Text = "Product Description";
+            this.columnHeader2.Width = 111;
             // 
-            // Column6
+            // columnHeader3
             // 
-            this.Column6.HeaderText = "Quantity";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
+            this.columnHeader3.Text = "Quantity";
+            this.columnHeader3.Width = 69;
             // 
-            // Column7
+            // columnHeader4
             // 
-            this.Column7.HeaderText = "Country";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
+            this.columnHeader4.Text = "Country";
+            this.columnHeader4.Width = 76;
             // 
-            // Column8
+            // columnHeader5
             // 
-            this.Column8.HeaderText = "Unit COGS In USD";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
+            this.columnHeader5.Text = "Unit COGS In USD";
+            this.columnHeader5.Width = 107;
             // 
-            // Column9
+            // columnHeader6
             // 
-            this.Column9.HeaderText = "Unit COGS In BDT";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
+            this.columnHeader6.Text = "Exchange Rate";
+            this.columnHeader6.Width = 91;
             // 
-            // Column10
+            // columnHeader7
             // 
-            this.Column10.HeaderText = "MOP In BDT";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
+            this.columnHeader7.Text = "Unit COGS In BDT";
+            this.columnHeader7.Width = 121;
             // 
-            // Column11
+            // columnHeader8
             // 
-            this.Column11.HeaderText = "Price";
-            this.Column11.Name = "Column11";
-            this.Column11.ReadOnly = true;
+            this.columnHeader8.Text = "MOP In BDT";
+            this.columnHeader8.Width = 99;
             // 
-            // Column12
+            // columnHeader9
             // 
-            this.Column12.HeaderText = "Stock Status";
-            this.Column12.Name = "Column12";
-            this.Column12.ReadOnly = true;
+            this.columnHeader9.Text = "Stock Status";
+            this.columnHeader9.Width = 108;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(385, 9);
+            this.label9.Location = new System.Drawing.Point(504, 9);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(186, 20);
+            this.label9.Size = new System.Drawing.Size(147, 20);
             this.label9.TabIndex = 3;
-            this.label9.Text = "Reply Inquiry Creation";
+            this.label9.Text = "Inquiry Feedback";
             // 
             // ReplyForInquiry
             // 
@@ -467,7 +468,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "ReplyForInquiry";
-            this.Text = "ReplyForInquiry";
+            this.Text = "FeedbackForInquiry        ";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ReplyForInquiry_FormClosed);
             this.Load += new System.EventHandler(this.ReplyForInquiry_Load);
             this.groupBox1.ResumeLayout(false);
@@ -475,7 +476,6 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -510,21 +510,21 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
     }
 }
