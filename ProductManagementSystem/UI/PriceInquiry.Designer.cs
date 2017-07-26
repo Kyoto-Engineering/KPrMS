@@ -70,7 +70,7 @@
             this.QtyTextBox.Location = new System.Drawing.Point(193, 203);
             this.QtyTextBox.Name = "QtyTextBox";
             this.QtyTextBox.Size = new System.Drawing.Size(249, 23);
-            this.QtyTextBox.TabIndex = 6;
+            this.QtyTextBox.TabIndex = 5;
             this.QtyTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.QtyTextBox_KeyDown);
             this.QtyTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.QtyTextBox_KeyPress);
             // 
@@ -82,7 +82,7 @@
             this.RemarksTextBox.Multiline = true;
             this.RemarksTextBox.Name = "RemarksTextBox";
             this.RemarksTextBox.Size = new System.Drawing.Size(249, 37);
-            this.RemarksTextBox.TabIndex = 1;
+            this.RemarksTextBox.TabIndex = 4;
             this.RemarksTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RemarksTextBox_KeyDown);
             // 
             // InqFromTextBox
@@ -92,7 +92,7 @@
             this.InqFromTextBox.MaxLength = 255;
             this.InqFromTextBox.Name = "InqFromTextBox";
             this.InqFromTextBox.Size = new System.Drawing.Size(249, 23);
-            this.InqFromTextBox.TabIndex = 4;
+            this.InqFromTextBox.TabIndex = 3;
             this.InqFromTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.InqFromTextBox_KeyDown);
             // 
             // ProDesTextBox
@@ -103,7 +103,7 @@
             this.ProDesTextBox.Multiline = true;
             this.ProDesTextBox.Name = "ProDesTextBox";
             this.ProDesTextBox.Size = new System.Drawing.Size(249, 47);
-            this.ProDesTextBox.TabIndex = 1;
+            this.ProDesTextBox.TabIndex = 2;
             this.ProDesTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ProDesTextBox_KeyDown);
             // 
             // ModelTextBox
@@ -164,7 +164,7 @@
             this.label1.Location = new System.Drawing.Point(18, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(177, 17);
-            this.label1.TabIndex = 1;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Model Number            :";
             // 
             // SaveButton
@@ -174,7 +174,7 @@
             this.SaveButton.Location = new System.Drawing.Point(263, 260);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(100, 54);
-            this.SaveButton.TabIndex = 8;
+            this.SaveButton.TabIndex = 6;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = false;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
