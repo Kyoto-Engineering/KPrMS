@@ -19,7 +19,7 @@ namespace ProductManagementSystem.UI
         private SqlDataReader rdr;
         public string Countryid;
         private DataGridViewRow dr;
-        private string PInquiryId;
+        
         public ReplyForInquiry()
         {
             InitializeComponent();
@@ -27,16 +27,7 @@ namespace ProductManagementSystem.UI
 
         private void CountryComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-                con = new SqlConnection(cs.DBConn);
-                string qry ="SELECT Model, ProductDescription, Qty FROM PriceInquiry";
-                cmd = new SqlCommand(qry, con);
-                con.Open();
-                rdr = cmd.ExecuteReader();
-                while (rdr.Read())
-                {
-                    dataGridView1.Rows.Add(rdr[0], rdr[1], rdr[2]);
-                }
-                con.Close();
+
         }
 
         private void ReplyForInquiry_Load(object sender, EventArgs e)
@@ -112,7 +103,22 @@ namespace ProductManagementSystem.UI
 
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                dr = dataGridView1.SelectedRows[0];
+                ModelNumberTextBox.Text = dr.Cells[0].Value.ToString();
+                ProDesTextBox.Text = dr.Cells[1].Value.ToString();
+                QtyTextBox.Text = dr.Cells[2].Value.ToString();
+            }
+            else
+            {
+                MessageBox.Show(@"Select Something first");
+            }
+        }
+
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+
         }
         
     }
