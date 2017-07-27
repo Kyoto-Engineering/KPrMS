@@ -33,6 +33,7 @@
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
@@ -71,6 +72,7 @@
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label9 = new System.Windows.Forms.Label();
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -95,7 +97,8 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
-            this.Column3});
+            this.Column3,
+            this.Column4});
             this.dataGridView1.Location = new System.Drawing.Point(18, 17);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -105,21 +108,28 @@
             // 
             // Column1
             // 
-            this.Column1.HeaderText = "Model Number";
+            this.Column1.HeaderText = "PInquiryId";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
             // 
             // Column2
             // 
-            this.Column2.HeaderText = "Product Description";
+            this.Column2.HeaderText = "Model";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
-            this.Column3.HeaderText = "Quantity";
+            this.Column3.HeaderText = "Product Description";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Quantity";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // groupBox2
             // 
@@ -256,6 +266,7 @@
             this.ExchangeRateTextBox.Name = "ExchangeRateTextBox";
             this.ExchangeRateTextBox.Size = new System.Drawing.Size(151, 20);
             this.ExchangeRateTextBox.TabIndex = 14;
+            this.ExchangeRateTextBox.TextChanged += new System.EventHandler(this.ExchangeRateTextBox_TextChanged);
             // 
             // MopBdtTextBox
             // 
@@ -268,6 +279,7 @@
             // 
             this.UnitCogsBdtTextBox.Location = new System.Drawing.Point(143, 254);
             this.UnitCogsBdtTextBox.Name = "UnitCogsBdtTextBox";
+            this.UnitCogsBdtTextBox.ReadOnly = true;
             this.UnitCogsBdtTextBox.Size = new System.Drawing.Size(151, 20);
             this.UnitCogsBdtTextBox.TabIndex = 12;
             // 
@@ -395,7 +407,8 @@
             this.columnHeader6,
             this.columnHeader7,
             this.columnHeader8,
-            this.columnHeader9});
+            this.columnHeader9,
+            this.columnHeader10});
             this.listView1.Location = new System.Drawing.Point(6, 27);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(875, 293);
@@ -405,48 +418,48 @@
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "Model ";
-            this.columnHeader1.Width = 94;
+            this.columnHeader1.Text = "PInquiryId";
+            this.columnHeader1.Width = 0;
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "Product Description";
-            this.columnHeader2.Width = 111;
+            this.columnHeader2.Text = "Model";
+            this.columnHeader2.Width = 82;
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "Quantity";
-            this.columnHeader3.Width = 69;
+            this.columnHeader3.Text = "Product Description";
+            this.columnHeader3.Width = 108;
             // 
             // columnHeader4
             // 
-            this.columnHeader4.Text = "Country";
+            this.columnHeader4.Text = "Quantity";
             this.columnHeader4.Width = 76;
             // 
             // columnHeader5
             // 
-            this.columnHeader5.Text = "Unit COGS In USD";
+            this.columnHeader5.Text = "Country";
             this.columnHeader5.Width = 107;
             // 
             // columnHeader6
             // 
-            this.columnHeader6.Text = "Exchange Rate";
-            this.columnHeader6.Width = 91;
+            this.columnHeader6.Text = "Unit COGS In USD";
+            this.columnHeader6.Width = 109;
             // 
             // columnHeader7
             // 
-            this.columnHeader7.Text = "Unit COGS In BDT";
-            this.columnHeader7.Width = 121;
+            this.columnHeader7.Text = "Exchange Rate";
+            this.columnHeader7.Width = 101;
             // 
             // columnHeader8
             // 
-            this.columnHeader8.Text = "MOP In BDT";
-            this.columnHeader8.Width = 99;
+            this.columnHeader8.Text = "Unit COGS In BDT";
+            this.columnHeader8.Width = 108;
             // 
             // columnHeader9
             // 
-            this.columnHeader9.Text = "Stock Status";
-            this.columnHeader9.Width = 108;
+            this.columnHeader9.Text = "MOP In BDT";
+            this.columnHeader9.Width = 76;
             // 
             // label9
             // 
@@ -457,6 +470,11 @@
             this.label9.Size = new System.Drawing.Size(147, 20);
             this.label9.TabIndex = 3;
             this.label9.Text = "Inquiry Feedback";
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "Stock Status";
+            this.columnHeader10.Width = 102;
             // 
             // ReplyForInquiry
             // 
@@ -485,9 +503,6 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox StockStatusComboBox;
         private System.Windows.Forms.Label label10;
@@ -526,5 +541,10 @@
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.ColumnHeader columnHeader10;
     }
 }
