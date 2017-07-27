@@ -19,7 +19,8 @@ namespace ProductManagementSystem.UI
         private SqlDataReader rdr;
         public string Countryid;
         private DataGridViewRow dr;
-        
+        private string PInquiryId;
+       
         public ReplyForInquiry()
         {
             InitializeComponent();
@@ -79,12 +80,12 @@ namespace ProductManagementSystem.UI
             {
                 con = new SqlConnection(cs.DBConn);
                 con.Open();
-                cmd = new SqlCommand("SELECT Model, ProductDescription, Qty FROM PriceInquiry",con);
+                cmd = new SqlCommand("SELECT PInquiryId, Model, ProductDescription, Qty FROM PriceInquiry",con);
                 rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
                 dataGridView1.Rows.Clear();
                 while (rdr.Read() == true)
                 {
-                    dataGridView1.Rows.Add(rdr[0], rdr[1], rdr[2]);
+                    dataGridView1.Rows.Add(rdr[0], rdr[1], rdr[2],rdr[3]);
                 }
                 con.Close();
             }
@@ -106,9 +107,10 @@ namespace ProductManagementSystem.UI
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 dr = dataGridView1.SelectedRows[0];
-                ModelNumberTextBox.Text = dr.Cells[0].Value.ToString();
-                ProDesTextBox.Text = dr.Cells[1].Value.ToString();
-                QtyTextBox.Text = dr.Cells[2].Value.ToString();
+                PInquiryId = dr.Cells[0].Value.ToString();
+                ModelNumberTextBox.Text = dr.Cells[1].Value.ToString();
+                ProDesTextBox.Text = dr.Cells[2].Value.ToString();
+                QtyTextBox.Text = dr.Cells[3].Value.ToString();
             }
             else
             {
@@ -118,8 +120,63 @@ namespace ProductManagementSystem.UI
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-
+            if (listView1.Items.Count < 1)
+            {
+                ListViewItem l1 = new ListViewItem();
+                l1.Text = PInquiryId;
+                l1.SubItems.Add(ModelNumberTextBox.Text);
+                l1.SubItems.Add(ProDesTextBox.Text);
+                l1.SubItems.Add(QtyTextBox.Text);
+                l1.SubItems.Add(CountryComboBox.Text);
+                l1.SubItems.Add(UnitCogsUsdTextBox.Text);
+                l1.SubItems.Add(ExchangeRateTextBox.Text);
+                l1.SubItems.Add(UnitCogsBdtTextBox.Text);
+                l1.SubItems.Add(MopBdtTextBox.Text);
+                l1.SubItems.Add(StockStatusComboBox.Text);
+                listView1.Items.Add(l1);
+                ClearselectedProduct();
+            }
         }
+
+        private void ClearselectedProduct()
+        {
+            PInquiryId = null;
+            ModelNumberTextBox.Clear();
+            ProDesTextBox.Clear();
+            QtyTextBox.Clear();
+            //CountryComboBox.SelectedIndexChanged -= CountryComboBox_SelectedIndexChanged;
+            CountryComboBox.SelectedIndex = -1;
+            //CountryComboBox.SelectedIndexChanged += CountryComboBox_SelectedIndexChanged;
+            UnitCogsUsdTextBox.Clear();
+            ExchangeRateTextBox.Clear();
+            UnitCogsBdtTextBox.Clear();
+            MopBdtTextBox.Clear();
+            ////StockStatusComboBox.SelectedIndexChanged -= StockStatusComboBox_SelectedIndexChanged;
+            StockStatusComboBox.SelectedIndex = -1;
+            //StockStatusComboBox.SelectedIndexChanged += StockStatusComboBox_SelectedIndexChanged;
+            
+        }
+
+        //private void StockStatusComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        private void ExchangeRateTextBox_TextChanged(object sender, EventArgs e)
+        {
+            //string as = UnitCogsUsdTextBox.Text; v1 = new UnitCogsUsdTextBox();
+            //UnitCogsBdtTextBox.Text = (UnitCogsUsdTextBox.Text * ExchangeRateTextBox.Text);
+            //UnitCogsBdtTextBox.Text = UnitCogsBdtTextBox.ToString();
+            decimal val7 = 0;
+            decimal val8 = 0;
+            decimal val9 = 0;
+            decimal.TryParse(UnitCogsUsdTextBox.Text, out val7);
+            decimal.TryParse(ExchangeRateTextBox.Text, out val8);
+            decimal.TryParse(UnitCogsBdtTextBox.Text, out val9);
+            //UnitCogsBdtTextBox.Text = (Convert.ToDecimal(UnitCogsUsdTextBox.Text) * Convert.ToDecimal(ExchangeRateTextBox.Text)).ToString();
+            UnitCogsBdtTextBox.Text = (Convert.ToDecimal(val7) * Convert.ToDecimal(val8)).ToString();
+        }
+        
         
     }
 }
