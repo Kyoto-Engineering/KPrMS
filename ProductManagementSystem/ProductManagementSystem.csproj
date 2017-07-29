@@ -105,6 +105,22 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\InquiryFeedback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\InquiryFeedback.Designer.cs">
+      <DependentUpon>InquiryFeedback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\InquiryFeedback1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InquiryFeedback.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\InquiryFeedbackWithoutPrice.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InquiryFeedbackWithoutPrice.rpt</DependentUpon>
+    </Compile>
     <Compile Include="Reports\WithoutPriceProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -217,6 +233,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reports\InquiryFeedback.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InquiryFeedback1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\InquiryFeedbackWithoutPrice.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InquiryFeedbackWithoutPrice.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\WithoutPriceProduct.resx">
       <DependentUpon>WithoutPriceProduct.cs</DependentUpon>
     </EmbeddedResource>
