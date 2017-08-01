@@ -248,11 +248,11 @@ namespace ProductManagementSystem.UI
                         l2.SubItems.Add(ModelNumberTextBox.Text);
                         l2.SubItems.Add(ProDesTextBox.Text);
                         l2.SubItems.Add(QtyTextBox.Text);
-                        l2.SubItems.Add(CountryComboBox.Text);
+                        l2.SubItems.Add(StockStatusComboBox.Text + " " + textBox2.Text + comboBox3.Text);
                         l2.SubItems.Add(UnitCogsUsdTextBox.Text);
                         l2.SubItems.Add(UnitCogsBdtTextBox.Text);
                         l2.SubItems.Add(MopBdtTextBox.Text);
-                        l2.SubItems.Add(StockStatusComboBox.Text + " " + textBox2.Text + comboBox3.Text);
+                        l2.SubItems.Add(CountryComboBox.Text);
                         l2.SubItems.Add(productNameTextBox.Text);
                         l2.SubItems.Add(productCodeTextBox.Text);
                         l2.SubItems.Add(eXWTextBox.Text);
@@ -574,8 +574,8 @@ namespace ProductManagementSystem.UI
                             cmd = new SqlCommand(query, con, trans);
                             cmd.Parameters.AddWithValue("@d1", (listView1.Items[i].Text == "0") ? (object)DBNull.Value : listView1.Items[i].Text);
                             cmd.Parameters.AddWithValue("@d2", listView1.Items[i].SubItems[2].Text);
-                            cmd.Parameters.AddWithValue("@d3", listView1.Items[i].SubItems[6].Text);
-                            cmd.Parameters.AddWithValue("@d4", listView1.Items[i].SubItems[5].Text);
+                            cmd.Parameters.AddWithValue("@d3", listView1.Items[i].SubItems[5].Text);
+                            cmd.Parameters.AddWithValue("@d4", listView1.Items[i].SubItems[6].Text);
                             cmd.Parameters.AddWithValue("@d5",sl);
                             cmd.ExecuteNonQuery();
 
