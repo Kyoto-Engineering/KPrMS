@@ -363,8 +363,9 @@ namespace ProductManagementSystem.UI
                     if (dr.Cells[0].Value.ToString() == PInquiryId)
                     {
                         dataGridView1.Rows.Remove(dr);
+                        break;
                     }
-                    break;
+                    
                 }
             }
 
