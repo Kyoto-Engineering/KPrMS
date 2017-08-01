@@ -447,11 +447,11 @@
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
-            this.columnHeader5,
+            this.columnHeader10,
             this.columnHeader6,
             this.columnHeader8,
             this.columnHeader9,
-            this.columnHeader10,
+            this.columnHeader5,
             this.columnHeader11,
             this.columnHeader12,
             this.columnHeader13});
@@ -491,6 +491,7 @@
             // 
             // columnHeader5
             // 
+            this.columnHeader5.DisplayIndex = 5;
             this.columnHeader5.Text = "Country";
             // 
             // columnHeader6
@@ -511,6 +512,7 @@
             // 
             // columnHeader10
             // 
+            this.columnHeader10.DisplayIndex = 9;
             this.columnHeader10.Text = "Status";
             // 
             // columnHeader11

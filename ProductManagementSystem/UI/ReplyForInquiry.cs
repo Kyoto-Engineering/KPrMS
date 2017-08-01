@@ -188,11 +188,11 @@ namespace ProductManagementSystem.UI
                         l1.SubItems.Add(ModelNumberTextBox.Text);
                         l1.SubItems.Add(ProDesTextBox.Text);
                         l1.SubItems.Add(QtyTextBox.Text);
-                        l1.SubItems.Add(CountryComboBox.Text);
+                        l1.SubItems.Add(StockStatusComboBox.Text + " " + textBox2.Text + comboBox3.Text);
                         l1.SubItems.Add(UnitCogsUsdTextBox.Text);
                         l1.SubItems.Add(UnitCogsBdtTextBox.Text);
                         l1.SubItems.Add(MopBdtTextBox.Text);
-                        l1.SubItems.Add(StockStatusComboBox.Text + " " + textBox2.Text + comboBox3.Text);
+                        l1.SubItems.Add(CountryComboBox.Text);
                         l1.SubItems.Add(productNameTextBox.Text);
                         l1.SubItems.Add(productCodeTextBox.Text);
                         l1.SubItems.Add(eXWTextBox.Text);
@@ -534,8 +534,8 @@ namespace ProductManagementSystem.UI
                     int FbId = (int) cmd.ExecuteScalar();
                     for (int i = 0; i < listView1.Items.Count; i++)
                     {
-                        if (listView1.Items[i].SubItems[9].Text == "Invalid Model" ||
-                            listView1.Items[i].SubItems[9].Text == "Out of Production")
+                        if (listView1.Items[i].SubItems[5].Text == "Invalid Model" ||
+                            listView1.Items[i].SubItems[5].Text == "Out of Production")
                         {
                             string query =
                                 "INSERT INTO InquiryFeedbackDetail (PInquiryId, ProductDescription, StockStatus,IFId) VALUES        (@d1,@d2,@d3," +
@@ -543,7 +543,7 @@ namespace ProductManagementSystem.UI
                             cmd = new SqlCommand(query, con, trans);
                             cmd.Parameters.AddWithValue("@d1", listView1.Items[i].Text);
                             cmd.Parameters.AddWithValue("@d2", listView1.Items[i].SubItems[2].Text);
-                            cmd.Parameters.AddWithValue("@d3", listView1.Items[i].SubItems[9].Text);
+                            cmd.Parameters.AddWithValue("@d3", listView1.Items[i].SubItems[5].Text);
                             cmd.ExecuteNonQuery();
                         }
                         else
@@ -553,9 +553,9 @@ namespace ProductManagementSystem.UI
                                 "SELECT CONVERT(int, SCOPE_IDENTITY())";
                             cmd = new SqlCommand(pquery, con, trans);
                             cmd.Parameters.AddWithValue("@d1", listView1.Items[i].SubItems[10].Text);
-                            cmd.Parameters.AddWithValue("@d2", listView1.Items[i].SubItems[9].Text);
+                            cmd.Parameters.AddWithValue("@d2", listView1.Items[i].SubItems[3].Text);
                             cmd.Parameters.AddWithValue("@d3", listView1.Items[i].SubItems[11].Text);
-                            cmd.Parameters.AddWithValue("@d4", listView1.Items[i].SubItems[5].Text);
+                            cmd.Parameters.AddWithValue("@d4", listView1.Items[i].SubItems[9].Text);
                             cmd.Parameters.AddWithValue("@d5", listView1.Items[i].SubItems[8].Text);
                             cmd.Parameters.AddWithValue("@d6", 1);
                             cmd.Parameters.AddWithValue("@d7", frmLogin.uId2);
@@ -575,7 +575,7 @@ namespace ProductManagementSystem.UI
                             cmd.Parameters.AddWithValue("@d1", (listView1.Items[i].Text == "0") ? (object)DBNull.Value : listView1.Items[i].Text);
                             cmd.Parameters.AddWithValue("@d2", listView1.Items[i].SubItems[2].Text);
                             cmd.Parameters.AddWithValue("@d3", listView1.Items[i].SubItems[6].Text);
-                            cmd.Parameters.AddWithValue("@d4", listView1.Items[i].SubItems[9].Text);
+                            cmd.Parameters.AddWithValue("@d4", listView1.Items[i].SubItems[5].Text);
                             cmd.Parameters.AddWithValue("@d5",sl);
                             cmd.ExecuteNonQuery();
 
