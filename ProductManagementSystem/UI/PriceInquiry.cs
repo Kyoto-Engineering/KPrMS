@@ -247,7 +247,7 @@ namespace ProductManagementSystem.UI
                 !String.IsNullOrWhiteSpace(InqFromTextBox.Text) || !String.IsNullOrWhiteSpace(RemarksTextBox.Text) ||
                 !String.IsNullOrWhiteSpace(QtyTextBox.Text))
             {
-                MessageBox.Show(@"You For got to add "+"\r \n Add first or clear these");
+                MessageBox.Show(@"You Forgot to add "+"\r \n Add first or clear these");
             }
             else if(listView1.Items.Count<1)
             {
