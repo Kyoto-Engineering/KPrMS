@@ -22,7 +22,7 @@ namespace ProductManagementSystem.UI
         private DataGridViewRow dr;
         private string PInquiryId;
         private string _output;
-
+        private SqlTransaction trans;
         public ReplyForInquiry()
         {
             InitializeComponent();
@@ -412,9 +412,12 @@ namespace ProductManagementSystem.UI
         {
             if (StockStatusComboBox.Text == @"Indent" || StockStatusComboBox.Text == @"Stock")
         {
+
             comboBox3.Visible = true;
             textBox2.Visible = true;
             label12.Visible = true;
+            label13.Visible = true;
+            label14.Visible = true;
             label4.Visible = true;
             //label8.Visible = true;
             label7.Visible = true;
@@ -456,6 +459,8 @@ namespace ProductManagementSystem.UI
                 textBox2.Visible = false;
                 label12.Visible = false;
                 label4.Visible = false;
+                label13.Visible = false;
+                label14.Visible = false;
                 //label8.Visible = false;
                 label7.Visible = false;
                 label6.Visible = false;
@@ -473,7 +478,7 @@ namespace ProductManagementSystem.UI
                 textBox2.Clear();
                 eXWTextBox.Clear();
                 UnitCogsUsdTextBox.Clear();
-                ExchangeRateTextBox.Clear();
+                //ExchangeRateTextBox.Clear();
                 UnitCogsBdtTextBox.Clear();
                 MopBdtTextBox.Clear();
             }
@@ -517,7 +522,7 @@ namespace ProductManagementSystem.UI
 
                     con = new SqlConnection(cs.DBConn);
                     con.Open();
-                    SqlTransaction trans = con.BeginTransaction();
+                     trans = con.BeginTransaction();
                     string qry =
                         "INSERT INTO InquiryFeedback (ExchangeRate, PrInId, UserId, EntryDate)VALUES  (@d1,@d2,@d3,@d4)" +
                         "SELECT CONVERT(int, SCOPE_IDENTITY())";
@@ -576,13 +581,13 @@ namespace ProductManagementSystem.UI
 
                         }
                     }
-                    cmd.Transaction.Commit();
+                  trans.Commit();
                     MessageBox.Show("Saved SuccessFully");
                 }
                 catch (Exception exception)
                 {
                     MessageBox.Show(exception.Message,"RolleBack");
-                    cmd.Transaction.Rollback();
+                    trans.Rollback();
                 }
             }
         }
