@@ -189,7 +189,19 @@ namespace ProductManagementSystem.UI
         private void LoadPNo()
         {
             try
+
             {
+                int cnt=0;
+                con = new SqlConnection(cs.DBConn);
+                con.Open();
+                string qry = "SELECT  COUNT(PrInId) AS Expr1 FROM PriceInquiry";
+                cmd = new SqlCommand(qry, con);
+                rdr = cmd.ExecuteReader();
+                if (rdr.Read())
+                {
+                     cnt= rdr.GetInt32(0);
+                }
+                con.Close();
                 con = new SqlConnection(cs.DBConn);
                 con.Open();
 
@@ -200,6 +212,10 @@ namespace ProductManagementSystem.UI
                 {
                     //string pno = rdr[0].ToString();
                     pno = rdr.GetInt32(0);
+                    if (cnt != 0)
+                    {
+                        pno = pno + 1;
+                    }
                 }
                 else
                 {
