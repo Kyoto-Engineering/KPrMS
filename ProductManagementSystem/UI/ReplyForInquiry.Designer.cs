@@ -291,7 +291,6 @@
             this.CountryComboBox.Size = new System.Drawing.Size(217, 21);
             this.CountryComboBox.TabIndex = 15;
             this.CountryComboBox.Visible = false;
-            this.CountryComboBox.SelectedIndexChanged += new System.EventHandler(this.CountryComboBox_SelectedIndexChanged);
             // 
             // MopBdtTextBox
             // 

@@ -28,11 +28,6 @@ namespace ProductManagementSystem.UI
             InitializeComponent();
         }
 
-        private void CountryComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void ReplyForInquiry_Load(object sender, EventArgs e)
         {
             FillInquiry();
@@ -313,6 +308,7 @@ namespace ProductManagementSystem.UI
             else if (string.IsNullOrWhiteSpace(ExchangeRateTextBox.Text))
             {
                 validate = false;
+               UnitCogsUsdTextBox.Clear();
             }
             else if (string.IsNullOrWhiteSpace(ModelNumberTextBox.Text) && !checkBox1.Checked)
             {
@@ -337,6 +333,18 @@ namespace ProductManagementSystem.UI
 
         private void ClearselectedProduct()
         {
+            if (!checkBox1.Checked)
+            {
+                foreach (DataGridViewRow dr in dataGridView1.Rows)
+                {
+                    if (dr.Cells[0].Value.ToString() == PInquiryId)
+                    {
+                        dataGridView1.Rows.Remove(dr);
+                        break;
+                    }
+
+                }
+            }
             PInquiryId = null;
             ModelNumberTextBox.Clear();
             ProDesTextBox.Clear();
@@ -348,26 +356,15 @@ namespace ProductManagementSystem.UI
             //ExchangeRateTextBox.Clear();
             UnitCogsBdtTextBox.Clear();
             MopBdtTextBox.Clear();
-            ////StockStatusComboBox.SelectedIndexChanged -= StockStatusComboBox_SelectedIndexChanged;
+            StockStatusComboBox.SelectedIndexChanged -= StockStatusComboBox_SelectedIndexChanged;
             StockStatusComboBox.SelectedIndex = -1;
-            //StockStatusComboBox.SelectedIndexChanged += StockStatusComboBox_SelectedIndexChanged;
+            StockStatusComboBox.SelectedIndexChanged += StockStatusComboBox_SelectedIndexChanged;
             productNameTextBox.Clear();
             productCodeTextBox.Clear();
             eXWTextBox.Clear();
             textBox2.Clear();
             comboBox3.SelectedIndex = -1;
-            if (!checkBox1.Checked)
-            {
-                foreach (DataGridViewRow dr in dataGridView1.Rows)
-                {
-                    if (dr.Cells[0].Value.ToString() == PInquiryId)
-                    {
-                        dataGridView1.Rows.Remove(dr);
-                        break;
-                    }
-                    
-                }
-            }
+           
 
         }
 
@@ -481,6 +478,7 @@ namespace ProductManagementSystem.UI
         {
             if (checkBox1.Checked)
             {
+                ClearselectedProduct();
                 ProDesTextBox.ReadOnly = true;
             }
             else
