@@ -193,6 +193,9 @@ namespace ProductManagementSystem.UI
                         l1.SubItems.Add(UnitCogsBdtTextBox.Text);
                         l1.SubItems.Add(MopBdtTextBox.Text);
                         l1.SubItems.Add(StockStatusComboBox.Text + " " + textBox2.Text + comboBox3.Text);
+                        l1.SubItems.Add(productNameTextBox.Text);
+                        l1.SubItems.Add(productCodeTextBox.Text);
+                        l1.SubItems.Add(eXWTextBox.Text);
                         listView1.Items.Add(l1);
                         ClearselectedProduct();
                         comboBox1.Enabled = false;
@@ -250,6 +253,9 @@ namespace ProductManagementSystem.UI
                         l2.SubItems.Add(UnitCogsBdtTextBox.Text);
                         l2.SubItems.Add(MopBdtTextBox.Text);
                         l2.SubItems.Add(StockStatusComboBox.Text + " " + textBox2.Text + comboBox3.Text);
+                        l2.SubItems.Add(productNameTextBox.Text);
+                        l2.SubItems.Add(productCodeTextBox.Text);
+                        l2.SubItems.Add(eXWTextBox.Text);
                         listView1.Items.Add(l2);
                         ClearselectedProduct();
                     }
