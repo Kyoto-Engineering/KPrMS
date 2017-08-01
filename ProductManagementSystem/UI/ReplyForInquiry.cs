@@ -356,6 +356,17 @@ namespace ProductManagementSystem.UI
             eXWTextBox.Clear();
             textBox2.Clear();
             comboBox3.SelectedIndex = -1;
+            if (!checkBox1.Checked)
+            {
+                foreach (DataGridViewRow dr in dataGridView1.Rows)
+                {
+                    if (dr.Cells[0].Value.ToString() == PInquiryId)
+                    {
+                        dataGridView1.Rows.Remove(dr);
+                    }
+                    break;
+                }
+            }
 
         }
 
