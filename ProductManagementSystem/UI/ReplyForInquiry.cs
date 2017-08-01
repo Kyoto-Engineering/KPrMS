@@ -428,6 +428,7 @@ namespace ProductManagementSystem.UI
             //ExchangeRateTextBox.Visible = true;
             productNameTextBox.Visible = true;
             productCodeTextBox.Visible = true;
+            CountryComboBox.Visible = true;
             
             if (StockStatusComboBox.Text == @"Stock")
             {
@@ -465,6 +466,7 @@ namespace ProductManagementSystem.UI
                 //ExchangeRateTextBox.Visible = false;
                 productNameTextBox.Visible = false;
                 productCodeTextBox.Visible = false;
+                CountryComboBox.Visible = false;
                 textBox2.Clear();
                 eXWTextBox.Clear();
                 UnitCogsUsdTextBox.Clear();
