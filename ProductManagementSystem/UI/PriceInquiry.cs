@@ -19,6 +19,7 @@ namespace ProductManagementSystem.UI
         private SqlDataReader rdr;
         ConnectionString cs = new ConnectionString();
         private int pno;
+        private SqlTransaction trans;
        
         public PriceInquiry()
         {
@@ -275,7 +276,7 @@ namespace ProductManagementSystem.UI
                 {
                     con = new SqlConnection(cs.DBConn);
                     con.Open();
-                    SqlTransaction trans = con.BeginTransaction();
+                   trans = con.BeginTransaction();
                     string query1 = "insert into PriceInquiry(EntryDate,UserId) values(@d1,@d2)" + "SELECT CONVERT(int, SCOPE_IDENTITY())";
                     cmd = new SqlCommand(query1, con, trans);
                     cmd.Parameters.AddWithValue("@d1", DateTime.UtcNow.ToLocalTime());
@@ -295,7 +296,7 @@ namespace ProductManagementSystem.UI
                         cmd.ExecuteNonQuery();
                     }
                   
-                   cmd.Transaction.Commit();
+                  trans.Commit();
                     MessageBox.Show("Successfully Saved", "Report", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     textBox1.Clear();
                     listView1.Items.Clear();
@@ -306,7 +307,7 @@ namespace ProductManagementSystem.UI
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    cmd.Transaction.Rollback();
+                   trans.Rollback();
                     con.Close();
                 }
             }
