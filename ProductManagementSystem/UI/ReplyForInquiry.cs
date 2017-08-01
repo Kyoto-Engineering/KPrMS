@@ -242,7 +242,7 @@ namespace ProductManagementSystem.UI
                         }
                         else
                         {
-                            l2 = new ListViewItem("PInquiryId");
+                            l2 = new ListViewItem(PInquiryId);
                             l2.SubItems.Add("FeedBack");
                         }
                         l2.SubItems.Add(ModelNumberTextBox.Text);
