@@ -111,11 +111,22 @@
       <DependentUpon>InquiryFeedback.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\InquiryFeedbackReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\InquiryFeedbackReport.Designer.cs">
+      <DependentUpon>InquiryFeedbackReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\InquiryFeedbackWithoutPrice.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>InquiryFeedbackWithoutPrice.rpt</DependentUpon>
-      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\PriceInquiryReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\PriceInquiryReport.Designer.cs">
+      <DependentUpon>PriceInquiryReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\WithoutPriceProduct.cs">
       <SubType>Form</SubType>
@@ -233,9 +244,15 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>InquiryFeedback1.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\InquiryFeedbackReport.resx">
+      <DependentUpon>InquiryFeedbackReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\InquiryFeedbackWithoutPrice.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>InquiryFeedbackWithoutPrice.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PriceInquiryReport.resx">
+      <DependentUpon>PriceInquiryReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\WithoutPriceProduct.resx">
       <DependentUpon>WithoutPriceProduct.cs</DependentUpon>
