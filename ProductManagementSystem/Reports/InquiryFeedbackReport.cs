@@ -29,42 +29,6 @@ namespace ProductManagementSystem.Reports
         {
             GetButton.Enabled = false;
 
-
-
-            if (!string.IsNullOrWhiteSpace(IFIdComboBox.Text))
-            {
-                if (IFBackRadioButton.Checked)
-                {
-                    GetInFWithPrice();
-                    Clear();
-                }
-                else if (IFBackWithoutPriceRadioButton.Checked)
-                {
-                    GetInFWithoutPrice();
-                    Clear();
-                }
-                else
-                {
-                    MessageBox.Show(@"Please Choose an Option");
-                }
-            }
-            else
-            {
-                MessageBox.Show(@"Please Select a Inquiry Feedback Id");
-            }
-
-            GetButton.Enabled = true;
-        }
-
-        private void Clear()
-        {
-            IFIdComboBox.SelectedIndex = -1;
-            IFBackRadioButton.Checked = false;
-            IFBackWithoutPriceRadioButton.Checked = false;
-        }
-
-        private void GetInFWithPrice()
-        {
             ParameterField paramField1 = new ParameterField();
 
 
@@ -111,57 +75,14 @@ namespace ProductManagementSystem.Reports
 
             f2.ShowDialog();
             this.Visible = true;
+            GetButton.Enabled = true;
+            IFIdComboBox.SelectedIndex = -1;
         }
 
-        private void GetInFWithoutPrice()
-        {
-            ParameterField paramField1 = new ParameterField();
+       
+       
 
-
-            //creating an object of ParameterFields class
-            ParameterFields paramFields1 = new ParameterFields();
-
-            //creating an object of ParameterDiscreteValue class
-            ParameterDiscreteValue paramDiscreteValue1 = new ParameterDiscreteValue();
-
-            //set the parameter field name
-            paramField1.Name = "Id";
-
-            //set the parameter value
-            paramDiscreteValue1.Value = IFIdComboBox.Text;
-
-            //add the parameter value in the ParameterField object
-            paramField1.CurrentValues.Add(paramDiscreteValue1);
-
-            //add the parameter in the ParameterFields object
-            paramFields1.Add(paramField1);
-            ReportViewer f2 = new ReportViewer();
-            TableLogOnInfos reportLogonInfos = new TableLogOnInfos();
-            TableLogOnInfo reportLogonInfo = new TableLogOnInfo();
-            ConnectionInfo reportConInfo = new ConnectionInfo();
-            Tables tables = default(Tables);
-            //	Table table = default(Table);
-            var with1 = reportConInfo;
-            with1.ServerName = "tcp:KyotoServer,49172";
-            with1.DatabaseName = "NewProductList1";
-            with1.UserID = "sa";
-            with1.Password = "SystemAdministrator";
-            InquiryFeedbackWithoutPrice cr = new InquiryFeedbackWithoutPrice();
-            tables = cr.Database.Tables;
-            foreach (Table table in tables)
-            {
-                reportLogonInfo = table.LogOnInfo;
-                reportLogonInfo.ConnectionInfo = reportConInfo;
-                table.ApplyLogOnInfo(reportLogonInfo);
-            }
-
-            f2.crystalReportViewer1.ParameterFieldInfo = paramFields1;
-            f2.crystalReportViewer1.ReportSource = cr;
-            this.Visible = false;
-
-            f2.ShowDialog();
-            this.Visible = true;
-        }
+      
 
         private void InquiryFeedbackReport_Load(object sender, EventArgs e)
         {

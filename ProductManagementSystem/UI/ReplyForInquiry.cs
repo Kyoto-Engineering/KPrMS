@@ -9,6 +9,9 @@ using System.Text;
 using System.Windows.Forms;
 using ProductManagementSystem.DbGateway;
 using ProductManagementSystem.LogInUI;
+using ProductManagementSystem.Reports;
+using CrystalDecisions.Shared;
+using CrystalDecisions.CrystalReports.Engine;
 
 namespace ProductManagementSystem.UI
 {
@@ -22,6 +25,7 @@ namespace ProductManagementSystem.UI
         private DataGridViewRow dr;
         private string PInquiryId;
         private string _output;
+        private int FbId;
         private SqlTransaction trans;
         public decimal Price;
         public ReplyForInquiry()
@@ -514,6 +518,8 @@ namespace ProductManagementSystem.UI
             UnitCogsBdtTextBox.Text = (Convert.ToDecimal(val7) * Convert.ToDecimal(val8)).ToString();
         }
 
+        
+
         private void DoneButton_Click(object sender, EventArgs e)
         {
             if (ValidateSubmit())
@@ -533,6 +539,7 @@ namespace ProductManagementSystem.UI
                     cmd.Parameters.AddWithValue("@d3", frmLogin.uId2);
                     cmd.Parameters.AddWithValue("@d4", DateTime.UtcNow.ToLocalTime());
                     int FbId = (int) cmd.ExecuteScalar();
+                    
                     for (int i = 0; i < listView1.Items.Count; i++)
                     {
                         if (listView1.Items[i].SubItems[5].Text == "Invalid Model" ||
@@ -567,6 +574,7 @@ namespace ProductManagementSystem.UI
                             cmd = new SqlCommand(cd, con, trans);
                             cmd.Parameters.AddWithValue("@d1", listView1.Items[i].SubItems[12].Text);
                             cmd.Parameters.AddWithValue("@d2", sl);
+                            
                             //con.Open();
                             cmd.ExecuteNonQuery();
                             string query =
@@ -579,11 +587,13 @@ namespace ProductManagementSystem.UI
                             cmd.Parameters.AddWithValue("@d4", listView1.Items[i].SubItems[6].Text);
                             cmd.Parameters.AddWithValue("@d5",sl);
                             cmd.ExecuteNonQuery();
-
+                            
                         }
                     }
                   trans.Commit();
                     MessageBox.Show("Saved SuccessFully");
+                    Report();
+
                 }
                 catch (Exception exception)
                 {
@@ -591,6 +601,58 @@ namespace ProductManagementSystem.UI
                     trans.Rollback();
                 }
             }
+        }
+
+        private void Report()
+        {
+            ParameterField paramField1 = new ParameterField();
+
+
+            //creating an object of ParameterFields class
+            ParameterFields paramFields1 = new ParameterFields();
+
+            //creating an object of ParameterDiscreteValue class
+            ParameterDiscreteValue paramDiscreteValue1 = new ParameterDiscreteValue();
+
+            //set the parameter field name
+            paramField1.Name = "Id";
+
+            //set the parameter value
+            paramDiscreteValue1.Value = FbId;
+
+            //add the parameter value in the ParameterField object
+            paramField1.CurrentValues.Add(paramDiscreteValue1);
+
+            //add the parameter in the ParameterFields object
+            paramFields1.Add(paramField1);
+            ReportViewer f2 = new ReportViewer();
+            TableLogOnInfos reportLogonInfos = new TableLogOnInfos();
+            TableLogOnInfo reportLogonInfo = new TableLogOnInfo();
+            ConnectionInfo reportConInfo = new ConnectionInfo();
+            Tables tables = default(Tables);
+            //	Table table = default(Table);
+            var with1 = reportConInfo;
+            with1.ServerName = "tcp:KyotoServer,49172";
+            with1.DatabaseName = "NewProductList1";
+            with1.UserID = "sa";
+            with1.Password = "SystemAdministrator";
+
+            InquiryFeedback cr = new InquiryFeedback();
+
+            tables = cr.Database.Tables;
+            foreach (Table table in tables)
+            {
+                reportLogonInfo = table.LogOnInfo;
+                reportLogonInfo.ConnectionInfo = reportConInfo;
+                table.ApplyLogOnInfo(reportLogonInfo);
+            }
+            f2.crystalReportViewer1.ParameterFieldInfo = paramFields1;
+            f2.crystalReportViewer1.ReportSource = cr;
+
+            this.Visible = false;
+
+            f2.ShowDialog();
+            this.Visible = true;
         }
 
         private bool ValidateSubmit()

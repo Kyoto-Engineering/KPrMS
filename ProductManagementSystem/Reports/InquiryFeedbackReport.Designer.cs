@@ -31,8 +31,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.IFIdComboBox = new System.Windows.Forms.ComboBox();
             this.GetButton = new System.Windows.Forms.Button();
-            this.IFBackRadioButton = new System.Windows.Forms.RadioButton();
-            this.IFBackWithoutPriceRadioButton = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // label1
@@ -64,35 +62,11 @@
             this.GetButton.UseVisualStyleBackColor = true;
             this.GetButton.Click += new System.EventHandler(this.GetButton_Click);
             // 
-            // IFBackRadioButton
-            // 
-            this.IFBackRadioButton.AutoSize = true;
-            this.IFBackRadioButton.Location = new System.Drawing.Point(190, 81);
-            this.IFBackRadioButton.Name = "IFBackRadioButton";
-            this.IFBackRadioButton.Size = new System.Drawing.Size(159, 17);
-            this.IFBackRadioButton.TabIndex = 3;
-            this.IFBackRadioButton.TabStop = true;
-            this.IFBackRadioButton.Text = "Inquiry Feedback With Price";
-            this.IFBackRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // IFBackWithoutPriceRadioButton
-            // 
-            this.IFBackWithoutPriceRadioButton.AutoSize = true;
-            this.IFBackWithoutPriceRadioButton.Location = new System.Drawing.Point(190, 117);
-            this.IFBackWithoutPriceRadioButton.Name = "IFBackWithoutPriceRadioButton";
-            this.IFBackWithoutPriceRadioButton.Size = new System.Drawing.Size(174, 17);
-            this.IFBackWithoutPriceRadioButton.TabIndex = 4;
-            this.IFBackWithoutPriceRadioButton.TabStop = true;
-            this.IFBackWithoutPriceRadioButton.Text = "Inquiry Feedback Without Price";
-            this.IFBackWithoutPriceRadioButton.UseVisualStyleBackColor = true;
-            // 
             // InquiryFeedbackReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(459, 293);
-            this.Controls.Add(this.IFBackWithoutPriceRadioButton);
-            this.Controls.Add(this.IFBackRadioButton);
             this.Controls.Add(this.GetButton);
             this.Controls.Add(this.IFIdComboBox);
             this.Controls.Add(this.label1);
@@ -109,7 +83,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox IFIdComboBox;
         private System.Windows.Forms.Button GetButton;
-        private System.Windows.Forms.RadioButton IFBackRadioButton;
-        private System.Windows.Forms.RadioButton IFBackWithoutPriceRadioButton;
     }
 }

@@ -29,11 +29,10 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.InFeedbackButton = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.PriceInqListButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.CloseButton = new System.Windows.Forms.Button();
-            this.InFeedbackButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,6 +47,19 @@
             this.groupBox1.Size = new System.Drawing.Size(519, 313);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // InFeedbackButton
+            // 
+            this.InFeedbackButton.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.InFeedbackButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InFeedbackButton.ForeColor = System.Drawing.Color.Blue;
+            this.InFeedbackButton.Location = new System.Drawing.Point(18, 95);
+            this.InFeedbackButton.Name = "InFeedbackButton";
+            this.InFeedbackButton.Size = new System.Drawing.Size(119, 56);
+            this.InFeedbackButton.TabIndex = 3;
+            this.InFeedbackButton.Text = "Inquiry Feedback";
+            this.InFeedbackButton.UseVisualStyleBackColor = false;
+            this.InFeedbackButton.Click += new System.EventHandler(this.InFeedbackButton_Click);
             // 
             // button2
             // 
@@ -88,39 +100,12 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // CloseButton
-            // 
-            this.CloseButton.BackColor = System.Drawing.Color.Honeydew;
-            this.CloseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CloseButton.ForeColor = System.Drawing.Color.Coral;
-            this.CloseButton.Location = new System.Drawing.Point(470, 14);
-            this.CloseButton.Name = "CloseButton";
-            this.CloseButton.Size = new System.Drawing.Size(73, 30);
-            this.CloseButton.TabIndex = 1;
-            this.CloseButton.Text = "Close";
-            this.CloseButton.UseVisualStyleBackColor = false;
-            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
-            // 
-            // InFeedbackButton
-            // 
-            this.InFeedbackButton.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.InFeedbackButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InFeedbackButton.ForeColor = System.Drawing.Color.Blue;
-            this.InFeedbackButton.Location = new System.Drawing.Point(18, 95);
-            this.InFeedbackButton.Name = "InFeedbackButton";
-            this.InFeedbackButton.Size = new System.Drawing.Size(119, 56);
-            this.InFeedbackButton.TabIndex = 3;
-            this.InFeedbackButton.Text = "Inquiry Feedback";
-            this.InFeedbackButton.UseVisualStyleBackColor = false;
-            this.InFeedbackButton.Click += new System.EventHandler(this.InFeedbackButton_Click);
-            // 
             // ReportsUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Bisque;
             this.ClientSize = new System.Drawing.Size(565, 375);
-            this.Controls.Add(this.CloseButton);
             this.Controls.Add(this.groupBox1);
             this.Name = "ReportsUI";
             this.Text = "ReportsUI";
@@ -134,7 +119,6 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button CloseButton;
         private System.Windows.Forms.Button PriceInqListButton;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button InFeedbackButton;
