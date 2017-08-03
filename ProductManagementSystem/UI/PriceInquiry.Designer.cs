@@ -71,7 +71,7 @@
             this.groupBox1.Location = new System.Drawing.Point(40, 131);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(489, 285);
-            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
             // QtyTextBox
@@ -258,7 +258,7 @@
             this.textBox1.Location = new System.Drawing.Point(233, 67);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(237, 26);
-            this.textBox1.TabIndex = 2;
+            this.textBox1.TabIndex = 1;
             // 
             // label3
             // 
@@ -267,7 +267,7 @@
             this.label3.Location = new System.Drawing.Point(58, 72);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(124, 17);
-            this.label3.TabIndex = 3;
+            this.label3.TabIndex = 0;
             this.label3.Text = "Price Inquiry No";
             // 
             // button1
@@ -277,7 +277,7 @@
             this.button1.Location = new System.Drawing.Point(541, 355);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 54);
-            this.button1.TabIndex = 7;
+            this.button1.TabIndex = 3;
             this.button1.Text = "Done";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
