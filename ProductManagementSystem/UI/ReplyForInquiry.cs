@@ -25,7 +25,7 @@ namespace ProductManagementSystem.UI
         private DataGridViewRow dr;
         private string PInquiryId;
         private string _output;
-        private int FbId;
+        public int FbId;
         private SqlTransaction trans;
         public decimal Price;
         public ReplyForInquiry()
@@ -144,70 +144,7 @@ namespace ProductManagementSystem.UI
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(comboBox1.Text))
-            {
-                MessageBox.Show("First Select A Inquiry Number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                comboBox1.Focus();
-            }
-
-            else if (string.IsNullOrWhiteSpace(ExchangeRateTextBox.Text))
-            {
-                MessageBox.Show("Select Exchange Rate", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                ExchangeRateTextBox.Focus();
-            }
-
-            else if (string.IsNullOrEmpty(StockStatusComboBox.Text))
-            {
-                MessageBox.Show("Select Stock Status", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                StockStatusComboBox.Focus();
-            }
-
-            else if (string.IsNullOrWhiteSpace(textBox2.Text))
-            {
-                MessageBox.Show("Add Available Validity", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                textBox2.Focus();
-            }
-
-            else if (string.IsNullOrWhiteSpace(eXWTextBox.Text))
-            {
-                MessageBox.Show("Add EXW Price", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                eXWTextBox.Focus();
-            }
-
-            else if (string.IsNullOrWhiteSpace(UnitCogsUsdTextBox.Text))
-            {
-                MessageBox.Show("Add Unit COGS In Usd", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                UnitCogsUsdTextBox.Focus();
-            }
-
-            else if (string.IsNullOrWhiteSpace(MopBdtTextBox.Text))
-            {
-                MessageBox.Show("Add MOP In BDT", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                MopBdtTextBox.Focus();
-            }
-
-            else if (string.IsNullOrWhiteSpace(MopBdtTextBox.Text))
-            {
-                MessageBox.Show("Add MOP In BDT", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                MopBdtTextBox.Focus();
-            }
-
-            else if (string.IsNullOrWhiteSpace(productNameTextBox.Text))
-            {
-                MessageBox.Show("Add product Name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                productNameTextBox.Focus();
-            }
-
-            else if (string.IsNullOrWhiteSpace(productCodeTextBox.Text))
-            {
-                MessageBox.Show("Add product Name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                productCodeTextBox.Focus();
-            }
-
             
-
-
-
             if (ValidateMustControls()) 
             { 
                 if (listView1.Items.Count < 1)
@@ -350,14 +287,20 @@ namespace ProductManagementSystem.UI
             else if (string.IsNullOrWhiteSpace(UnitCogsUsdTextBox.Text))
             {
                 validate = false;
+                MessageBox.Show("Add Unit COGS In Usd", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                UnitCogsUsdTextBox.Focus();
             }
             else if (string.IsNullOrWhiteSpace(MopBdtTextBox.Text))
             {
                 validate = false;
+                MessageBox.Show("Add MOP In BDT", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MopBdtTextBox.Focus();
             }
             else if (string.IsNullOrWhiteSpace(textBox2.Text))
             {
                 validate = false;
+                MessageBox.Show("Add Available ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBox2.Focus();
             }
             else if (string.IsNullOrWhiteSpace(comboBox3.Text))
             {
@@ -366,14 +309,20 @@ namespace ProductManagementSystem.UI
             else if (string.IsNullOrWhiteSpace(productNameTextBox.Text))
             {
                 validate = false;
+                MessageBox.Show("Add product Name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                productNameTextBox.Focus();
             }
             else if (string.IsNullOrWhiteSpace(productCodeTextBox.Text))
             {
                 validate = false;
+                MessageBox.Show("Add product Code", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                productCodeTextBox.Focus();
             }
             else if (string.IsNullOrWhiteSpace(eXWTextBox.Text))
             {
                 validate = false;
+                MessageBox.Show("Add EXW Price", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                eXWTextBox.Focus();
             }
             return validate;
         }
@@ -383,11 +332,15 @@ namespace ProductManagementSystem.UI
             if (string.IsNullOrWhiteSpace(comboBox1.Text))
             {
                 validate = false;
+                MessageBox.Show("First Select A Inquiry Number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                comboBox1.Focus();
             }
             else if (string.IsNullOrWhiteSpace(ExchangeRateTextBox.Text))
             {
                 validate = false;
+                MessageBox.Show("Select Exchange Rate", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                UnitCogsUsdTextBox.Clear();
+                ExchangeRateTextBox.Focus();
             }
             else if (string.IsNullOrWhiteSpace(ModelNumberTextBox.Text) && !checkBox1.Checked)
             {
@@ -406,6 +359,8 @@ namespace ProductManagementSystem.UI
             else if (string.IsNullOrWhiteSpace(StockStatusComboBox.Text))
             {
                 validate = false;
+                MessageBox.Show("Select Stock Status", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                StockStatusComboBox.Focus();
             }
             return validate;
         }
@@ -606,7 +561,7 @@ namespace ProductManagementSystem.UI
                     cmd.Parameters.AddWithValue("@d2", _output);
                     cmd.Parameters.AddWithValue("@d3", frmLogin.uId2);
                     cmd.Parameters.AddWithValue("@d4", DateTime.UtcNow.ToLocalTime());
-                    int FbId = (int) cmd.ExecuteScalar();
+                    FbId = (int) cmd.ExecuteScalar();
                     
                     for (int i = 0; i < listView1.Items.Count; i++)
                     {
@@ -686,7 +641,7 @@ namespace ProductManagementSystem.UI
             paramField1.Name = "Id";
 
             //set the parameter value
-            paramDiscreteValue1.Value = FbId;
+            paramDiscreteValue1.Value = _output;
 
             //add the parameter value in the ParameterField object
             paramField1.CurrentValues.Add(paramDiscreteValue1);
@@ -893,5 +848,7 @@ namespace ProductManagementSystem.UI
                AddButton_Click(this, new EventArgs());
             }
         }
+
+       
     }
 }
