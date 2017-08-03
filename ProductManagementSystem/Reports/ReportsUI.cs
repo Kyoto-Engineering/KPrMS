@@ -29,6 +29,7 @@ namespace ProductManagementSystem.Reports
 
         private void button1_Click(object sender, EventArgs e)
         {
+            this.Hide();
             ReportByBrand f2 = new ReportByBrand();
             this.Visible = false;
             f2.ShowDialog();
@@ -44,36 +45,16 @@ namespace ProductManagementSystem.Reports
 
         private void PriceInqListButton_Click(object sender, EventArgs e)
         {
-            ReportViewer f2 = new ReportViewer();
-            TableLogOnInfos reportLogonInfos = new TableLogOnInfos();
-            TableLogOnInfo reportLogonInfo = new TableLogOnInfo();
-            ConnectionInfo reportConInfo = new ConnectionInfo();
-            Tables tables = default(Tables);
-            //	Table table = default(Table);
-            var with1 = reportConInfo;
-            with1.ServerName = "tcp:KyotoServer,49172";
-            with1.DatabaseName = "NewProductList1";
-            with1.UserID = "sa";
-            with1.Password = "SystemAdministrator";
-            PriceInquiryList cr = new PriceInquiryList();
-            tables = cr.Database.Tables;
-            foreach (Table table in tables)
-            {
-                reportLogonInfo = table.LogOnInfo;
-                reportLogonInfo.ConnectionInfo = reportConInfo;
-                table.ApplyLogOnInfo(reportLogonInfo);
-            }
-            //f2.crystalReportViewer1.ParameterFieldInfo = paramFields;
-            //set the parameterfield information in the crystal report
-            f2.crystalReportViewer1.ReportSource = cr;
+            this.Hide();
+            PriceInquiryReport f2 = new PriceInquiryReport();
             this.Visible = false;
-
             f2.ShowDialog();
             this.Visible = true;
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {
+        {   
+            this.Hide();
             WithoutPriceProduct f2 = new WithoutPriceProduct();
             this.Visible = false;
             f2.ShowDialog();
@@ -81,5 +62,15 @@ namespace ProductManagementSystem.Reports
         }
 
         
+        private void InFeedbackButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            InquiryFeedbackReport f2 = new InquiryFeedbackReport();
+            this.Visible = false;
+            f2.ShowDialog();
+            this.Visible = true;
         }
+
+        
+    }
 }
