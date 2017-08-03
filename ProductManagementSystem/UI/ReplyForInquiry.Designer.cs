@@ -320,6 +320,7 @@
             this.UnitCogsUsdTextBox.TabIndex = 11;
             this.UnitCogsUsdTextBox.Visible = false;
             this.UnitCogsUsdTextBox.TextChanged += new System.EventHandler(this.UnitCogsUsdTextBox_TextChanged);
+            this.UnitCogsUsdTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UnitCogsUsdTextBox_KeyPress);
             // 
             // QtyTextBox
             // 
