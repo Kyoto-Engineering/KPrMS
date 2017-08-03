@@ -567,6 +567,7 @@
             this.ExchangeRateTextBox.Size = new System.Drawing.Size(263, 20);
             this.ExchangeRateTextBox.TabIndex = 20;
             this.ExchangeRateTextBox.TextChanged += new System.EventHandler(this.ExchangeRateTextBox_TextChanged_1);
+            this.ExchangeRateTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ExchangeRateTextBox_KeyPress);
             // 
             // label8
             // 
