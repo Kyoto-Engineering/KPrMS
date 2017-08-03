@@ -192,6 +192,18 @@ namespace ProductManagementSystem.UI
                 MopBdtTextBox.Focus();
             }
 
+            else if (string.IsNullOrWhiteSpace(productNameTextBox.Text))
+            {
+                MessageBox.Show("Add product Name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                productNameTextBox.Focus();
+            }
+
+            else if (string.IsNullOrWhiteSpace(productCodeTextBox.Text))
+            {
+                MessageBox.Show("Add product Name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                productCodeTextBox.Focus();
+            }
+
             
 
 
@@ -812,6 +824,73 @@ namespace ProductManagementSystem.UI
             else if (!char.IsDigit(ch) && ch != '.' || !Decimal.TryParse(MopBdtTextBox.Text + ch, out x))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void ExchangeRateTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ModelNumberTextBox.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void textBox2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                eXWTextBox.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void eXWTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                UnitCogsUsdTextBox.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void UnitCogsUsdTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                MopBdtTextBox.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void MopBdtTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                productNameTextBox.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void productNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void productNameTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                productCodeTextBox.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void productCodeTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+               AddButton_Click(this, new EventArgs());
             }
         }
     }
