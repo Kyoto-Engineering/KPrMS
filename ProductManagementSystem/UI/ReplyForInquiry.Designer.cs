@@ -302,6 +302,7 @@
             this.MopBdtTextBox.Size = new System.Drawing.Size(217, 20);
             this.MopBdtTextBox.TabIndex = 13;
             this.MopBdtTextBox.Visible = false;
+            this.MopBdtTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MopBdtTextBox_KeyPress);
             // 
             // UnitCogsBdtTextBox
             // 
