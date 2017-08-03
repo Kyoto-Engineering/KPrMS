@@ -192,6 +192,7 @@
             this.productCodeTextBox.Size = new System.Drawing.Size(219, 20);
             this.productCodeTextBox.TabIndex = 13;
             this.productCodeTextBox.Visible = false;
+            this.productCodeTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.productCodeTextBox_KeyDown);
             // 
             // label13
             // 
@@ -210,6 +211,8 @@
             this.productNameTextBox.Size = new System.Drawing.Size(219, 20);
             this.productNameTextBox.TabIndex = 12;
             this.productNameTextBox.Visible = false;
+            this.productNameTextBox.TextChanged += new System.EventHandler(this.productNameTextBox_TextChanged);
+            this.productNameTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.productNameTextBox_KeyDown);
             // 
             // label12
             // 
@@ -228,6 +231,7 @@
             this.eXWTextBox.Size = new System.Drawing.Size(217, 20);
             this.eXWTextBox.TabIndex = 8;
             this.eXWTextBox.Visible = false;
+            this.eXWTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.eXWTextBox_KeyDown);
             this.eXWTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.eXWTextBox_KeyPress);
             // 
             // label11
@@ -259,6 +263,7 @@
             this.textBox2.Size = new System.Drawing.Size(151, 20);
             this.textBox2.TabIndex = 5;
             this.textBox2.Visible = false;
+            this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
             this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
             // StockStatusComboBox
@@ -302,6 +307,7 @@
             this.MopBdtTextBox.Size = new System.Drawing.Size(217, 20);
             this.MopBdtTextBox.TabIndex = 11;
             this.MopBdtTextBox.Visible = false;
+            this.MopBdtTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MopBdtTextBox_KeyDown);
             this.MopBdtTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MopBdtTextBox_KeyPress);
             // 
             // UnitCogsBdtTextBox
@@ -321,6 +327,7 @@
             this.UnitCogsUsdTextBox.TabIndex = 9;
             this.UnitCogsUsdTextBox.Visible = false;
             this.UnitCogsUsdTextBox.TextChanged += new System.EventHandler(this.UnitCogsUsdTextBox_TextChanged);
+            this.UnitCogsUsdTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UnitCogsUsdTextBox_KeyDown);
             this.UnitCogsUsdTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UnitCogsUsdTextBox_KeyPress);
             // 
             // QtyTextBox
@@ -571,6 +578,7 @@
             this.ExchangeRateTextBox.Size = new System.Drawing.Size(263, 20);
             this.ExchangeRateTextBox.TabIndex = 2;
             this.ExchangeRateTextBox.TextChanged += new System.EventHandler(this.ExchangeRateTextBox_TextChanged_1);
+            this.ExchangeRateTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ExchangeRateTextBox_KeyDown);
             this.ExchangeRateTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ExchangeRateTextBox_KeyPress);
             // 
             // label8
