@@ -144,132 +144,188 @@ namespace ProductManagementSystem.UI
 
         private void AddButton_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(comboBox1.Text))
+            {
+                MessageBox.Show("First Select A Inquiry Number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                comboBox1.Focus();
+            }
+
+            else if (string.IsNullOrWhiteSpace(ExchangeRateTextBox.Text))
+            {
+                MessageBox.Show("Select Exchange Rate", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ExchangeRateTextBox.Focus();
+            }
+
+            else if (string.IsNullOrEmpty(StockStatusComboBox.Text))
+            {
+                MessageBox.Show("Select Stock Status", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                StockStatusComboBox.Focus();
+            }
+
+            else if (string.IsNullOrWhiteSpace(textBox2.Text))
+            {
+                MessageBox.Show("Add Available Validity", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBox2.Focus();
+            }
+
+            else if (string.IsNullOrWhiteSpace(eXWTextBox.Text))
+            {
+                MessageBox.Show("Add EXW Price", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                eXWTextBox.Focus();
+            }
+
+            else if (string.IsNullOrWhiteSpace(UnitCogsUsdTextBox.Text))
+            {
+                MessageBox.Show("Add Unit COGS In Usd", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                UnitCogsUsdTextBox.Focus();
+            }
+
+            else if (string.IsNullOrWhiteSpace(MopBdtTextBox.Text))
+            {
+                MessageBox.Show("Add MOP In BDT", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MopBdtTextBox.Focus();
+            }
+
+            else if (string.IsNullOrWhiteSpace(MopBdtTextBox.Text))
+            {
+                MessageBox.Show("Add MOP In BDT", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MopBdtTextBox.Focus();
+            }
+
+            
+
+
+
             if (ValidateMustControls()) 
-            {
+            { 
                 if (listView1.Items.Count < 1)
-            {
-                if (StockStatusComboBox.Text == "Invalid Model" || StockStatusComboBox.Text == "Out of Production")
-                {
-                    
-                    
-                        if (checkBox1.Checked)
                         {
-                            MessageBox.Show("You Can not Add Invalid product When The Checkbox Is Checked");
+                            if (StockStatusComboBox.Text == "Invalid Model" ||
+                                StockStatusComboBox.Text == "Out of Production")
+                            {
+
+
+                                if (checkBox1.Checked)
+                                {
+                                    MessageBox.Show("You Can not Add Invalid product When The Checkbox Is Checked");
+                                }
+                                else
+                                {
+                                    ListViewItem l1 = new ListViewItem(PInquiryId);
+                                    l1.SubItems.Add("FeedBack");
+                                    l1.SubItems.Add(ModelNumberTextBox.Text);
+                                    l1.SubItems.Add(ProDesTextBox.Text);
+                                    l1.SubItems.Add(QtyTextBox.Text);
+                                    l1.SubItems.Add(StockStatusComboBox.Text);
+                                    listView1.Items.Add(l1);
+                                    ClearselectedProduct();
+                                    comboBox1.Enabled = false;
+                                    ExchangeRateTextBox.Enabled = false;
+                                }
+
+
+                            }
+                            else
+                            {
+                                if (ValidateSecondControls())
+                                {
+                                    ListViewItem l1;
+
+
+                                    if (checkBox1.Checked)
+                                    {
+
+                                        l1 = new ListViewItem("0");
+                                        l1.SubItems.Add("FeedBack");
+                                    }
+                                    else
+                                    {
+                                        l1 = new ListViewItem(PInquiryId);
+                                        l1.SubItems.Add("FeedBack");
+                                    }
+                                    l1.SubItems.Add(ModelNumberTextBox.Text);
+                                    l1.SubItems.Add(ProDesTextBox.Text);
+                                    l1.SubItems.Add(QtyTextBox.Text);
+                                    l1.SubItems.Add(StockStatusComboBox.Text + " " + textBox2.Text + comboBox3.Text);
+                                    l1.SubItems.Add(UnitCogsUsdTextBox.Text);
+                                    l1.SubItems.Add(UnitCogsBdtTextBox.Text);
+                                    l1.SubItems.Add(MopBdtTextBox.Text);
+                                    l1.SubItems.Add(CountryComboBox.Text);
+                                    l1.SubItems.Add(productNameTextBox.Text);
+                                    l1.SubItems.Add(productCodeTextBox.Text);
+                                    l1.SubItems.Add(eXWTextBox.Text);
+                                    listView1.Items.Add(l1);
+                                    ClearselectedProduct();
+                                    comboBox1.Enabled = false;
+                                    ExchangeRateTextBox.Enabled = false;
+                                }
+
+                            }
                         }
                         else
                         {
-                            ListViewItem l1 = new ListViewItem(PInquiryId);
-                            l1.SubItems.Add("FeedBack");
-                            l1.SubItems.Add(ModelNumberTextBox.Text);
-                            l1.SubItems.Add(ProDesTextBox.Text);
-                            l1.SubItems.Add(QtyTextBox.Text);
-                            l1.SubItems.Add(StockStatusComboBox.Text);
-                            listView1.Items.Add(l1);
-                            ClearselectedProduct();
-                            comboBox1.Enabled = false;
-                            ExchangeRateTextBox.Enabled = false;
-                        }
+                            if (StockStatusComboBox.Text == "Invalid Model" ||
+                                StockStatusComboBox.Text == "Out of Production")
+                            {
 
-                    
-                }
-                else
-                {
-                    if (ValidateSecondControls())
-                    {
-                        ListViewItem l1;
+                                if (checkBox1.Checked)
+                                {
+                                    MessageBox.Show("You Can not Add Invalid product When The Checkbox Is Checked");
+                                }
+                                else
+                                {
+                                    ListViewItem l2 = new ListViewItem(PInquiryId);
+                                    l2.SubItems.Add("FeedBack");
+                                    l2.SubItems.Add(ModelNumberTextBox.Text);
+                                    l2.SubItems.Add(ProDesTextBox.Text);
+                                    l2.SubItems.Add(QtyTextBox.Text);
+                                    l2.SubItems.Add(StockStatusComboBox.Text);
+                                    listView1.Items.Add(l2);
+                                    ClearselectedProduct();
+                                }
 
 
-                        if (checkBox1.Checked)
-                        {
+                            }
+                            else
+                            {
+                                if (ValidateSecondControls())
+                                {
+                                    ListViewItem l2;
 
-                            l1 = new ListViewItem("0");
-                            l1.SubItems.Add("FeedBack");
-                        }
-                        else
-                        {
-                            l1 = new ListViewItem(PInquiryId);
-                            l1.SubItems.Add("FeedBack");
-                        }
-                        l1.SubItems.Add(ModelNumberTextBox.Text);
-                        l1.SubItems.Add(ProDesTextBox.Text);
-                        l1.SubItems.Add(QtyTextBox.Text);
-                        l1.SubItems.Add(StockStatusComboBox.Text + " " + textBox2.Text + comboBox3.Text);
-                        l1.SubItems.Add(UnitCogsUsdTextBox.Text);
-                        l1.SubItems.Add(UnitCogsBdtTextBox.Text);
-                        l1.SubItems.Add(MopBdtTextBox.Text);
-                        l1.SubItems.Add(CountryComboBox.Text);
-                        l1.SubItems.Add(productNameTextBox.Text);
-                        l1.SubItems.Add(productCodeTextBox.Text);
-                        l1.SubItems.Add(eXWTextBox.Text);
-                        listView1.Items.Add(l1);
-                        ClearselectedProduct();
-                        comboBox1.Enabled = false;
-                        ExchangeRateTextBox.Enabled = false;
+
+                                    if (checkBox1.Checked)
+                                    {
+
+                                        l2 = new ListViewItem("0");
+                                        l2.SubItems.Add("FeedBack");
+                                    }
+                                    else
+                                    {
+                                        l2 = new ListViewItem(PInquiryId);
+                                        l2.SubItems.Add("FeedBack");
+                                    }
+                                    l2.SubItems.Add(ModelNumberTextBox.Text);
+                                    l2.SubItems.Add(ProDesTextBox.Text);
+                                    l2.SubItems.Add(QtyTextBox.Text);
+                                    l2.SubItems.Add(StockStatusComboBox.Text + " " + textBox2.Text + comboBox3.Text);
+                                    l2.SubItems.Add(UnitCogsUsdTextBox.Text);
+                                    l2.SubItems.Add(UnitCogsBdtTextBox.Text);
+                                    l2.SubItems.Add(MopBdtTextBox.Text);
+                                    l2.SubItems.Add(CountryComboBox.Text);
+                                    l2.SubItems.Add(productNameTextBox.Text);
+                                    l2.SubItems.Add(productCodeTextBox.Text);
+                                    l2.SubItems.Add(eXWTextBox.Text);
+                                    listView1.Items.Add(l2);
+                                    ClearselectedProduct();
+                                }
+
+                            }
+                        
                     }
 
                 }
-            }
-            else
-            {
-                if (StockStatusComboBox.Text == "Invalid Model" || StockStatusComboBox.Text == "Out of Production")
-                {
-                   
-                        if (checkBox1.Checked)
-                        {
-                            MessageBox.Show("You Can not Add Invalid product When The Checkbox Is Checked");
-                        }
-                        else
-                        {
-                            ListViewItem l2 = new ListViewItem(PInquiryId);
-                            l2.SubItems.Add("FeedBack");
-                            l2.SubItems.Add(ModelNumberTextBox.Text);
-                            l2.SubItems.Add(ProDesTextBox.Text);
-                            l2.SubItems.Add(QtyTextBox.Text);
-                            l2.SubItems.Add(StockStatusComboBox.Text);
-                            listView1.Items.Add(l2);
-                            ClearselectedProduct();
-                        }
-
-                  
-                }
-                else
-                {
-                    if ( ValidateSecondControls())
-                    {
-                        ListViewItem l2;
-
-
-                        if (checkBox1.Checked)
-                        {
-
-                            l2= new ListViewItem("0");
-                            l2.SubItems.Add("FeedBack");
-                        }
-                        else
-                        {
-                            l2 = new ListViewItem(PInquiryId);
-                            l2.SubItems.Add("FeedBack");
-                        }
-                        l2.SubItems.Add(ModelNumberTextBox.Text);
-                        l2.SubItems.Add(ProDesTextBox.Text);
-                        l2.SubItems.Add(QtyTextBox.Text);
-                        l2.SubItems.Add(StockStatusComboBox.Text + " " + textBox2.Text + comboBox3.Text);
-                        l2.SubItems.Add(UnitCogsUsdTextBox.Text);
-                        l2.SubItems.Add(UnitCogsBdtTextBox.Text);
-                        l2.SubItems.Add(MopBdtTextBox.Text);
-                        l2.SubItems.Add(CountryComboBox.Text);
-                        l2.SubItems.Add(productNameTextBox.Text);
-                        l2.SubItems.Add(productCodeTextBox.Text);
-                        l2.SubItems.Add(eXWTextBox.Text);
-                        listView1.Items.Add(l2);
-                        ClearselectedProduct();
-                    }
-
-                }
-            }
-            }
-        
         }
+
         private bool ValidateSecondControls()
         {
             bool validate = true;
