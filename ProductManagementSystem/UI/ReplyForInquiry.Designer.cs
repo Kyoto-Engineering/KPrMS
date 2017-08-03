@@ -69,11 +69,11 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -82,6 +82,7 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.ExchangeRateTextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -489,10 +490,10 @@
             this.columnHeader4.Text = "Qty";
             this.columnHeader4.Width = 50;
             // 
-            // columnHeader5
+            // columnHeader10
             // 
-            this.columnHeader5.DisplayIndex = 5;
-            this.columnHeader5.Text = "Country";
+            this.columnHeader10.DisplayIndex = 9;
+            this.columnHeader10.Text = "Status";
             // 
             // columnHeader6
             // 
@@ -510,10 +511,10 @@
             this.columnHeader9.Text = "MOP(BDT)U";
             this.columnHeader9.Width = 76;
             // 
-            // columnHeader10
+            // columnHeader5
             // 
-            this.columnHeader10.DisplayIndex = 9;
-            this.columnHeader10.Text = "Status";
+            this.columnHeader5.DisplayIndex = 5;
+            this.columnHeader5.Text = "Country";
             // 
             // columnHeader11
             // 
@@ -542,9 +543,9 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(155, 21);
+            this.comboBox1.Location = new System.Drawing.Point(179, 21);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(263, 21);
+            this.comboBox1.Size = new System.Drawing.Size(239, 21);
             this.comboBox1.TabIndex = 4;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -565,6 +566,7 @@
             this.ExchangeRateTextBox.Name = "ExchangeRateTextBox";
             this.ExchangeRateTextBox.Size = new System.Drawing.Size(263, 20);
             this.ExchangeRateTextBox.TabIndex = 20;
+            this.ExchangeRateTextBox.TextChanged += new System.EventHandler(this.ExchangeRateTextBox_TextChanged_1);
             // 
             // label8
             // 
@@ -575,11 +577,22 @@
             this.label8.TabIndex = 19;
             this.label8.Text = "Exchange Rate         :";
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(27, 24);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(138, 13);
+            this.label15.TabIndex = 21;
+            this.label15.Text = "Select Inquiry Number        :";
+            this.label15.Click += new System.EventHandler(this.label15_Click);
+            // 
             // ReplyForInquiry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1354, 652);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.ExchangeRateTextBox);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.checkBox1);
@@ -660,5 +673,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader14;
         private System.Windows.Forms.TextBox ExchangeRateTextBox;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label15;
     }
 }
