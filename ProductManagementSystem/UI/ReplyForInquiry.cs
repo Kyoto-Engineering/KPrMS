@@ -615,5 +615,15 @@ namespace ProductManagementSystem.UI
             }
             return validate;
         }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ExchangeRateTextBox_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
