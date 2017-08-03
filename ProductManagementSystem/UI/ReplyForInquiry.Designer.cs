@@ -69,11 +69,11 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -82,6 +82,7 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.ExchangeRateTextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -170,7 +171,7 @@
             this.groupBox2.Location = new System.Drawing.Point(18, 106);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(400, 398);
-            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Feedback Inquiry";
             // 
@@ -189,7 +190,7 @@
             this.productCodeTextBox.Location = new System.Drawing.Point(141, 370);
             this.productCodeTextBox.Name = "productCodeTextBox";
             this.productCodeTextBox.Size = new System.Drawing.Size(219, 20);
-            this.productCodeTextBox.TabIndex = 30;
+            this.productCodeTextBox.TabIndex = 13;
             this.productCodeTextBox.Visible = false;
             // 
             // label13
@@ -207,7 +208,7 @@
             this.productNameTextBox.Location = new System.Drawing.Point(141, 341);
             this.productNameTextBox.Name = "productNameTextBox";
             this.productNameTextBox.Size = new System.Drawing.Size(219, 20);
-            this.productNameTextBox.TabIndex = 28;
+            this.productNameTextBox.TabIndex = 12;
             this.productNameTextBox.Visible = false;
             // 
             // label12
@@ -225,8 +226,9 @@
             this.eXWTextBox.Location = new System.Drawing.Point(143, 222);
             this.eXWTextBox.Name = "eXWTextBox";
             this.eXWTextBox.Size = new System.Drawing.Size(217, 20);
-            this.eXWTextBox.TabIndex = 26;
+            this.eXWTextBox.TabIndex = 8;
             this.eXWTextBox.Visible = false;
+            this.eXWTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.eXWTextBox_KeyPress);
             // 
             // label11
             // 
@@ -247,7 +249,7 @@
             this.comboBox3.Location = new System.Drawing.Point(301, 164);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(93, 21);
-            this.comboBox3.TabIndex = 23;
+            this.comboBox3.TabIndex = 6;
             this.comboBox3.Visible = false;
             // 
             // textBox2
@@ -255,8 +257,9 @@
             this.textBox2.Location = new System.Drawing.Point(141, 164);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(151, 20);
-            this.textBox2.TabIndex = 21;
+            this.textBox2.TabIndex = 5;
             this.textBox2.Visible = false;
+            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
             // StockStatusComboBox
             // 
@@ -270,7 +273,7 @@
             this.StockStatusComboBox.Location = new System.Drawing.Point(141, 133);
             this.StockStatusComboBox.Name = "StockStatusComboBox";
             this.StockStatusComboBox.Size = new System.Drawing.Size(219, 21);
-            this.StockStatusComboBox.TabIndex = 19;
+            this.StockStatusComboBox.TabIndex = 4;
             this.StockStatusComboBox.SelectedIndexChanged += new System.EventHandler(this.StockStatusComboBox_SelectedIndexChanged);
             // 
             // label10
@@ -289,7 +292,7 @@
             this.CountryComboBox.Location = new System.Drawing.Point(143, 188);
             this.CountryComboBox.Name = "CountryComboBox";
             this.CountryComboBox.Size = new System.Drawing.Size(217, 21);
-            this.CountryComboBox.TabIndex = 15;
+            this.CountryComboBox.TabIndex = 7;
             this.CountryComboBox.Visible = false;
             // 
             // MopBdtTextBox
@@ -297,8 +300,9 @@
             this.MopBdtTextBox.Location = new System.Drawing.Point(143, 310);
             this.MopBdtTextBox.Name = "MopBdtTextBox";
             this.MopBdtTextBox.Size = new System.Drawing.Size(217, 20);
-            this.MopBdtTextBox.TabIndex = 13;
+            this.MopBdtTextBox.TabIndex = 11;
             this.MopBdtTextBox.Visible = false;
+            this.MopBdtTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MopBdtTextBox_KeyPress);
             // 
             // UnitCogsBdtTextBox
             // 
@@ -306,7 +310,7 @@
             this.UnitCogsBdtTextBox.Name = "UnitCogsBdtTextBox";
             this.UnitCogsBdtTextBox.ReadOnly = true;
             this.UnitCogsBdtTextBox.Size = new System.Drawing.Size(217, 20);
-            this.UnitCogsBdtTextBox.TabIndex = 12;
+            this.UnitCogsBdtTextBox.TabIndex = 10;
             this.UnitCogsBdtTextBox.Visible = false;
             // 
             // UnitCogsUsdTextBox
@@ -314,9 +318,10 @@
             this.UnitCogsUsdTextBox.Location = new System.Drawing.Point(143, 248);
             this.UnitCogsUsdTextBox.Name = "UnitCogsUsdTextBox";
             this.UnitCogsUsdTextBox.Size = new System.Drawing.Size(217, 20);
-            this.UnitCogsUsdTextBox.TabIndex = 11;
+            this.UnitCogsUsdTextBox.TabIndex = 9;
             this.UnitCogsUsdTextBox.Visible = false;
             this.UnitCogsUsdTextBox.TextChanged += new System.EventHandler(this.UnitCogsUsdTextBox_TextChanged);
+            this.UnitCogsUsdTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UnitCogsUsdTextBox_KeyPress);
             // 
             // QtyTextBox
             // 
@@ -324,7 +329,7 @@
             this.QtyTextBox.Name = "QtyTextBox";
             this.QtyTextBox.ReadOnly = true;
             this.QtyTextBox.Size = new System.Drawing.Size(217, 20);
-            this.QtyTextBox.TabIndex = 10;
+            this.QtyTextBox.TabIndex = 3;
             // 
             // ProDesTextBox
             // 
@@ -332,7 +337,7 @@
             this.ProDesTextBox.Name = "ProDesTextBox";
             this.ProDesTextBox.ReadOnly = true;
             this.ProDesTextBox.Size = new System.Drawing.Size(217, 20);
-            this.ProDesTextBox.TabIndex = 9;
+            this.ProDesTextBox.TabIndex = 2;
             // 
             // ModelNumberTextBox
             // 
@@ -340,7 +345,7 @@
             this.ModelNumberTextBox.Name = "ModelNumberTextBox";
             this.ModelNumberTextBox.ReadOnly = true;
             this.ModelNumberTextBox.Size = new System.Drawing.Size(217, 20);
-            this.ModelNumberTextBox.TabIndex = 8;
+            this.ModelNumberTextBox.TabIndex = 1;
             // 
             // label7
             // 
@@ -414,7 +419,7 @@
             this.DoneButton.Location = new System.Drawing.Point(932, 288);
             this.DoneButton.Name = "DoneButton";
             this.DoneButton.Size = new System.Drawing.Size(75, 23);
-            this.DoneButton.TabIndex = 17;
+            this.DoneButton.TabIndex = 5;
             this.DoneButton.Text = "Done";
             this.DoneButton.UseVisualStyleBackColor = true;
             this.DoneButton.Click += new System.EventHandler(this.DoneButton_Click);
@@ -424,7 +429,7 @@
             this.AddButton.Location = new System.Drawing.Point(430, 180);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(75, 23);
-            this.AddButton.TabIndex = 16;
+            this.AddButton.TabIndex = 4;
             this.AddButton.Text = "Add";
             this.AddButton.UseVisualStyleBackColor = true;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
@@ -489,10 +494,10 @@
             this.columnHeader4.Text = "Qty";
             this.columnHeader4.Width = 50;
             // 
-            // columnHeader5
+            // columnHeader10
             // 
-            this.columnHeader5.DisplayIndex = 5;
-            this.columnHeader5.Text = "Country";
+            this.columnHeader10.DisplayIndex = 9;
+            this.columnHeader10.Text = "Status";
             // 
             // columnHeader6
             // 
@@ -510,10 +515,10 @@
             this.columnHeader9.Text = "MOP(BDT)U";
             this.columnHeader9.Width = 76;
             // 
-            // columnHeader10
+            // columnHeader5
             // 
-            this.columnHeader10.DisplayIndex = 9;
-            this.columnHeader10.Text = "Status";
+            this.columnHeader5.DisplayIndex = 5;
+            this.columnHeader5.Text = "Country";
             // 
             // columnHeader11
             // 
@@ -542,10 +547,10 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(155, 21);
+            this.comboBox1.Location = new System.Drawing.Point(179, 21);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(263, 21);
-            this.comboBox1.TabIndex = 4;
+            this.comboBox1.Size = new System.Drawing.Size(239, 21);
+            this.comboBox1.TabIndex = 1;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // checkBox1
@@ -564,7 +569,9 @@
             this.ExchangeRateTextBox.Location = new System.Drawing.Point(155, 57);
             this.ExchangeRateTextBox.Name = "ExchangeRateTextBox";
             this.ExchangeRateTextBox.Size = new System.Drawing.Size(263, 20);
-            this.ExchangeRateTextBox.TabIndex = 20;
+            this.ExchangeRateTextBox.TabIndex = 2;
+            this.ExchangeRateTextBox.TextChanged += new System.EventHandler(this.ExchangeRateTextBox_TextChanged_1);
+            this.ExchangeRateTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ExchangeRateTextBox_KeyPress);
             // 
             // label8
             // 
@@ -572,14 +579,25 @@
             this.label8.Location = new System.Drawing.Point(27, 60);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(111, 13);
-            this.label8.TabIndex = 19;
+            this.label8.TabIndex = 0;
             this.label8.Text = "Exchange Rate         :";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(27, 24);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(138, 13);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "Select Inquiry Number        :";
+            this.label15.Click += new System.EventHandler(this.label15_Click);
             // 
             // ReplyForInquiry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1354, 652);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.ExchangeRateTextBox);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.checkBox1);
@@ -660,5 +678,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader14;
         private System.Windows.Forms.TextBox ExchangeRateTextBox;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label15;
     }
 }

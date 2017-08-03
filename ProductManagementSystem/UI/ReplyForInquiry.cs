@@ -27,6 +27,7 @@ namespace ProductManagementSystem.UI
         private string _output;
         private int FbId;
         private SqlTransaction trans;
+        public decimal Price;
         public ReplyForInquiry()
         {
             InitializeComponent();
@@ -676,6 +677,86 @@ namespace ProductManagementSystem.UI
                 validate = false;
             }
             return validate;
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ExchangeRateTextBox_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ExchangeRateTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            decimal x;
+            if (ch == (char)Keys.Back)
+            {
+                e.Handled = false;
+            }
+            else if (!char.IsDigit(ch) && ch != '.' || !Decimal.TryParse(ExchangeRateTextBox.Text + ch, out x))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            decimal x;
+            if (ch == (char)Keys.Back)
+            {
+                e.Handled = false;
+            }
+            else if (!char.IsDigit(ch) && ch != '.' || !Decimal.TryParse(textBox2.Text + ch, out x))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void eXWTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            decimal x;
+            if (ch == (char)Keys.Back)
+            {
+                e.Handled = false;
+            }
+            else if (!char.IsDigit(ch) && ch != '.' || !Decimal.TryParse(eXWTextBox.Text + ch, out x))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void UnitCogsUsdTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            decimal x;
+            if (ch == (char)Keys.Back)
+            {
+                e.Handled = false;
+            }
+            else if (!char.IsDigit(ch) && ch != '.' || !Decimal.TryParse(UnitCogsUsdTextBox.Text + ch, out x))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void MopBdtTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            decimal x;
+            if (ch == (char)Keys.Back)
+            {
+                e.Handled = false;
+            }
+            else if (!char.IsDigit(ch) && ch != '.' || !Decimal.TryParse(MopBdtTextBox.Text + ch, out x))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
