@@ -23,6 +23,7 @@ namespace ProductManagementSystem.UI
         private string PInquiryId;
         private string _output;
         private SqlTransaction trans;
+        public decimal Price;
         public ReplyForInquiry()
         {
             InitializeComponent();
@@ -624,6 +625,20 @@ namespace ProductManagementSystem.UI
         private void ExchangeRateTextBox_TextChanged_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void ExchangeRateTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            decimal x;
+            if (ch == (char)Keys.Back)
+            {
+                e.Handled = false;
+            }
+            else if (!char.IsDigit(ch) && ch != '.' || !Decimal.TryParse(ExchangeRateTextBox.Text + ch, out x))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
