@@ -668,5 +668,19 @@ namespace ProductManagementSystem.UI
                 e.Handled = true;
             }
         }
+
+        private void UnitCogsUsdTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            decimal x;
+            if (ch == (char)Keys.Back)
+            {
+                e.Handled = false;
+            }
+            else if (!char.IsDigit(ch) && ch != '.' || !Decimal.TryParse(UnitCogsUsdTextBox.Text + ch, out x))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
