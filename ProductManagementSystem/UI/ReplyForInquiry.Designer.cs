@@ -228,6 +228,7 @@
             this.eXWTextBox.Size = new System.Drawing.Size(217, 20);
             this.eXWTextBox.TabIndex = 26;
             this.eXWTextBox.Visible = false;
+            this.eXWTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.eXWTextBox_KeyPress);
             // 
             // label11
             // 
