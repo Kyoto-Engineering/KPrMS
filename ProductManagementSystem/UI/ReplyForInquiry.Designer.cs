@@ -258,6 +258,7 @@
             this.textBox2.Size = new System.Drawing.Size(151, 20);
             this.textBox2.TabIndex = 21;
             this.textBox2.Visible = false;
+            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
             // StockStatusComboBox
             // 
