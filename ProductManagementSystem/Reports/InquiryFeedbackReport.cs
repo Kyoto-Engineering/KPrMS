@@ -19,7 +19,7 @@ namespace ProductManagementSystem.Reports
         private SqlCommand cmd;
         private SqlDataReader rdr;
         ConnectionString cs = new ConnectionString();
-        public int IFId;
+        public int PrInId;
         public InquiryFeedbackReport()
         {
             InitializeComponent();
@@ -42,7 +42,7 @@ namespace ProductManagementSystem.Reports
             paramField1.Name = "Id";
 
             //set the parameter value
-            paramDiscreteValue1.Value = IFIdComboBox.Text;
+            paramDiscreteValue1.Value = PrInIdComboBox.Text;
 
             //add the parameter value in the ParameterField object
             paramField1.CurrentValues.Add(paramDiscreteValue1);
@@ -76,29 +76,24 @@ namespace ProductManagementSystem.Reports
             f2.ShowDialog();
             this.Visible = true;
             GetButton.Enabled = true;
-            IFIdComboBox.SelectedIndex = -1;
+            PrInIdComboBox.SelectedIndex = -1;
         }
 
-       
-       
-
-      
-
-        private void InquiryFeedbackReport_Load(object sender, EventArgs e)
+       private void InquiryFeedbackReport_Load(object sender, EventArgs e)
         {
             try
             {
 
                 con = new SqlConnection(cs.DBConn);
                 con.Open();
-                string ct = "SELECT IFId FROM InquiryFeedback ORDER BY IFId";
+                string ct = "SELECT PrInId FROM InquiryFeedback ORDER BY PrInId";
                 cmd = new SqlCommand(ct);
                 cmd.Connection = con;
                 rdr = cmd.ExecuteReader();
 
                 while (rdr.Read())
                 {
-                    IFIdComboBox.Items.Add(rdr[0]);
+                    PrInIdComboBox.Items.Add(rdr[0]);
                 }
                 con.Close();
 
@@ -108,5 +103,10 @@ namespace ProductManagementSystem.Reports
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+       private void PrInIdComboBox_SelectedIndexChanged(object sender, EventArgs e)
+       {
+
+       }
     }
 }
