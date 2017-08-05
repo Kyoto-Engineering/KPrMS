@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.IFIdComboBox = new System.Windows.Forms.ComboBox();
+            this.PrInIdComboBox = new System.Windows.Forms.ComboBox();
             this.GetButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -39,17 +39,18 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 37);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(175, 17);
+            this.label1.Size = new System.Drawing.Size(161, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Inquiry Feedback Id    :";
+            this.label1.Text = "Product Inquiry Id    :";
             // 
-            // IFIdComboBox
+            // PrInIdComboBox
             // 
-            this.IFIdComboBox.FormattingEnabled = true;
-            this.IFIdComboBox.Location = new System.Drawing.Point(193, 37);
-            this.IFIdComboBox.Name = "IFIdComboBox";
-            this.IFIdComboBox.Size = new System.Drawing.Size(156, 21);
-            this.IFIdComboBox.TabIndex = 1;
+            this.PrInIdComboBox.FormattingEnabled = true;
+            this.PrInIdComboBox.Location = new System.Drawing.Point(193, 37);
+            this.PrInIdComboBox.Name = "PrInIdComboBox";
+            this.PrInIdComboBox.Size = new System.Drawing.Size(156, 21);
+            this.PrInIdComboBox.TabIndex = 1;
+            this.PrInIdComboBox.SelectedIndexChanged += new System.EventHandler(this.PrInIdComboBox_SelectedIndexChanged);
             // 
             // GetButton
             // 
@@ -68,7 +69,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(459, 293);
             this.Controls.Add(this.GetButton);
-            this.Controls.Add(this.IFIdComboBox);
+            this.Controls.Add(this.PrInIdComboBox);
             this.Controls.Add(this.label1);
             this.Name = "InquiryFeedbackReport";
             this.Text = "InquiryFeedbackReport";
@@ -81,7 +82,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox IFIdComboBox;
+        private System.Windows.Forms.ComboBox PrInIdComboBox;
         private System.Windows.Forms.Button GetButton;
     }
 }
