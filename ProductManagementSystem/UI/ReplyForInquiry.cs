@@ -12,6 +12,7 @@ using ProductManagementSystem.LogInUI;
 using ProductManagementSystem.Reports;
 using CrystalDecisions.Shared;
 using CrystalDecisions.CrystalReports.Engine;
+using Message = System.Web.Services.Description.Message;
 
 namespace ProductManagementSystem.UI
 {
@@ -25,7 +26,7 @@ namespace ProductManagementSystem.UI
         private DataGridViewRow dr;
         private string PInquiryId;
         private string _output;
-        public int FbId;
+        public int FbId, BrandId, PrInId, IFId;
         private SqlTransaction trans;
         public decimal Price;
         public ReplyForInquiry()
@@ -278,11 +279,28 @@ namespace ProductManagementSystem.UI
         private bool ValidateSecondControls()
         {
             bool validate = true;
-            if (string.IsNullOrWhiteSpace(CountryComboBox.Text))
+            if (string.IsNullOrWhiteSpace(textBox2.Text))
             {
                 validate = false;
-
-                ModelNumberTextBox.Focus();
+                MessageBox.Show("Add Available Within", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBox2.Focus();
+            }
+            else if (string.IsNullOrWhiteSpace(comboBox3.Text))
+            {
+                validate = false;
+                MessageBox.Show("Select Days/Weeks/Months", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                comboBox3.Focus();
+            }
+            else if (string.IsNullOrWhiteSpace(CountryComboBox.Text))
+            {
+                validate = false;
+                MessageBox.Show("Please Select Country Name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+             }
+            else if (string.IsNullOrWhiteSpace(eXWTextBox.Text))
+            {
+                validate = false;
+                MessageBox.Show("Add EXW Price", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                eXWTextBox.Focus();
             }
             else if (string.IsNullOrWhiteSpace(UnitCogsUsdTextBox.Text))
             {
@@ -296,33 +314,18 @@ namespace ProductManagementSystem.UI
                 MessageBox.Show("Add MOP In BDT", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 MopBdtTextBox.Focus();
             }
-            else if (string.IsNullOrWhiteSpace(textBox2.Text))
-            {
-                validate = false;
-                MessageBox.Show("Add Available ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                textBox2.Focus();
-            }
-            else if (string.IsNullOrWhiteSpace(comboBox3.Text))
-            {
-                validate = false;
-            }
+            
             else if (string.IsNullOrWhiteSpace(productNameTextBox.Text))
             {
                 validate = false;
-                MessageBox.Show("Add product Name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Add Product Name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 productNameTextBox.Focus();
             }
             else if (string.IsNullOrWhiteSpace(productCodeTextBox.Text))
             {
                 validate = false;
-                MessageBox.Show("Add product Code", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Add Product Code", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 productCodeTextBox.Focus();
-            }
-            else if (string.IsNullOrWhiteSpace(eXWTextBox.Text))
-            {
-                validate = false;
-                MessageBox.Show("Add EXW Price", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                eXWTextBox.Focus();
             }
             return validate;
         }
@@ -345,16 +348,20 @@ namespace ProductManagementSystem.UI
             else if (string.IsNullOrWhiteSpace(ModelNumberTextBox.Text) && !checkBox1.Checked)
             {
                 validate = false;
-
+                MessageBox.Show("Select Model Number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 ModelNumberTextBox.Focus();
             }
             else if (string.IsNullOrWhiteSpace(ProDesTextBox.Text))
             {
                 validate = false;
+                MessageBox.Show("Select Product Description", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ProDesTextBox.Focus();
             }
             else if (string.IsNullOrWhiteSpace(QtyTextBox.Text) && !checkBox1.Checked)
             {
                 validate = false;
+                MessageBox.Show("Select Quantity", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                QtyTextBox.Focus();
             }
             else if (string.IsNullOrWhiteSpace(StockStatusComboBox.Text))
             {
@@ -467,8 +474,12 @@ namespace ProductManagementSystem.UI
             if (StockStatusComboBox.Text == @"Stock")
             {
                 comboBox3.Items.Clear();
-                comboBox3.Items.Add("Pcs");
                 comboBox3.Items.Add("Kgs");
+                comboBox3.Items.Add("Set");
+                comboBox3.Items.Add("Pair");
+                comboBox3.Items.Add("Box");
+                comboBox3.Items.Add("Doz");
+                comboBox3.Items.Add("Grs");
                 label12.Text = @"Available Quantity";
             }
             else
@@ -561,7 +572,8 @@ namespace ProductManagementSystem.UI
                     cmd.Parameters.AddWithValue("@d2", _output);
                     cmd.Parameters.AddWithValue("@d3", frmLogin.uId2);
                     cmd.Parameters.AddWithValue("@d4", DateTime.UtcNow.ToLocalTime());
-                    FbId = (int) cmd.ExecuteScalar();
+                    FbId = (int)cmd.ExecuteScalar();
+                    
                     
                     for (int i = 0; i < listView1.Items.Count; i++)
                     {
@@ -569,12 +581,13 @@ namespace ProductManagementSystem.UI
                             listView1.Items[i].SubItems[5].Text == "Out of Production")
                         {
                             string query =
-                                "INSERT INTO InquiryFeedbackDetail (PInquiryId, ProductDescription, StockStatus,IFId) VALUES        (@d1,@d2,@d3," +
+                                "INSERT INTO InquiryFeedbackDetail (PInquiryId, ProductDescription, StockStatus,IFId) VALUES        (@d1,@d2,@d3,@d4" +
                                 FbId + ")";
                             cmd = new SqlCommand(query, con, trans);
                             cmd.Parameters.AddWithValue("@d1", listView1.Items[i].Text);
                             cmd.Parameters.AddWithValue("@d2", listView1.Items[i].SubItems[2].Text);
                             cmd.Parameters.AddWithValue("@d3", listView1.Items[i].SubItems[5].Text);
+                            cmd.Parameters.AddWithValue("@d4", IFId);
                             cmd.ExecuteNonQuery();
                         }
                         else
@@ -588,7 +601,7 @@ namespace ProductManagementSystem.UI
                             cmd.Parameters.AddWithValue("@d3", listView1.Items[i].SubItems[11].Text);
                             cmd.Parameters.AddWithValue("@d4", listView1.Items[i].SubItems[9].Text);
                             cmd.Parameters.AddWithValue("@d5", listView1.Items[i].SubItems[8].Text);
-                            cmd.Parameters.AddWithValue("@d6", 1);
+                            cmd.Parameters.AddWithValue("@d6", BrandId);
                             cmd.Parameters.AddWithValue("@d7", frmLogin.uId2);
                             cmd.Parameters.AddWithValue("@d8", DateTime.UtcNow.ToLocalTime());
                             cmd.Parameters.AddWithValue("@d9", 1);
@@ -615,7 +628,7 @@ namespace ProductManagementSystem.UI
                     }
                   trans.Commit();
                     MessageBox.Show("Saved SuccessFully");
-                    Report();
+                    //Report();
 
                 }
                 catch (Exception exception)
@@ -626,57 +639,57 @@ namespace ProductManagementSystem.UI
             }
         }
 
-        private void Report()
-        {
-            ParameterField paramField1 = new ParameterField();
+        //private void Report()
+        //{
+        //    ParameterField paramField1 = new ParameterField();
 
 
-            //creating an object of ParameterFields class
-            ParameterFields paramFields1 = new ParameterFields();
+        //    //creating an object of ParameterFields class
+        //    ParameterFields paramFields1 = new ParameterFields();
 
-            //creating an object of ParameterDiscreteValue class
-            ParameterDiscreteValue paramDiscreteValue1 = new ParameterDiscreteValue();
+        //    //creating an object of ParameterDiscreteValue class
+        //    ParameterDiscreteValue paramDiscreteValue1 = new ParameterDiscreteValue();
 
-            //set the parameter field name
-            paramField1.Name = "Id";
+        //    //set the parameter field name
+        //    paramField1.Name = "Id";
 
-            //set the parameter value
-            paramDiscreteValue1.Value = _output;
+        //    //set the parameter value
+        //    paramDiscreteValue1.Value = _output;
 
-            //add the parameter value in the ParameterField object
-            paramField1.CurrentValues.Add(paramDiscreteValue1);
+        //    //add the parameter value in the ParameterField object
+        //    paramField1.CurrentValues.Add(paramDiscreteValue1);
 
-            //add the parameter in the ParameterFields object
-            paramFields1.Add(paramField1);
-            ReportViewer f2 = new ReportViewer();
-            TableLogOnInfos reportLogonInfos = new TableLogOnInfos();
-            TableLogOnInfo reportLogonInfo = new TableLogOnInfo();
-            ConnectionInfo reportConInfo = new ConnectionInfo();
-            Tables tables = default(Tables);
-            //	Table table = default(Table);
-            var with1 = reportConInfo;
-            with1.ServerName = "tcp:KyotoServer,49172";
-            with1.DatabaseName = "NewProductList1";
-            with1.UserID = "sa";
-            with1.Password = "SystemAdministrator";
+        //    //add the parameter in the ParameterFields object
+        //    paramFields1.Add(paramField1);
+        //    ReportViewer f2 = new ReportViewer();
+        //    TableLogOnInfos reportLogonInfos = new TableLogOnInfos();
+        //    TableLogOnInfo reportLogonInfo = new TableLogOnInfo();
+        //    ConnectionInfo reportConInfo = new ConnectionInfo();
+        //    Tables tables = default(Tables);
+        //    //	Table table = default(Table);
+        //    var with1 = reportConInfo;
+        //    with1.ServerName = "tcp:KyotoServer,49172";
+        //    with1.DatabaseName = "NewProductList1";
+        //    with1.UserID = "sa";
+        //    with1.Password = "SystemAdministrator";
 
-            InquiryFeedback cr = new InquiryFeedback();
+        //    InquiryFeedback cr = new InquiryFeedback();
 
-            tables = cr.Database.Tables;
-            foreach (Table table in tables)
-            {
-                reportLogonInfo = table.LogOnInfo;
-                reportLogonInfo.ConnectionInfo = reportConInfo;
-                table.ApplyLogOnInfo(reportLogonInfo);
-            }
-            f2.crystalReportViewer1.ParameterFieldInfo = paramFields1;
-            f2.crystalReportViewer1.ReportSource = cr;
+        //    tables = cr.Database.Tables;
+        //    foreach (Table table in tables)
+        //    {
+        //        reportLogonInfo = table.LogOnInfo;
+        //        reportLogonInfo.ConnectionInfo = reportConInfo;
+        //        table.ApplyLogOnInfo(reportLogonInfo);
+        //    }
+        //    f2.crystalReportViewer1.ParameterFieldInfo = paramFields1;
+        //    f2.crystalReportViewer1.ReportSource = cr;
 
-            this.Visible = false;
+        //    this.Visible = false;
 
-            f2.ShowDialog();
-            this.Visible = true;
-        }
+        //    f2.ShowDialog();
+        //    this.Visible = true;
+        //}
 
         private bool ValidateSubmit()
         {
@@ -848,7 +861,6 @@ namespace ProductManagementSystem.UI
                AddButton_Click(this, new EventArgs());
             }
         }
-
-       
+    
     }
 }
