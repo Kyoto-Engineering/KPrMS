@@ -83,6 +83,9 @@
             this.ExchangeRateTextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.CogsVsMopTextBox = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -143,6 +146,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label17);
+            this.groupBox2.Controls.Add(this.CogsVsMopTextBox);
+            this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.productCodeTextBox);
             this.groupBox2.Controls.Add(this.label13);
@@ -170,7 +176,7 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(18, 106);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(400, 398);
+            this.groupBox2.Size = new System.Drawing.Size(400, 454);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Feedback Inquiry";
@@ -178,38 +184,38 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(15, 377);
+            this.label14.Location = new System.Drawing.Point(15, 406);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(81, 13);
+            this.label14.Size = new System.Drawing.Size(123, 13);
             this.label14.TabIndex = 31;
-            this.label14.Text = "Product Code  :";
+            this.label14.Text = "Product Code                :";
             this.label14.Visible = false;
             // 
             // productCodeTextBox
             // 
-            this.productCodeTextBox.Location = new System.Drawing.Point(141, 370);
+            this.productCodeTextBox.Location = new System.Drawing.Point(141, 403);
             this.productCodeTextBox.Name = "productCodeTextBox";
             this.productCodeTextBox.Size = new System.Drawing.Size(219, 20);
-            this.productCodeTextBox.TabIndex = 13;
+            this.productCodeTextBox.TabIndex = 14;
             this.productCodeTextBox.Visible = false;
             this.productCodeTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.productCodeTextBox_KeyDown);
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(15, 348);
+            this.label13.Location = new System.Drawing.Point(15, 376);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(93, 13);
+            this.label13.Size = new System.Drawing.Size(126, 13);
             this.label13.TabIndex = 29;
-            this.label13.Text = "Product Name     :";
+            this.label13.Text = "Product Name                :";
             this.label13.Visible = false;
             // 
             // productNameTextBox
             // 
-            this.productNameTextBox.Location = new System.Drawing.Point(141, 341);
+            this.productNameTextBox.Location = new System.Drawing.Point(141, 373);
             this.productNameTextBox.Name = "productNameTextBox";
             this.productNameTextBox.Size = new System.Drawing.Size(219, 20);
-            this.productNameTextBox.TabIndex = 12;
+            this.productNameTextBox.TabIndex = 13;
             this.productNameTextBox.Visible = false;
             this.productNameTextBox.TextChanged += new System.EventHandler(this.productNameTextBox_TextChanged);
             this.productNameTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.productNameTextBox_KeyDown);
@@ -217,11 +223,11 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(15, 171);
+            this.label12.Location = new System.Drawing.Point(15, 167);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(62, 13);
+            this.label12.Size = new System.Drawing.Size(125, 13);
             this.label12.TabIndex = 27;
-            this.label12.Text = "Availble     :";
+            this.label12.Text = "Availble                          :";
             this.label12.Visible = false;
             // 
             // eXWTextBox
@@ -239,28 +245,32 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(13, 225);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(121, 13);
+            this.label11.Size = new System.Drawing.Size(130, 13);
             this.label11.TabIndex = 25;
-            this.label11.Text = "EXW Price In USD       :";
+            this.label11.Text = "EXW Price In USD          :";
             this.label11.Visible = false;
             // 
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Items.AddRange(new object[] {
-            "Pcs",
-            "Kg"});
+            "Kgs",
+            "Set",
+            "Pair",
+            "Box",
+            "Doz",
+            "Grs"});
             this.comboBox3.Location = new System.Drawing.Point(301, 164);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(93, 21);
+            this.comboBox3.Size = new System.Drawing.Size(59, 21);
             this.comboBox3.TabIndex = 6;
             this.comboBox3.Visible = false;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(141, 164);
+            this.textBox2.Location = new System.Drawing.Point(143, 164);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(151, 20);
+            this.textBox2.Size = new System.Drawing.Size(149, 20);
             this.textBox2.TabIndex = 5;
             this.textBox2.Visible = false;
             this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
@@ -275,9 +285,9 @@
             "Stock",
             "Out of Production",
             "Invalid Model"});
-            this.StockStatusComboBox.Location = new System.Drawing.Point(141, 133);
+            this.StockStatusComboBox.Location = new System.Drawing.Point(143, 133);
             this.StockStatusComboBox.Name = "StockStatusComboBox";
-            this.StockStatusComboBox.Size = new System.Drawing.Size(219, 21);
+            this.StockStatusComboBox.Size = new System.Drawing.Size(217, 21);
             this.StockStatusComboBox.TabIndex = 4;
             this.StockStatusComboBox.SelectedIndexChanged += new System.EventHandler(this.StockStatusComboBox_SelectedIndexChanged);
             // 
@@ -286,15 +296,15 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(13, 136);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(107, 13);
+            this.label10.Size = new System.Drawing.Size(128, 13);
             this.label10.TabIndex = 18;
-            this.label10.Text = "Stock Status            :";
+            this.label10.Text = "Stock Status                   :";
             // 
             // CountryComboBox
             // 
             this.CountryComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CountryComboBox.FormattingEnabled = true;
-            this.CountryComboBox.Location = new System.Drawing.Point(143, 188);
+            this.CountryComboBox.Location = new System.Drawing.Point(143, 193);
             this.CountryComboBox.Name = "CountryComboBox";
             this.CountryComboBox.Size = new System.Drawing.Size(217, 21);
             this.CountryComboBox.TabIndex = 7;
@@ -302,26 +312,26 @@
             // 
             // MopBdtTextBox
             // 
-            this.MopBdtTextBox.Location = new System.Drawing.Point(143, 310);
+            this.MopBdtTextBox.Location = new System.Drawing.Point(141, 342);
             this.MopBdtTextBox.Name = "MopBdtTextBox";
             this.MopBdtTextBox.Size = new System.Drawing.Size(217, 20);
-            this.MopBdtTextBox.TabIndex = 11;
+            this.MopBdtTextBox.TabIndex = 12;
             this.MopBdtTextBox.Visible = false;
             this.MopBdtTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MopBdtTextBox_KeyDown);
             this.MopBdtTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MopBdtTextBox_KeyPress);
             // 
             // UnitCogsBdtTextBox
             // 
-            this.UnitCogsBdtTextBox.Location = new System.Drawing.Point(143, 277);
+            this.UnitCogsBdtTextBox.Location = new System.Drawing.Point(141, 281);
             this.UnitCogsBdtTextBox.Name = "UnitCogsBdtTextBox";
             this.UnitCogsBdtTextBox.ReadOnly = true;
-            this.UnitCogsBdtTextBox.Size = new System.Drawing.Size(217, 20);
+            this.UnitCogsBdtTextBox.Size = new System.Drawing.Size(219, 20);
             this.UnitCogsBdtTextBox.TabIndex = 10;
             this.UnitCogsBdtTextBox.Visible = false;
             // 
             // UnitCogsUsdTextBox
             // 
-            this.UnitCogsUsdTextBox.Location = new System.Drawing.Point(143, 248);
+            this.UnitCogsUsdTextBox.Location = new System.Drawing.Point(143, 252);
             this.UnitCogsUsdTextBox.Name = "UnitCogsUsdTextBox";
             this.UnitCogsUsdTextBox.Size = new System.Drawing.Size(217, 20);
             this.UnitCogsUsdTextBox.TabIndex = 9;
@@ -357,56 +367,56 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(15, 313);
+            this.label7.Location = new System.Drawing.Point(14, 345);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(98, 13);
+            this.label7.Size = new System.Drawing.Size(128, 13);
             this.label7.TabIndex = 6;
-            this.label7.Text = "MOP In BDT         :";
+            this.label7.Text = "MOP In BDT                   :";
             this.label7.Visible = false;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(15, 280);
+            this.label6.Location = new System.Drawing.Point(13, 284);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(114, 13);
+            this.label6.Size = new System.Drawing.Size(129, 13);
             this.label6.TabIndex = 5;
-            this.label6.Text = "Unit COGS In BDT     :";
+            this.label6.Text = "Unit COGS In BDT          :";
             this.label6.Visible = false;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(15, 248);
+            this.label5.Location = new System.Drawing.Point(12, 255);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(121, 13);
+            this.label5.Size = new System.Drawing.Size(130, 13);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Unit COGS In USD       :";
+            this.label5.Text = "Unit COGS In USD          :";
             this.label5.Visible = false;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 191);
+            this.label4.Location = new System.Drawing.Point(15, 196);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 13);
+            this.label4.Size = new System.Drawing.Size(127, 13);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Country        :";
+            this.label4.Text = "Country                           :";
             this.label4.Visible = false;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 110);
+            this.label3.Location = new System.Drawing.Point(14, 110);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 13);
+            this.label3.Size = new System.Drawing.Size(127, 13);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Quantity       :";
+            this.label3.Text = "Quantity                          :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 74);
+            this.label2.Location = new System.Drawing.Point(14, 74);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(127, 13);
             this.label2.TabIndex = 1;
@@ -417,9 +427,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(15, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 13);
+            this.label1.Size = new System.Drawing.Size(127, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Model Number       :";
+            this.label1.Text = "Model Number                :";
             // 
             // DoneButton
             // 
@@ -447,7 +457,7 @@
             this.groupBox3.Location = new System.Drawing.Point(461, 317);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(889, 326);
-            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Feedback Inquiry Info";
             // 
@@ -548,15 +558,15 @@
             this.label9.Location = new System.Drawing.Point(504, 9);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(147, 20);
-            this.label9.TabIndex = 3;
+            this.label9.TabIndex = 0;
             this.label9.Text = "Inquiry Feedback";
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(179, 21);
+            this.comboBox1.Location = new System.Drawing.Point(161, 21);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(239, 21);
+            this.comboBox1.Size = new System.Drawing.Size(217, 21);
             this.comboBox1.TabIndex = 1;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -566,16 +576,16 @@
             this.checkBox1.Location = new System.Drawing.Point(427, 92);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(78, 17);
-            this.checkBox1.TabIndex = 18;
+            this.checkBox1.TabIndex = 0;
             this.checkBox1.Text = "Extra Items";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // ExchangeRateTextBox
             // 
-            this.ExchangeRateTextBox.Location = new System.Drawing.Point(155, 57);
+            this.ExchangeRateTextBox.Location = new System.Drawing.Point(161, 57);
             this.ExchangeRateTextBox.Name = "ExchangeRateTextBox";
-            this.ExchangeRateTextBox.Size = new System.Drawing.Size(263, 20);
+            this.ExchangeRateTextBox.Size = new System.Drawing.Size(217, 20);
             this.ExchangeRateTextBox.TabIndex = 2;
             this.ExchangeRateTextBox.TextChanged += new System.EventHandler(this.ExchangeRateTextBox_TextChanged_1);
             this.ExchangeRateTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ExchangeRateTextBox_KeyDown);
@@ -586,19 +596,45 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(27, 60);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(111, 13);
+            this.label8.Size = new System.Drawing.Size(132, 13);
             this.label8.TabIndex = 0;
-            this.label8.Text = "Exchange Rate         :";
+            this.label8.Text = "Exchange Rate                :";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(27, 24);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(138, 13);
+            this.label15.Size = new System.Drawing.Size(132, 13);
             this.label15.TabIndex = 0;
-            this.label15.Text = "Select Inquiry Number        :";
+            this.label15.Text = "Select Inquiry Number      :";
             this.label15.Click += new System.EventHandler(this.label15_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(16, 315);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(127, 13);
+            this.label16.TabIndex = 32;
+            this.label16.Text = "COGS Vs MOP               :";
+            // 
+            // CogsVsMopTextBox
+            // 
+            this.CogsVsMopTextBox.Location = new System.Drawing.Point(141, 312);
+            this.CogsVsMopTextBox.Name = "CogsVsMopTextBox";
+            this.CogsVsMopTextBox.Size = new System.Drawing.Size(59, 20);
+            this.CogsVsMopTextBox.TabIndex = 11;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(206, 313);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(20, 17);
+            this.label17.TabIndex = 34;
+            this.label17.Text = "%";
             // 
             // ReplyForInquiry
             // 
@@ -687,5 +723,8 @@
         private System.Windows.Forms.TextBox ExchangeRateTextBox;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox CogsVsMopTextBox;
+        private System.Windows.Forms.Label label16;
     }
 }
