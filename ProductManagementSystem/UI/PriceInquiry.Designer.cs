@@ -70,7 +70,7 @@
             this.groupBox1.Controls.Add(this.SaveButton);
             this.groupBox1.Location = new System.Drawing.Point(40, 131);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(489, 285);
+            this.groupBox1.Size = new System.Drawing.Size(489, 315);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
@@ -87,11 +87,10 @@
             // RemarksTextBox
             // 
             this.RemarksTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RemarksTextBox.Location = new System.Drawing.Point(193, 152);
+            this.RemarksTextBox.Location = new System.Drawing.Point(193, 159);
             this.RemarksTextBox.MaxLength = 255;
-            this.RemarksTextBox.Multiline = true;
             this.RemarksTextBox.Name = "RemarksTextBox";
-            this.RemarksTextBox.Size = new System.Drawing.Size(249, 37);
+            this.RemarksTextBox.Size = new System.Drawing.Size(249, 23);
             this.RemarksTextBox.TabIndex = 4;
             this.RemarksTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RemarksTextBox_KeyDown);
             // 
@@ -181,7 +180,7 @@
             // 
             this.SaveButton.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.SaveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SaveButton.Location = new System.Drawing.Point(193, 228);
+            this.SaveButton.Location = new System.Drawing.Point(193, 245);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(100, 54);
             this.SaveButton.TabIndex = 6;
@@ -205,7 +204,7 @@
             this.groupBox2.Controls.Add(this.listView1);
             this.groupBox2.Location = new System.Drawing.Point(535, 131);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(543, 182);
+            this.groupBox2.Size = new System.Drawing.Size(525, 182);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "groupBox2";
@@ -287,7 +286,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.ClientSize = new System.Drawing.Size(1090, 421);
+            this.ClientSize = new System.Drawing.Size(1089, 458);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox1);
