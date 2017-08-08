@@ -35,6 +35,9 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.CogsVsMopTextBox = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.productCodeTextBox = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -83,9 +86,6 @@
             this.ExchangeRateTextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.CogsVsMopTextBox = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -181,6 +181,32 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Feedback Inquiry";
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(206, 313);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(20, 17);
+            this.label17.TabIndex = 34;
+            this.label17.Text = "%";
+            // 
+            // CogsVsMopTextBox
+            // 
+            this.CogsVsMopTextBox.Location = new System.Drawing.Point(141, 312);
+            this.CogsVsMopTextBox.Name = "CogsVsMopTextBox";
+            this.CogsVsMopTextBox.Size = new System.Drawing.Size(59, 20);
+            this.CogsVsMopTextBox.TabIndex = 11;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(16, 315);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(127, 13);
+            this.label16.TabIndex = 32;
+            this.label16.Text = "COGS Vs MOP               :";
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -254,7 +280,7 @@
             // 
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Items.AddRange(new object[] {
-            "Kgs",
+            "Pcs",
             "Set",
             "Pair",
             "Box",
@@ -609,32 +635,6 @@
             this.label15.TabIndex = 0;
             this.label15.Text = "Select Inquiry Number      :";
             this.label15.Click += new System.EventHandler(this.label15_Click);
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(16, 315);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(127, 13);
-            this.label16.TabIndex = 32;
-            this.label16.Text = "COGS Vs MOP               :";
-            // 
-            // CogsVsMopTextBox
-            // 
-            this.CogsVsMopTextBox.Location = new System.Drawing.Point(141, 312);
-            this.CogsVsMopTextBox.Name = "CogsVsMopTextBox";
-            this.CogsVsMopTextBox.Size = new System.Drawing.Size(59, 20);
-            this.CogsVsMopTextBox.TabIndex = 11;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(206, 313);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(20, 17);
-            this.label17.TabIndex = 34;
-            this.label17.Text = "%";
             // 
             // ReplyForInquiry
             // 
