@@ -474,7 +474,7 @@ namespace ProductManagementSystem.UI
             if (StockStatusComboBox.Text == @"Stock")
             {
                 comboBox3.Items.Clear();
-                comboBox3.Items.Add("Kgs");
+                comboBox3.Items.Add("Pcs");
                 comboBox3.Items.Add("Set");
                 comboBox3.Items.Add("Pair");
                 comboBox3.Items.Add("Box");
