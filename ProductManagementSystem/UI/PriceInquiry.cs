@@ -59,8 +59,8 @@ namespace ProductManagementSystem.UI
             }
             else  if (string.IsNullOrWhiteSpace(ProDesTextBox.Text))
             {
-                MessageBox.Show("Please Enter Product Description", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                ProDesTextBox.Focus();
+                //MessageBox.Show("Please Enter Product Description", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //ProDesTextBox.Focus();
               
             }
             
@@ -72,8 +72,8 @@ namespace ProductManagementSystem.UI
             }
             else if (string.IsNullOrWhiteSpace(RemarksTextBox.Text ))
             {
-                MessageBox.Show("Please Enter Remarks", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                RemarksTextBox.Focus();
+                //MessageBox.Show("Please Enter Remarks", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //RemarksTextBox.Focus();
              
             }
             else if (string.IsNullOrWhiteSpace(QtyTextBox.Text))
