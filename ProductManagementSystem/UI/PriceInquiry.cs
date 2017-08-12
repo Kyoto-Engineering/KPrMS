@@ -45,6 +45,7 @@ namespace ProductManagementSystem.UI
             InqFromTextBox.Clear();
             RemarksTextBox.Clear();
             QtyTextBox.Clear();
+            ProGenDesTextBox.Clear();
             SaveButton.Enabled = true;
         }
 
@@ -81,6 +82,11 @@ namespace ProductManagementSystem.UI
                 QtyTextBox.Focus();
 
             }
+            else if (string.IsNullOrWhiteSpace(ProGenDesTextBox.Text))
+            {
+                MessageBox.Show("Please Enter Product Generic Description", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ProGenDesTextBox.Focus();
+            }
 
             else
             {
@@ -92,6 +98,7 @@ namespace ProductManagementSystem.UI
                     l1.SubItems.Add(InqFromTextBox.Text);
                     l1.SubItems.Add(RemarksTextBox.Text);
                     l1.SubItems.Add(QtyTextBox.Text);
+                    l1.SubItems.Add(ProGenDesTextBox.Text);
                     listView1.Items.Add(l1);
                     Reset();
                 }
@@ -103,6 +110,7 @@ namespace ProductManagementSystem.UI
                     l2.SubItems.Add(InqFromTextBox.Text);
                     l2.SubItems.Add(RemarksTextBox.Text);
                     l2.SubItems.Add(QtyTextBox.Text);
+                    l2.SubItems.Add(ProGenDesTextBox.Text);
                     listView1.Items.Add(l2);
                     Reset();
                 }
@@ -262,7 +270,7 @@ namespace ProductManagementSystem.UI
         {
             if (!String.IsNullOrWhiteSpace(ModelTextBox.Text) || !String.IsNullOrWhiteSpace(ProDesTextBox.Text) ||
                 !String.IsNullOrWhiteSpace(InqFromTextBox.Text) || !String.IsNullOrWhiteSpace(RemarksTextBox.Text) ||
-                !String.IsNullOrWhiteSpace(QtyTextBox.Text))
+                !String.IsNullOrWhiteSpace(QtyTextBox.Text) || !String.IsNullOrWhiteSpace(ProGenDesTextBox.Text))
             {
                 MessageBox.Show(@"You Forgot to add "+"\r \n Add first or clear these");
             }
@@ -282,7 +290,7 @@ namespace ProductManagementSystem.UI
                     cmd.Parameters.AddWithValue("@d1", DateTime.UtcNow.ToLocalTime());
                     cmd.Parameters.AddWithValue("@d2", frmLogin.uId2);
                     int id = (int) cmd.ExecuteScalar();
-                    string query2 = "insert into PriceInquiryDetail(Model,ProductDescription,InquiryFrom,Remarks,Qty,PrInId) values(@d1,@d2,@d3,@d4,@d5,@d6)";
+                    string query2 = "insert into PriceInquiryDetail(Model,ProductDescription,InquiryFrom,Remarks,Qty,PrInId,ProductGenericDescription) values(@d1,@d2,@d3,@d4,@d5,@d6,@d7)";
                     cmd = new SqlCommand(query2, con,trans);
                     for (int i = 0; i < listView1.Items.Count; i++)
                     {
@@ -293,6 +301,7 @@ namespace ProductManagementSystem.UI
                         cmd.Parameters.AddWithValue("@d4", listView1.Items[i].SubItems[3].Text);
                         cmd.Parameters.AddWithValue("@d5", listView1.Items[i].SubItems[4].Text);
                         cmd.Parameters.AddWithValue("@d6", id);
+                        cmd.Parameters.AddWithValue("@d7", listView1.Items[i].SubItems[5].Text);
                         cmd.ExecuteNonQuery();
                     }
                   
