@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.ProGenDesTextBox = new System.Windows.Forms.TextBox();
             this.QtyTextBox = new System.Windows.Forms.TextBox();
             this.RemarksTextBox = new System.Windows.Forms.TextBox();
             this.InqFromTextBox = new System.Windows.Forms.TextBox();
@@ -48,12 +50,10 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ProGenDesTextBox = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -79,13 +79,31 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(18, 120);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(228, 17);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "Product Generic Description  :";
+            // 
+            // ProGenDesTextBox
+            // 
+            this.ProGenDesTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProGenDesTextBox.Location = new System.Drawing.Point(248, 117);
+            this.ProGenDesTextBox.Name = "ProGenDesTextBox";
+            this.ProGenDesTextBox.Size = new System.Drawing.Size(212, 23);
+            this.ProGenDesTextBox.TabIndex = 3;
+            // 
             // QtyTextBox
             // 
             this.QtyTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QtyTextBox.Location = new System.Drawing.Point(248, 224);
             this.QtyTextBox.Name = "QtyTextBox";
             this.QtyTextBox.Size = new System.Drawing.Size(212, 23);
-            this.QtyTextBox.TabIndex = 5;
+            this.QtyTextBox.TabIndex = 6;
             this.QtyTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.QtyTextBox_KeyDown);
             this.QtyTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.QtyTextBox_KeyPress);
             // 
@@ -96,7 +114,7 @@
             this.RemarksTextBox.MaxLength = 255;
             this.RemarksTextBox.Name = "RemarksTextBox";
             this.RemarksTextBox.Size = new System.Drawing.Size(212, 23);
-            this.RemarksTextBox.TabIndex = 4;
+            this.RemarksTextBox.TabIndex = 5;
             this.RemarksTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RemarksTextBox_KeyDown);
             // 
             // InqFromTextBox
@@ -106,7 +124,7 @@
             this.InqFromTextBox.MaxLength = 255;
             this.InqFromTextBox.Name = "InqFromTextBox";
             this.InqFromTextBox.Size = new System.Drawing.Size(212, 23);
-            this.InqFromTextBox.TabIndex = 3;
+            this.InqFromTextBox.TabIndex = 4;
             this.InqFromTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.InqFromTextBox_KeyDown);
             // 
             // ProDesTextBox
@@ -188,7 +206,7 @@
             this.SaveButton.Location = new System.Drawing.Point(248, 275);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(100, 54);
-            this.SaveButton.TabIndex = 6;
+            this.SaveButton.TabIndex = 7;
             this.SaveButton.Text = "Add";
             this.SaveButton.UseVisualStyleBackColor = false;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
@@ -210,7 +228,7 @@
             this.groupBox2.Location = new System.Drawing.Point(535, 131);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(525, 182);
-            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "groupBox2";
             // 
@@ -257,6 +275,11 @@
             // 
             this.columnHeader5.Text = "Qty";
             // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Product Generic Description";
+            this.columnHeader6.Width = 98;
+            // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -286,29 +309,6 @@
             this.button1.Text = "Done";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Product Generic Description";
-            this.columnHeader6.Width = 98;
-            // 
-            // ProGenDesTextBox
-            // 
-            this.ProGenDesTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProGenDesTextBox.Location = new System.Drawing.Point(248, 117);
-            this.ProGenDesTextBox.Name = "ProGenDesTextBox";
-            this.ProGenDesTextBox.Size = new System.Drawing.Size(212, 23);
-            this.ProGenDesTextBox.TabIndex = 7;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(18, 120);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(228, 17);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "Product Generic Description  :";
             // 
             // PriceInquiry
             // 
