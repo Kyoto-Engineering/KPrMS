@@ -123,6 +123,12 @@
     <Compile Include="Reports\PriceInquiryReport.Designer.cs">
       <DependentUpon>PriceInquiryReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\ProductListWithStockStatus.cs">
+      <DependentUpon>ProductListWithStockStatus.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Reports\WithoutPriceProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,6 +250,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\PriceInquiryReport.resx">
       <DependentUpon>PriceInquiryReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ProductListWithStockStatus.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ProductListWithStockStatus.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\WithoutPriceProduct.resx">
       <DependentUpon>WithoutPriceProduct.cs</DependentUpon>
