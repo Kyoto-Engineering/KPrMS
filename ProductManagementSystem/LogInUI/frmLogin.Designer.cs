@@ -39,7 +39,7 @@
             // 
             // txtUserName
             // 
-            this.txtUserName.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
             this.txtUserName.Location = new System.Drawing.Point(24, 136);
             this.txtUserName.MaxLength = 50;
             this.txtUserName.Name = "txtUserName";
@@ -49,7 +49,7 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
             this.txtPassword.Location = new System.Drawing.Point(25, 252);
             this.txtPassword.MaxLength = 50;
             this.txtPassword.Name = "txtPassword";
@@ -61,7 +61,7 @@
             // loginButton
             // 
             this.loginButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.loginButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.loginButton.Location = new System.Drawing.Point(142, 333);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(132, 45);
@@ -116,7 +116,7 @@
             this.MinimizeBox = false;
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmLogin";
+            this.Text = "Kyoto Product Management System 1_0_0_14";
             this.ResumeLayout(false);
             this.PerformLayout();
 
