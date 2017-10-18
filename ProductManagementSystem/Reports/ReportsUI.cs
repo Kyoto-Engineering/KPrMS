@@ -64,6 +64,15 @@ namespace ProductManagementSystem.Reports
             this.Visible = true;
         }
 
+        private void ProductListWithStockStatusbutton_Click(object sender, EventArgs e)
+        {
+            //this.Hide();
+            ProductListWithStockStatusUI f2 = new ProductListWithStockStatusUI();
+            this.Visible = false;
+            f2.ShowDialog();
+            this.Visible = true;
+        }
+
         
     }
 }

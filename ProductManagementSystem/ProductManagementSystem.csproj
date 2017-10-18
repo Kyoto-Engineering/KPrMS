@@ -129,6 +129,12 @@
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Reports\ProductListWithStockStatusUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ProductListWithStockStatusUI.Designer.cs">
+      <DependentUpon>ProductListWithStockStatusUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\WithoutPriceProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -254,6 +260,9 @@
     <EmbeddedResource Include="Reports\ProductListWithStockStatus.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ProductListWithStockStatus.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ProductListWithStockStatusUI.resx">
+      <DependentUpon>ProductListWithStockStatusUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\WithoutPriceProduct.resx">
       <DependentUpon>WithoutPriceProduct.cs</DependentUpon>

@@ -33,11 +33,13 @@
             this.button2 = new System.Windows.Forms.Button();
             this.PriceInqListButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.ProductListWithStockStatusbutton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.ProductListWithStockStatusbutton);
             this.groupBox1.Controls.Add(this.InFeedbackButton);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.PriceInqListButton);
@@ -100,6 +102,19 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // ProductListWithStockStatusbutton
+            // 
+            this.ProductListWithStockStatusbutton.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.ProductListWithStockStatusbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductListWithStockStatusbutton.ForeColor = System.Drawing.Color.Blue;
+            this.ProductListWithStockStatusbutton.Location = new System.Drawing.Point(152, 95);
+            this.ProductListWithStockStatusbutton.Name = "ProductListWithStockStatusbutton";
+            this.ProductListWithStockStatusbutton.Size = new System.Drawing.Size(152, 52);
+            this.ProductListWithStockStatusbutton.TabIndex = 4;
+            this.ProductListWithStockStatusbutton.Text = "Product With Stock Status";
+            this.ProductListWithStockStatusbutton.UseVisualStyleBackColor = false;
+            this.ProductListWithStockStatusbutton.Click += new System.EventHandler(this.ProductListWithStockStatusbutton_Click);
+            // 
             // ReportsUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -122,5 +137,6 @@
         private System.Windows.Forms.Button PriceInqListButton;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button InFeedbackButton;
+        private System.Windows.Forms.Button ProductListWithStockStatusbutton;
     }
 }
