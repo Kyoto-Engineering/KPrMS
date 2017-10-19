@@ -116,7 +116,7 @@
             this.MinimizeBox = false;
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Kyoto Product Management System 1_0_0_15";
+            this.Text = "Kyoto Product Management System 1_0_0_16";
             this.ResumeLayout(false);
             this.PerformLayout();
 
