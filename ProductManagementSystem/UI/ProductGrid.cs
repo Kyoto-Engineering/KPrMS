@@ -32,7 +32,7 @@ namespace ProductManagementSystem.UI
         {
             con = new SqlConnection(cs.DBConn);
             con.Open();
-            sda = new SqlDataAdapter("Select  pp.Sl,pp.ProductGenericDescription,pp.ItemDescription,pp.ItemCode,pp.CountryOfOrigin,pp.Price,pp.Specification,pp.ProductImage,tt.BrandName, pp.Url,pp.CurrentRevision from ProductListSummary as pp,Brand as tt  where pp.BrandId=tt.BrandId  order by pp.Sl desc", con);
+            sda = new SqlDataAdapter("Select  pp.Sl,pp.ProductGenericDescription,pp.ItemDescription,pp.ItemCode,pp.CountryOfOrigin,pp.Price,pp.Specification,pp.ProductImage,tt.BrandName, pp.Url,pp.CurrentRevision, pp.DLT from ProductListSummary as pp,Brand as tt  where pp.BrandId=tt.BrandId  order by pp.Sl desc", con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             dataGridView1.DataSource = dt;
@@ -45,6 +45,7 @@ namespace ProductManagementSystem.UI
             dataGridView1.Columns[6].Width = 120;
             dataGridView1.Columns[7].Width = 180;
             dataGridView1.Columns[8].Width = 180;
+            dataGridView1.Columns[11].Width = 120;
                dataGridView1.Columns[7].DefaultCellStyle.NullValue = null;
             dataGridView1.Columns[8].DefaultCellStyle.NullValue = null;
                for (int i = 0; i < dataGridView1.Columns.Count; i++)
@@ -79,6 +80,7 @@ namespace ProductManagementSystem.UI
                 frm.cmbCountryOfOrigin.Text = dr.Cells[4].Value.ToString();
                 frm.txtUPrice.Text = dr.Cells[5].Value.ToString();
                 frm.richTextBox1.Text = dr.Cells[6].Value.ToString();
+                frm.textBox2.Text = dr.Cells[11].Value.ToString();
                 
                 
                     if (Convert.ToString(dr.Cells[7].Value) != string.Empty)

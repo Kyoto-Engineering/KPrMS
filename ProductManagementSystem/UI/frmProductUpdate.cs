@@ -122,7 +122,7 @@ namespace ProductManagementSystem.UI
                 
                     con = new SqlConnection(cs.DBConn);
                     con.Open();
-                    string cb = "Update ProductListSummary set ProductGenericDescription=@d1,ItemDescription=@d2,ItemCode=@d3,CountryOfOrigin=@d4,Price=@d5,ProductImage=@d6,Specification=@d7,BrandId=@d8,Url=@d9,CurrentRevision=@d10 where Sl='" + txtUProductId.Text + "'";
+                    string cb = "Update ProductListSummary set ProductGenericDescription=@d1,ItemDescription=@d2,ItemCode=@d3,CountryOfOrigin=@d4,Price=@d5,ProductImage=@d6,Specification=@d7,BrandId=@d8,Url=@d9,CurrentRevision=@d10,DLT = @d11 where Sl='" + txtUProductId.Text + "'";
                     cmd = new SqlCommand(cb);
                     cmd.Connection = con;
                     cmd.Parameters.AddWithValue("@d1", txtUProductName.Text);
@@ -151,6 +151,7 @@ namespace ProductManagementSystem.UI
                 cmd.Parameters.AddWithValue("@d9",
                     string.IsNullOrWhiteSpace(textBox1.Text) ? (object) DBNull.Value : textBox1.Text);
                 cmd.Parameters.AddWithValue("@d10", rev+1);
+                cmd.Parameters.AddWithValue("@d11", string.IsNullOrEmpty(textBox2.Text) ? (object) DBNull.Value : textBox2.Text);
                     rdr = cmd.ExecuteReader();
                     con.Close();
                string cd= "INSERT INTO ProductUpdateLog (UserId, UpdateTime, Revision, Sl) VALUES (@d1,@d2,@d3,@d4)";

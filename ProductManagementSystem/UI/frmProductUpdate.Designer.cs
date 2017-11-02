@@ -60,6 +60,8 @@
             this.cmbCountryOfOrigin = new System.Windows.Forms.ComboBox();
             this.txtUPictureBox = new System.Windows.Forms.PictureBox();
             this.txtUKBrandName = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtUPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -150,7 +152,7 @@
             // 
             // txtUPrice
             // 
-            this.txtUPrice.Location = new System.Drawing.Point(274, 440);
+            this.txtUPrice.Location = new System.Drawing.Point(274, 429);
             this.txtUPrice.Name = "txtUPrice";
             this.txtUPrice.Size = new System.Drawing.Size(238, 29);
             this.txtUPrice.TabIndex = 7;
@@ -160,7 +162,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(139, 370);
+            this.label9.Location = new System.Drawing.Point(139, 359);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(120, 22);
             this.label9.TabIndex = 15;
@@ -197,7 +199,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(145, 447);
+            this.label6.Location = new System.Drawing.Point(145, 436);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(114, 22);
             this.label6.TabIndex = 9;
@@ -271,6 +273,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label11);
@@ -295,18 +299,18 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtUProductName);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(15, 30);
+            this.groupBox1.Location = new System.Drawing.Point(18, 13);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(876, 476);
+            this.groupBox1.Size = new System.Drawing.Size(876, 498);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Product Info";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(270, 403);
+            this.textBox1.Location = new System.Drawing.Point(270, 392);
             this.textBox1.MaxLength = 500;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(240, 29);
@@ -315,7 +319,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(188, 410);
+            this.label12.Location = new System.Drawing.Point(188, 399);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(49, 22);
             this.label12.TabIndex = 30;
@@ -344,7 +348,7 @@
             // 
             this.richTextBox1.Location = new System.Drawing.Point(276, 237);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(236, 117);
+            this.richTextBox1.Size = new System.Drawing.Size(236, 104);
             this.richTextBox1.TabIndex = 5;
             this.richTextBox1.Text = "";
             this.richTextBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.richTextBox1_KeyDown);
@@ -352,7 +356,7 @@
             // cmbBrand
             // 
             this.cmbBrand.FormattingEnabled = true;
-            this.cmbBrand.Location = new System.Drawing.Point(274, 362);
+            this.cmbBrand.Location = new System.Drawing.Point(274, 351);
             this.cmbBrand.Name = "cmbBrand";
             this.cmbBrand.Size = new System.Drawing.Size(236, 30);
             this.cmbBrand.TabIndex = 6;
@@ -589,6 +593,23 @@
             this.txtUKBrandName.Visible = false;
             this.txtUKBrandName.TextChanged += new System.EventHandler(this.txtUKBrandName_TextChanged);
             // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(272, 464);
+            this.textBox2.MaxLength = 500;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(240, 29);
+            this.textBox2.TabIndex = 31;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(190, 471);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(47, 22);
+            this.label13.TabIndex = 32;
+            this.label13.Text = "DLT";
+            // 
             // frmProductUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -649,5 +670,7 @@
         private System.Windows.Forms.Label label11;
         public System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label12;
+        public System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label13;
     }
 }

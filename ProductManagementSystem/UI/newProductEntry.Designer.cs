@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(newProductEntry));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -63,6 +65,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label10);
@@ -89,10 +93,27 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(1008, 417);
+            this.groupBox1.Size = new System.Drawing.Size(1008, 468);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Product Info";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(302, 419);
+            this.textBox2.MaxLength = 500;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(263, 29);
+            this.textBox2.TabIndex = 29;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(27, 422);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(277, 22);
+            this.label12.TabIndex = 30;
+            this.label12.Text = "DLT                                             :";
             // 
             // textBox1
             // 
@@ -498,7 +519,7 @@
             // 
             this.groupBox2.Controls.Add(this.getDataButton);
             this.groupBox2.Controls.Add(this.saveButton);
-            this.groupBox2.Location = new System.Drawing.Point(132, 447);
+            this.groupBox2.Location = new System.Drawing.Point(132, 491);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(538, 105);
             this.groupBox2.TabIndex = 19;
@@ -599,5 +620,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }

@@ -29,6 +29,7 @@ namespace ProductManagementSystem.UI
 
         private void Reset()
         {
+            textBox2.Clear();
             txtProductName.Text = "";
             txtItemDescription.Text = "";
             txtItemCode.Text = "";
@@ -115,7 +116,7 @@ namespace ProductManagementSystem.UI
 
                 con = new SqlConnection(cs.DBConn);
                 con.Open();
-                string query = "insert into ProductListSummary(ProductGenericDescription,ItemDescription,ItemCode,CountryOfOrigin,Price,ProductImage,Specification,BrandId,Url,UserId,Entrytime,CurrentRevision) values(@d1,@d2,@d3,@d4,@d5,@d6,@d7,@d8,@d9,@d10,@d11,@d12)";
+                string query = "insert into ProductListSummary(ProductGenericDescription,ItemDescription,ItemCode,CountryOfOrigin,Price,ProductImage,Specification,BrandId,Url,UserId,Entrytime,CurrentRevision,DLT) values(@d1,@d2,@d3,@d4,@d5,@d6,@d7,@d8,@d9,@d10,@d11,@d12,@d13)";
                 cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@d1", txtProductName.Text);
                 cmd.Parameters.AddWithValue("@d2", txtItemDescription.Text);
@@ -146,6 +147,7 @@ namespace ProductManagementSystem.UI
                 cmd.Parameters.AddWithValue("@d10", frmLogin.uId2);
                 cmd.Parameters.AddWithValue("@d11", DateTime.UtcNow.ToLocalTime());
                 cmd.Parameters.AddWithValue("@d12", 1);
+                cmd.Parameters.AddWithValue("@d13", string.IsNullOrEmpty(textBox2.Text) ? (object)DBNull.Value : textBox2.Text);
                 cmd.ExecuteNonQuery();
                 con.Close();
                 MessageBox.Show("Successfully Saved", "Report", MessageBoxButtons.OK, MessageBoxIcon.Information);
