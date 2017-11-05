@@ -207,6 +207,12 @@
     <Compile Include="UI\newProductEntry.Designer.cs">
       <DependentUpon>newProductEntry.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\ObsoleteMakingUII.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ObsoleteMakingUII.Designer.cs">
+      <DependentUpon>ObsoleteMakingUII.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\PriceInquiry.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -302,6 +308,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\newProductEntry.resx">
       <DependentUpon>newProductEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ObsoleteMakingUII.resx">
+      <DependentUpon>ObsoleteMakingUII.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\PriceInquiry.resx">
       <DependentUpon>PriceInquiry.cs</DependentUpon>
