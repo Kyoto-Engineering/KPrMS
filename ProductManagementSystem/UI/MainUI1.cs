@@ -88,5 +88,14 @@ namespace ProductManagementSystem.UI
             ReplyForInquiry frm = new ReplyForInquiry();
             frm.Show();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            ObsoleteMakingUII obui = new ObsoleteMakingUII();
+            this.Visible = false;
+            obui.ShowDialog();
+            this.Visible = true;
+
+        }
     }
 }
