@@ -39,6 +39,12 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.reasonCombo = new System.Windows.Forms.ComboBox();
+            this.notifictxt = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.txtItemCode = new System.Windows.Forms.TextBox();
@@ -48,6 +54,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtProductName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -127,26 +134,93 @@
             this.groupBox2.Controls.Add(this.txtProductName);
             this.groupBox2.Location = new System.Drawing.Point(12, 99);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(454, 483);
+            this.groupBox2.Size = new System.Drawing.Size(454, 503);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.groupBox2.Text = "Selected Product";
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.dateTimePicker1);
+            this.groupBox3.Controls.Add(this.label8);
+            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Controls.Add(this.reasonCombo);
+            this.groupBox3.Controls.Add(this.notifictxt);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Controls.Add(this.comboBox1);
-            this.groupBox3.Location = new System.Drawing.Point(42, 202);
+            this.groupBox3.Location = new System.Drawing.Point(0, 182);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(382, 242);
+            this.groupBox3.Size = new System.Drawing.Size(448, 315);
             this.groupBox3.TabIndex = 17;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Make Obsolete";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(3, 164);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(122, 20);
+            this.label8.TabIndex = 22;
+            this.label8.Text = "Effective Date : ";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(3, 123);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(73, 20);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Reason :";
+            // 
+            // reasonCombo
+            // 
+            this.reasonCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.reasonCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reasonCombo.FormattingEnabled = true;
+            this.reasonCombo.Location = new System.Drawing.Point(149, 118);
+            this.reasonCombo.Name = "reasonCombo";
+            this.reasonCombo.Size = new System.Drawing.Size(248, 28);
+            this.reasonCombo.TabIndex = 20;
+            this.reasonCombo.SelectedIndexChanged += new System.EventHandler(this.reasonCombo_SelectedIndexChanged);
+            // 
+            // notifictxt
+            // 
+            this.notifictxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.notifictxt.Location = new System.Drawing.Point(147, 78);
+            this.notifictxt.MaxLength = 255;
+            this.notifictxt.Name = "notifictxt";
+            this.notifictxt.Size = new System.Drawing.Size(298, 26);
+            this.notifictxt.TabIndex = 18;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(3, 80);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(120, 20);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Notification No :";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(3, 37);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(122, 20);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "Select Obsolete";
+            // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(108, 139);
+            this.button1.Location = new System.Drawing.Point(169, 261);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(148, 48);
             this.button1.TabIndex = 1;
@@ -159,7 +233,7 @@
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(62, 49);
+            this.comboBox1.Location = new System.Drawing.Point(149, 34);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(248, 28);
             this.comboBox1.TabIndex = 0;
@@ -171,6 +245,7 @@
             this.txtItemCode.Location = new System.Drawing.Point(150, 127);
             this.txtItemCode.MaxLength = 255;
             this.txtItemCode.Name = "txtItemCode";
+            this.txtItemCode.ReadOnly = true;
             this.txtItemCode.Size = new System.Drawing.Size(298, 26);
             this.txtItemCode.TabIndex = 14;
             // 
@@ -180,6 +255,7 @@
             this.txtItemDescription.Location = new System.Drawing.Point(150, 93);
             this.txtItemDescription.MaxLength = 255;
             this.txtItemDescription.Name = "txtItemDescription";
+            this.txtItemDescription.ReadOnly = true;
             this.txtItemDescription.Size = new System.Drawing.Size(298, 26);
             this.txtItemDescription.TabIndex = 12;
             // 
@@ -219,6 +295,7 @@
             this.txtProductName.Location = new System.Drawing.Point(150, 58);
             this.txtProductName.MaxLength = 255;
             this.txtProductName.Name = "txtProductName";
+            this.txtProductName.ReadOnly = true;
             this.txtProductName.Size = new System.Drawing.Size(298, 26);
             this.txtProductName.TabIndex = 11;
             // 
@@ -232,6 +309,15 @@
             this.label4.TabIndex = 14;
             this.label4.Text = "Make Product Obsolete";
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(149, 163);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(248, 24);
+            this.dateTimePicker1.TabIndex = 23;
+            // 
             // ObsoleteMakingUII
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -241,6 +327,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "ObsoleteMakingUII";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ObsoleteMakingUII";
             this.Load += new System.EventHandler(this.ObsoleteMakingUII_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -248,6 +335,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -275,5 +363,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.TextBox txtProductName;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox reasonCombo;
+        private System.Windows.Forms.TextBox notifictxt;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

@@ -41,8 +41,8 @@ namespace ProductManagementSystem.LogInUI
                 txtPassword.Focus();
                 return;
             }
-            try
-            {
+            //try
+            //{
                 //
                 string clearText = txtPassword.Text.Trim();
                 string password = clearText;
@@ -112,11 +112,11 @@ namespace ProductManagementSystem.LogInUI
                     con.Dispose();
                 }
                 //
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
 
         private void button1_Click(object sender, EventArgs e)

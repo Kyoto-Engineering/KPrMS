@@ -97,5 +97,13 @@ namespace ProductManagementSystem.UI
             this.Visible = true;
 
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Replacetheobsolete rto = new Replacetheobsolete();
+            this.Visible = false;
+            rto.ShowDialog();
+            this.Visible = true;
+        }
     }
 }

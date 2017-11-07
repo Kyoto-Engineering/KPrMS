@@ -28,7 +28,7 @@
     <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>17</ApplicationRevision>
+    <ApplicationRevision>21</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -225,6 +225,12 @@
     <Compile Include="UI\ProductGrid.Designer.cs">
       <DependentUpon>ProductGrid.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Replacetheobsolete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Replacetheobsolete.Designer.cs">
+      <DependentUpon>Replacetheobsolete.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\ReplyForInquiry.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -318,6 +324,9 @@
     <EmbeddedResource Include="UI\ProductGrid.resx">
       <DependentUpon>ProductGrid.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Replacetheobsolete.resx">
+      <DependentUpon>Replacetheobsolete.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\ReplyForInquiry.resx">
       <DependentUpon>ReplyForInquiry.cs</DependentUpon>
     </EmbeddedResource>
@@ -367,6 +376,16 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\whiteyglossyrectanglebuttonmd.png" />
+    <None Include="Resources\KPrMS1.png" />
+    <None Include="Resources\Productedited 1.png" />
+    <None Include="Resources\KPrMS12.png" />
+    <None Include="Resources\Productedited 11.png" />
+    <None Include="Resources\ProductManagement.png" />
+    <None Include="Resources\Productedited 12.png" />
+    <None Include="Resources\Logowithoutnamarked.png" />
+    <None Include="Resources\banner.png" />
+    <None Include="Resources\ProductManagement1.png" />
     <Content Include="web_product_managment_fainal_icon_256px.ico" />
   </ItemGroup>
   <ItemGroup>

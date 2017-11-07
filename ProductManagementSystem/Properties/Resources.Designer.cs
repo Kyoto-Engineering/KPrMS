@@ -93,9 +93,39 @@ namespace ProductManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap banner {
+            get {
+                object obj = ResourceManager.GetObject("banner", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap img12 {
             get {
                 object obj = ResourceManager.GetObject("img12", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap KPrMS1 {
+            get {
+                object obj = ResourceManager.GetObject("KPrMS1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap KPrMS12 {
+            get {
+                object obj = ResourceManager.GetObject("KPrMS12", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,6 +153,16 @@ namespace ProductManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Logowithoutnamarked {
+            get {
+                object obj = ResourceManager.GetObject("Logowithoutnamarked", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Product_Management_System_UI_99 {
             get {
                 object obj = ResourceManager.GetObject("Product Management System UI-99", resourceCulture);
@@ -136,6 +176,66 @@ namespace ProductManagementSystem.Properties {
         internal static System.Drawing.Bitmap Product_Management_System_UI_9933 {
             get {
                 object obj = ResourceManager.GetObject("Product Management System UI-9933", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Productedited1 {
+            get {
+                object obj = ResourceManager.GetObject("Productedited1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Productedited11 {
+            get {
+                object obj = ResourceManager.GetObject("Productedited11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Productedited12 {
+            get {
+                object obj = ResourceManager.GetObject("Productedited12", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ProductManagement {
+            get {
+                object obj = ResourceManager.GetObject("ProductManagement", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ProductManagement1 {
+            get {
+                object obj = ResourceManager.GetObject("ProductManagement1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap whiteyglossyrectanglebuttonmd {
+            get {
+                object obj = ResourceManager.GetObject("whiteyglossyrectanglebuttonmd", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
