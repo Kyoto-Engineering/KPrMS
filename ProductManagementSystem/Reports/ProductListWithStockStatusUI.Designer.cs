@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductListWithStockStatusUI));
             this.GetButton = new System.Windows.Forms.Button();
             this.BrandNameComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -71,6 +72,7 @@
             this.Controls.Add(this.GetButton);
             this.Controls.Add(this.BrandNameComboBox);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ProductListWithStockStatusUI";
             this.Text = "ProductListWithStockStatusUI";
             this.Load += new System.EventHandler(this.ProductListWithStockStatusUI_Load);

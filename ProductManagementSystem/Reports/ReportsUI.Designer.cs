@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportsUI));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ProductListWithStockStatusbutton = new System.Windows.Forms.Button();
             this.InFeedbackButton = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.PriceInqListButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.ProductListWithStockStatusbutton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,6 +50,19 @@
             this.groupBox1.Size = new System.Drawing.Size(519, 313);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // ProductListWithStockStatusbutton
+            // 
+            this.ProductListWithStockStatusbutton.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.ProductListWithStockStatusbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductListWithStockStatusbutton.ForeColor = System.Drawing.Color.Blue;
+            this.ProductListWithStockStatusbutton.Location = new System.Drawing.Point(152, 95);
+            this.ProductListWithStockStatusbutton.Name = "ProductListWithStockStatusbutton";
+            this.ProductListWithStockStatusbutton.Size = new System.Drawing.Size(152, 52);
+            this.ProductListWithStockStatusbutton.TabIndex = 4;
+            this.ProductListWithStockStatusbutton.Text = "Product With Stock Status";
+            this.ProductListWithStockStatusbutton.UseVisualStyleBackColor = false;
+            this.ProductListWithStockStatusbutton.Click += new System.EventHandler(this.ProductListWithStockStatusbutton_Click);
             // 
             // InFeedbackButton
             // 
@@ -102,19 +116,6 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // ProductListWithStockStatusbutton
-            // 
-            this.ProductListWithStockStatusbutton.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.ProductListWithStockStatusbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProductListWithStockStatusbutton.ForeColor = System.Drawing.Color.Blue;
-            this.ProductListWithStockStatusbutton.Location = new System.Drawing.Point(152, 95);
-            this.ProductListWithStockStatusbutton.Name = "ProductListWithStockStatusbutton";
-            this.ProductListWithStockStatusbutton.Size = new System.Drawing.Size(152, 52);
-            this.ProductListWithStockStatusbutton.TabIndex = 4;
-            this.ProductListWithStockStatusbutton.Text = "Product With Stock Status";
-            this.ProductListWithStockStatusbutton.UseVisualStyleBackColor = false;
-            this.ProductListWithStockStatusbutton.Click += new System.EventHandler(this.ProductListWithStockStatusbutton_Click);
-            // 
             // ReportsUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -122,6 +123,7 @@
             this.BackColor = System.Drawing.Color.Bisque;
             this.ClientSize = new System.Drawing.Size(565, 375);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ReportsUI";
             this.Text = "ReportsUI";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ReportsUI_FormClosed);

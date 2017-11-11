@@ -28,7 +28,7 @@
     <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>21</ApplicationRevision>
+    <ApplicationRevision>24</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -55,7 +55,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>web_product_managment_fainal_icon_256px.ico</ApplicationIcon>
+    <ApplicationIcon>KPrMS1.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>ECB81E7CF19FC185FD405C64275178E08E80A0AB</ManifestCertificateThumbprint>
@@ -386,6 +386,7 @@
     <None Include="Resources\Logowithoutnamarked.png" />
     <None Include="Resources\banner.png" />
     <None Include="Resources\ProductManagement1.png" />
+    <Content Include="KPrMS1.ico" />
     <Content Include="web_product_managment_fainal_icon_256px.ico" />
   </ItemGroup>
   <ItemGroup>

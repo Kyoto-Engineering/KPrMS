@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PriceInquiry));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.ProGenDesTextBox = new System.Windows.Forms.TextBox();
@@ -322,6 +323,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PriceInquiry";
             this.Text = "Price Inquiry";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PriceInquiry_FormClosed);

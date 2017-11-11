@@ -118,5 +118,98 @@ namespace ProductManagementSystem.UI
             MainUI1 frm = new MainUI1();
             frm.Show();
         }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+            con = new SqlConnection(cs.DBConn);
+            con.Open();
+            sda = new SqlDataAdapter("Select  fset.Sl, fset.ProductGenericDescription, fset.ItemDescription, fset.ItemCode, fset.CountryOfOrigin, fset.Price, fset.Specification, fset.ProductImage, fset.BrandName, fset.Url, fset.CurrentRevision, fset.DLT from (Select  pp.Sl,pp.ProductGenericDescription,pp.ItemDescription,pp.ItemCode,pp.CountryOfOrigin,pp.Price,pp.Specification,pp.ProductImage,tt.BrandName, pp.Url,pp.CurrentRevision, pp.DLT from ProductListSummary as pp,Brand as tt  where pp.BrandId=tt.BrandId) as fset where fset.ItemCode like '" + textBox6.Text + "%' order by fset.Sl desc ", con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dataGridView1.DataSource = dt;
+            dataGridView1.Columns[0].Width = 100;
+            dataGridView1.Columns[1].Width = 140;
+            dataGridView1.Columns[2].Width = 140;
+            dataGridView1.Columns[3].Width = 120;
+            dataGridView1.Columns[4].Width = 120;
+            dataGridView1.Columns[5].Width = 120;
+            dataGridView1.Columns[6].Width = 120;
+            dataGridView1.Columns[7].Width = 180;
+            dataGridView1.Columns[8].Width = 180;
+            dataGridView1.Columns[11].Width = 120;
+            dataGridView1.Columns[7].DefaultCellStyle.NullValue = null;
+            dataGridView1.Columns[8].DefaultCellStyle.NullValue = null;
+            for (int i = 0; i < dataGridView1.Columns.Count; i++)
+                if (dataGridView1.Columns[i] is DataGridViewImageColumn)
+                {
+                    ((DataGridViewImageColumn)dataGridView1.Columns[i]).ImageLayout = DataGridViewImageCellLayout.Stretch;
+                    //break;
+                }
+            // or whatever width works well for abbrev
+            //dataGridView1.Columns[2].Width = dataGridView1.Width - dataGridView1.Columns[0].Width - dataGridView1.Columns[1].Width - 72;  
+            con.Close();
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+            con = new SqlConnection(cs.DBConn);
+            con.Open();
+            sda = new SqlDataAdapter("Select  fset.Sl, fset.ProductGenericDescription, fset.ItemDescription, fset.ItemCode, fset.CountryOfOrigin, fset.Price, fset.Specification, fset.ProductImage, fset.BrandName, fset.Url, fset.CurrentRevision, fset.DLT from (Select  pp.Sl,pp.ProductGenericDescription,pp.ItemDescription,pp.ItemCode,pp.CountryOfOrigin,pp.Price,pp.Specification,pp.ProductImage,tt.BrandName, pp.Url,pp.CurrentRevision, pp.DLT from ProductListSummary as pp,Brand as tt  where pp.BrandId=tt.BrandId) as fset where fset.ItemDescription like '" + textBox5.Text + "%' order by fset.Sl desc ", con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dataGridView1.DataSource = dt;
+            dataGridView1.Columns[0].Width = 100;
+            dataGridView1.Columns[1].Width = 140;
+            dataGridView1.Columns[2].Width = 140;
+            dataGridView1.Columns[3].Width = 120;
+            dataGridView1.Columns[4].Width = 120;
+            dataGridView1.Columns[5].Width = 120;
+            dataGridView1.Columns[6].Width = 120;
+            dataGridView1.Columns[7].Width = 180;
+            dataGridView1.Columns[8].Width = 180;
+            dataGridView1.Columns[11].Width = 120;
+            dataGridView1.Columns[7].DefaultCellStyle.NullValue = null;
+            dataGridView1.Columns[8].DefaultCellStyle.NullValue = null;
+            for (int i = 0; i < dataGridView1.Columns.Count; i++)
+                if (dataGridView1.Columns[i] is DataGridViewImageColumn)
+                {
+                    ((DataGridViewImageColumn)dataGridView1.Columns[i]).ImageLayout = DataGridViewImageCellLayout.Stretch;
+                    //break;
+                }
+            // or whatever width works well for abbrev
+            //dataGridView1.Columns[2].Width = dataGridView1.Width - dataGridView1.Columns[0].Width - dataGridView1.Columns[1].Width - 72;  
+            con.Close();
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            con = new SqlConnection(cs.DBConn);
+            con.Open();
+            sda = new SqlDataAdapter("Select  fset.Sl, fset.ProductGenericDescription, fset.ItemDescription, fset.ItemCode, fset.CountryOfOrigin, fset.Price, fset.Specification, fset.ProductImage, fset.BrandName, fset.Url, fset.CurrentRevision, fset.DLT from (Select  pp.Sl,pp.ProductGenericDescription,pp.ItemDescription,pp.ItemCode,pp.CountryOfOrigin,pp.Price,pp.Specification,pp.ProductImage,tt.BrandName, pp.Url,pp.CurrentRevision, pp.DLT from ProductListSummary as pp,Brand as tt  where pp.BrandId=tt.BrandId) as fset where fset.ProductGenericDescription like '" + textBox4.Text + "%' order by fset.Sl desc ", con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dataGridView1.DataSource = dt;
+            dataGridView1.Columns[0].Width = 100;
+            dataGridView1.Columns[1].Width = 140;
+            dataGridView1.Columns[2].Width = 140;
+            dataGridView1.Columns[3].Width = 120;
+            dataGridView1.Columns[4].Width = 120;
+            dataGridView1.Columns[5].Width = 120;
+            dataGridView1.Columns[6].Width = 120;
+            dataGridView1.Columns[7].Width = 180;
+            dataGridView1.Columns[8].Width = 180;
+            dataGridView1.Columns[11].Width = 120;
+            dataGridView1.Columns[7].DefaultCellStyle.NullValue = null;
+            dataGridView1.Columns[8].DefaultCellStyle.NullValue = null;
+            for (int i = 0; i < dataGridView1.Columns.Count; i++)
+                if (dataGridView1.Columns[i] is DataGridViewImageColumn)
+                {
+                    ((DataGridViewImageColumn)dataGridView1.Columns[i]).ImageLayout = DataGridViewImageCellLayout.Stretch;
+                    //break;
+                }
+            // or whatever width works well for abbrev
+            //dataGridView1.Columns[2].Width = dataGridView1.Width - dataGridView1.Columns[0].Width - dataGridView1.Columns[1].Width - 72;  
+            con.Close();
+        }
     }
 }

@@ -41,6 +41,7 @@ namespace ProductManagementSystem.UI
                 string q1 = "select ProductListSummary.Sl, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemDescription, ProductListSummary.ItemCode,ProductListSummary.CountryOfOrigin, ProductListSummary.Price, Obsolete.ObName from  ProductListSummary LEFT OUTER JOIN Obsolete ON ProductListSummary.ObsoleteId =  Obsolete.ObsoleteId where ProductListSummary.ObsoleteId IS NULL ";
                 cmd = new SqlCommand(q1, con);
                 rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                dataGridView2.Rows.Clear();
                 while (rdr.Read() == true)
                 {
                     dataGridView2.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4], rdr[5], rdr[6]);
@@ -64,6 +65,7 @@ namespace ProductManagementSystem.UI
                 string qr = "select ObsoleteProduct.ObproductId, ProductListSummary.Sl,ProductListSummary.ProductGenericDescription,ProductListSummary.ItemDescription,ProductListSummary.ItemCode, Obsolete.ObName from ProductListSummary INNER JOIN ObsoleteProduct ON ProductListSummary.Sl = ObsoleteProduct.Sl INNER JOIN Obsolete ON Obsolete.ObsoleteId = ProductListSummary.ObsoleteId where ObsoleteProduct.Replaced IS NULL";
                 cmd = new SqlCommand(qr, con);
                 rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                dataGridView1.Rows.Clear();
                 while (rdr.Read())
                 {
                     dataGridView1.Rows.Add(rdr[0],rdr[1], rdr[2], rdr[3], rdr[4], rdr[5]);
@@ -209,6 +211,151 @@ namespace ProductManagementSystem.UI
             }
 
 
+        }
+
+        private void txtProductsrch_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                con = new SqlConnection(cs.DBConn);
+                con.Open();
+               // string q1r = "select ObsoleteProduct.ObproductId, ProductListSummary.Sl,ProductListSummary.ProductGenericDescription,ProductListSummary.ItemDescription,ProductListSummary.ItemCode, Obsolete.ObName from ProductListSummary INNER JOIN ObsoleteProduct ON ProductListSummary.Sl = ObsoleteProduct.Sl INNER JOIN Obsolete ON Obsolete.ObsoleteId = ProductListSummary.ObsoleteId where ObsoleteProduct.Replaced IS NULL";
+
+                string qr = "select fset.ObproductId,fset.Sl, fset.ProductGenericDescription, fset.ItemDescription, fset.ItemCode, fset.ObName from  (select ObsoleteProduct.ObproductId, ProductListSummary.Sl,ProductListSummary.ProductGenericDescription,ProductListSummary.ItemDescription,ProductListSummary.ItemCode, Obsolete.ObName from ProductListSummary INNER JOIN ObsoleteProduct ON ProductListSummary.Sl = ObsoleteProduct.Sl INNER JOIN Obsolete ON Obsolete.ObsoleteId = ProductListSummary.ObsoleteId where ObsoleteProduct.Replaced IS NULL) as fset  where fset.ItemCode like '" + txtProductsrch.Text + "%'";
+                cmd = new SqlCommand(qr, con);
+                rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                dataGridView1.Rows.Clear();
+                while (rdr.Read())
+                {
+                    dataGridView1.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4], rdr[5]);
+                }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void itemDescriptionTextBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                con = new SqlConnection(cs.DBConn);
+                con.Open();
+               // string q1r = "select ObsoleteProduct.ObproductId, ProductListSummary.Sl,ProductListSummary.ProductGenericDescription,ProductListSummary.ItemDescription,ProductListSummary.ItemCode, Obsolete.ObName from ProductListSummary INNER JOIN ObsoleteProduct ON ProductListSummary.Sl = ObsoleteProduct.Sl INNER JOIN Obsolete ON Obsolete.ObsoleteId = ProductListSummary.ObsoleteId where ObsoleteProduct.Replaced IS NULL";
+
+                string qr = "select fset.ObproductId,fset.Sl, fset.ProductGenericDescription, fset.ItemDescription, fset.ItemCode, fset.ObName from  (select ObsoleteProduct.ObproductId, ProductListSummary.Sl,ProductListSummary.ProductGenericDescription,ProductListSummary.ItemDescription,ProductListSummary.ItemCode, Obsolete.ObName from ProductListSummary INNER JOIN ObsoleteProduct ON ProductListSummary.Sl = ObsoleteProduct.Sl INNER JOIN Obsolete ON Obsolete.ObsoleteId = ProductListSummary.ObsoleteId where ObsoleteProduct.Replaced IS NULL) as fset  where fset.ItemDescription like '" + itemDescriptionTextBox.Text + "%'";
+                cmd = new SqlCommand(qr, con);
+                rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                dataGridView1.Rows.Clear();
+                while (rdr.Read())
+                {
+                    dataGridView1.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4], rdr[5]);
+                }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void productNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                con = new SqlConnection(cs.DBConn);
+                con.Open();
+                // string q1r = "select ObsoleteProduct.ObproductId, ProductListSummary.Sl,ProductListSummary.ProductGenericDescription,ProductListSummary.ItemDescription,ProductListSummary.ItemCode, Obsolete.ObName from ProductListSummary INNER JOIN ObsoleteProduct ON ProductListSummary.Sl = ObsoleteProduct.Sl INNER JOIN Obsolete ON Obsolete.ObsoleteId = ProductListSummary.ObsoleteId where ObsoleteProduct.Replaced IS NULL";
+
+                string qr = "select fset.ObproductId,fset.Sl, fset.ProductGenericDescription, fset.ItemDescription, fset.ItemCode, fset.ObName from  (select ObsoleteProduct.ObproductId, ProductListSummary.Sl,ProductListSummary.ProductGenericDescription,ProductListSummary.ItemDescription,ProductListSummary.ItemCode, Obsolete.ObName from ProductListSummary INNER JOIN ObsoleteProduct ON ProductListSummary.Sl = ObsoleteProduct.Sl INNER JOIN Obsolete ON Obsolete.ObsoleteId = ProductListSummary.ObsoleteId where ObsoleteProduct.Replaced IS NULL) as fset  where fset.ProductGenericDescription like '" + productNameTextBox.Text + "%'";
+                cmd = new SqlCommand(qr, con);
+                rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                dataGridView1.Rows.Clear();
+                while (rdr.Read())
+                {
+                    dataGridView1.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4], rdr[5]);
+                }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                con = new SqlConnection(cs.DBConn);
+                con.Open();
+                string q1 = "select fset.Sl, fset.ProductGenericDescription, fset.ItemDescription, fset.ItemCode, fset.CountryOfOrigin, fset.Price, fset.ObName from (select ProductListSummary.Sl, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemDescription, ProductListSummary.ItemCode,ProductListSummary.CountryOfOrigin, ProductListSummary.Price, Obsolete.ObName from  ProductListSummary LEFT OUTER JOIN Obsolete ON ProductListSummary.ObsoleteId =  Obsolete.ObsoleteId where ProductListSummary.ObsoleteId IS NULL) as fset where fset.ItemCode like '" + textBox6.Text + "%' ";
+                cmd = new SqlCommand(q1, con);
+                rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                dataGridView2.Rows.Clear();
+                while (rdr.Read() == true)
+                {
+                    dataGridView2.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4], rdr[5], rdr[6]);
+
+                }
+
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                con = new SqlConnection(cs.DBConn);
+                con.Open();
+                string q1 = "select fset.Sl, fset.ProductGenericDescription, fset.ItemDescription, fset.ItemCode, fset.CountryOfOrigin, fset.Price, fset.ObName from (select ProductListSummary.Sl, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemDescription, ProductListSummary.ItemCode,ProductListSummary.CountryOfOrigin, ProductListSummary.Price, Obsolete.ObName from  ProductListSummary LEFT OUTER JOIN Obsolete ON ProductListSummary.ObsoleteId =  Obsolete.ObsoleteId where ProductListSummary.ObsoleteId IS NULL) as fset where fset.ItemDescription like '" + textBox5.Text + "%' ";
+                cmd = new SqlCommand(q1, con);
+                rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                dataGridView2.Rows.Clear();
+                while (rdr.Read() == true)
+                {
+                    dataGridView2.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4], rdr[5], rdr[6]);
+
+                }
+
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                con = new SqlConnection(cs.DBConn);
+                con.Open();
+                string q1 = "select fset.Sl, fset.ProductGenericDescription, fset.ItemDescription, fset.ItemCode, fset.CountryOfOrigin, fset.Price, fset.ObName from (select ProductListSummary.Sl, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemDescription, ProductListSummary.ItemCode,ProductListSummary.CountryOfOrigin, ProductListSummary.Price, Obsolete.ObName from  ProductListSummary LEFT OUTER JOIN Obsolete ON ProductListSummary.ObsoleteId =  Obsolete.ObsoleteId where ProductListSummary.ObsoleteId IS NULL) as fset where fset.ProductGenericDescription like '" + textBox4.Text + "%' ";
+                cmd = new SqlCommand(q1, con);
+                rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                dataGridView2.Rows.Clear();
+                while (rdr.Read() == true)
+                {
+                    dataGridView2.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4], rdr[5], rdr[6]);
+
+                }
+
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
     }

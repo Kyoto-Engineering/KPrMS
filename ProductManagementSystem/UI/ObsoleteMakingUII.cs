@@ -34,6 +34,7 @@ namespace ProductManagementSystem.UI
                 string q1 = "select ProductListSummary.Sl, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemDescription, ProductListSummary.ItemCode,ProductListSummary.CountryOfOrigin, ProductListSummary.Price, Obsolete.ObName from  ProductListSummary LEFT OUTER JOIN Obsolete ON ProductListSummary.ObsoleteId =  Obsolete.ObsoleteId  ";
                 cmd = new SqlCommand(q1, con);
                 rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                dataGridView1.Rows.Clear();
                 while (rdr.Read() == true)
                 {
                     dataGridView1.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4], rdr[5], rdr[6]);
@@ -56,25 +57,7 @@ namespace ProductManagementSystem.UI
             resnld();
         }
 
-        private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            try
-            {
-                DataGridViewRow dr = dataGridView1.CurrentRow;
-                slno = Convert.ToInt32(dr.Cells[0].Value.ToString());
-                txtProductName.Text = dr.Cells[1].Value.ToString();
-                txtItemDescription.Text = dr.Cells[2].Value.ToString();
-                txtItemCode.Text = dr.Cells[3].Value.ToString();
-
-
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show(exception.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-           
-
-        }
+       
 
         private void obsloleteload()
         {
@@ -289,6 +272,105 @@ namespace ProductManagementSystem.UI
 
             }
         }
+
+        private void txtProductsrch_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                con = new SqlConnection(cs.DBConn);
+                con.Open();
+                string qr1 = "select ProductListSummary.Sl, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemDescription, ProductListSummary.ItemCode,ProductListSummary.CountryOfOrigin, ProductListSummary.Price, Obsolete.ObName from  ProductListSummary LEFT OUTER JOIN Obsolete ON ProductListSummary.ObsoleteId =  Obsolete.ObsoleteId where ProductListSummary.ItemCode like '" + txtProductsrch.Text + "%'";
+                
+                cmd = new SqlCommand(qr1, con);
+                rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                dataGridView1.Rows.Clear();
+                while (rdr.Read() == true)
+                {
+                    dataGridView1.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4], rdr[5], rdr[6]);
+
+                }
+
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
+        }
+
+        private void itemDescriptionTextBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                con = new SqlConnection(cs.DBConn);
+                con.Open();
+                string qr1 = "select ProductListSummary.Sl, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemDescription, ProductListSummary.ItemCode,ProductListSummary.CountryOfOrigin, ProductListSummary.Price, Obsolete.ObName from  ProductListSummary LEFT OUTER JOIN Obsolete ON ProductListSummary.ObsoleteId =  Obsolete.ObsoleteId where ProductListSummary.ItemDescription like '" + itemDescriptionTextBox.Text + "%'";
+
+                cmd = new SqlCommand(qr1, con);
+                rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                dataGridView1.Rows.Clear();
+                while (rdr.Read() == true)
+                {
+                    dataGridView1.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4], rdr[5], rdr[6]);
+
+                }
+
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void productNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                con = new SqlConnection(cs.DBConn);
+                con.Open();
+                string qr1 = "select ProductListSummary.Sl, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemDescription, ProductListSummary.ItemCode,ProductListSummary.CountryOfOrigin, ProductListSummary.Price, Obsolete.ObName from  ProductListSummary LEFT OUTER JOIN Obsolete ON ProductListSummary.ObsoleteId =  Obsolete.ObsoleteId where ProductListSummary.ProductGenericDescription like '" + productNameTextBox.Text + "%'";
+
+                cmd = new SqlCommand(qr1, con);
+                rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                dataGridView1.Rows.Clear();
+                while (rdr.Read() == true)
+                {
+                    dataGridView1.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4], rdr[5], rdr[6]);
+
+                }
+
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+       
+
+        private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                DataGridViewRow dr = dataGridView1.CurrentRow;
+                slno = Convert.ToInt32(dr.Cells[0].Value.ToString());
+                txtProductName.Text = dr.Cells[1].Value.ToString();
+                txtItemDescription.Text = dr.Cells[2].Value.ToString();
+                txtItemCode.Text = dr.Cells[3].Value.ToString();
+
+
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+      
 
 
 

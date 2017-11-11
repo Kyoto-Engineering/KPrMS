@@ -51,6 +51,8 @@
             this.txtUProductName = new System.Windows.Forms.TextBox();
             this.labelk = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -60,8 +62,6 @@
             this.cmbCountryOfOrigin = new System.Windows.Forms.ComboBox();
             this.txtUPictureBox = new System.Windows.Forms.PictureBox();
             this.txtUKBrandName = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtUPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -307,6 +307,23 @@
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Product Info";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(272, 464);
+            this.textBox2.MaxLength = 500;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(240, 29);
+            this.textBox2.TabIndex = 31;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(190, 471);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(47, 22);
+            this.label13.TabIndex = 32;
+            this.label13.Text = "DLT";
             // 
             // textBox1
             // 
@@ -593,30 +610,12 @@
             this.txtUKBrandName.Visible = false;
             this.txtUKBrandName.TextChanged += new System.EventHandler(this.txtUKBrandName_TextChanged);
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(272, 464);
-            this.textBox2.MaxLength = 500;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(240, 29);
-            this.textBox2.TabIndex = 31;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(190, 471);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(47, 22);
-            this.label13.TabIndex = 32;
-            this.label13.Text = "DLT";
-            // 
             // frmProductUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(1049, 549);
-            this.ControlBox = false;
             this.Controls.Add(this.txtUKBrandName);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.labelk);
